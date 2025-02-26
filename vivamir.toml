@@ -1,0 +1,77 @@
+version = { major = 3, minor = 0, patch = 0 }
+name = 'axi-rt'
+design_top = 'bd_dpu_wrapper'
+simulation_top = 'tbd_multidev_run'
+ignore = { include = 'vivamir.ignore' }
+
+### Sources
+includes = [
+    { path = 'include' },
+    { exec = 'echo $(bender path apb)/include' },
+    { exec = 'echo $(bender path axi)/include' },
+    { exec = 'echo $(bender path common_cells)/include' },
+    { exec = 'echo $(bender path register_interface)/include' },
+]
+
+# Order matters! The first of its kind will be the default path for new files created in Vivado.
+filesets = [
+    { kind = 'design', path = 'src' },
+    { kind = 'simulation', path = 'test' },
+
+    ### Bender
+    { kind = 'design', read_only = true, exec = 'bender path apb' },
+    { kind = 'design', read_only = true, exec = 'bender path axi' },
+    { kind = 'design', read_only = true, exec = 'bender path common_cells' },
+    { kind = 'design', read_only = true, exec = 'bender path common_verification' },
+    { kind = 'design', read_only = true, exec = 'bender path register_interface' },
+    { kind = 'design', read_only = true, exec = 'echo $(bender path register_interface)/vendor/lowrisc_opentitan/src' },
+    { kind = 'design', read_only = true, exec = 'bender path tech_cells_generic' },
+]
+
+[block_designs]
+# Blocks designs need to be registered manually as they can ran arbitrary code.
+# Add only trusted designs!
+#
+# Order also matters when BDs depend on each other.
+trusted = [
+    # TODO: Synth stuff
+    'src/bds/top.tcl',
+    # 'block_designs/design_dpu.tcl',
+
+    'src/bds/bd_axi_rt.tcl',
+    'src/bds/axi_rt_device_port.tcl',
+    'test/bds/tbd_multidev.tcl',
+]
+
+# Where the sync utility should put new designs.
+new_design_path = 'src/bds'
+
+[ips]
+# Where Vivado should look for your IPs.
+#   Added only if it exists otherwise is silently ignored.
+user_ip_repo_path = 'ips'
+
+[remotes]
+# An example SSH remote host.
+# [[ssh]]
+# host = 'host'
+# vivado = '/path/to/vivado'
+
+[vivado]
+version = '2022.2'
+part = 'xck26-sfvc784-2LV-c'
+board = 'kr260_som'
+board_long = 'xilinx.com:kr260_som:part0:1.1'
+
+# A list of `set_property name value object` commands.
+#   Should be copied from Vivado Tcl Console.
+#
+# Note: All fields are Tcl snippets and WILL be executed.
+# `$::root` points to the project's root and can be used to make a path absolute.
+properties = [
+    { name = 'xsim.simulate.runtime', value = '0ps', object = '[get_filesets sim_1]' },
+    { name = 'xsim.simulate.log_all_signals', value = 'true', object = '[get_filesets sim_1]' },
+    { name = 'xsim.elaborate.mt_level', value = '32', object = '[get_filesets sim_1]' },
+    { name = 'xsim.view', value = '$::root/tb_axi_rt_device_port_behav.wcfg', object = '[get_filesets sim_1]' },
+    # { name = 'STEPS.WRITE_BITSTREAM.ARGS.BIN_FILE', value = 'true', object = '[get_runs impl_1]' },
+]

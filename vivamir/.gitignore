@@ -1,0 +1,8 @@
+# Vivamir
+project/
+
+# Vivado
+vivado*.jou
+vivado*.log
+vivado*.str
+**/.Xil
