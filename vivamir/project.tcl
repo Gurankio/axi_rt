@@ -15,16 +15,23 @@ foreach ignore $::ignores {
     }
 }
 
+set valid_extensions {}
+dict set valid_extensions .v ""
+dict set valid_extensions .vh ""
+dict set valid_extensions .sv ""
+dict set valid_extensions .svh ""
+dict set valid_extensions .vhdl ""
+
 set des_files {}
 foreach file [rglob $des_filesets {*.*}] {
-    if {![dict exists $ignore_files_dict $file]} {
+    if {[dict exists $valid_extensions [file extension $file]] && ![dict exists $ignore_files_dict $file]} {
         lappend des_files $file
     }
 }
 
 set sim_files {}
 foreach file [rglob $sim_filesets {*.*}] {
-    if {![dict exists $ignore_files_dict $file]} {
+    if {[dict exists $valid_extensions [file extension $file]] && ![dict exists $ignore_files_dict $file]} {
         lappend sim_files $file
     }
 }
@@ -57,7 +64,7 @@ add_files -fileset sim_1 -norecurse $sim_files
 import_files -relative_to $root -fileset sim_1
 
 ### Load user IPs
-set_property ip_repo_paths "" [current_project]
+set_property ip_repo_paths $::root/ips [current_project]
 update_ip_catalog
 
 ### Block Designs

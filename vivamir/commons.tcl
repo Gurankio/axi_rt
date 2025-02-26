@@ -80,10 +80,10 @@ set root_name [file rootname [file tail $root]]
 set project_name axi-rt
 
 set block_designs [list \
-    "$::root/block_designs/top.tcl" \
-    "$::root/block_designs/bd_axi_rt.tcl" \
-    "$::root/block_designs/axi_rt_device_port.tcl" \
-    "$::root/block_designs/tbd_multidev.tcl" \
+    "$::root/src/bds/top.tcl" \
+    "$::root/src/bds/bd_axi_rt.tcl" \
+    "$::root/src/bds/axi_rt_device_port.tcl" \
+    "$::root/test/bds/tbd_multidev.tcl" \
 ]
 set includes [list \
     "include" \
@@ -118,10 +118,6 @@ set sim_filesets_read_only [list \
 
 ]
 set ignores [list \
-    .DS_Store \
-    */regs/*.hjson \
-    */regs/*.py \
-    **/.DS_Store \
     **/apb/src/apb_cdc.sv \
     **/apb/src/apb_demux.sv \
     **/apb/src/apb_err_slv.sv \
@@ -297,7 +293,7 @@ proc vivamir_export_bds {} {
             open_bd_design $bd
             set name [file rootname [file tail $bd]]
 
-            set output $::root/block_designs/$name.tcl
+            set output $::root/src/bds/$name.tcl
             if [dict exists block_designs_name_to_path $name] {
                 set output [dict get block_designs_name_to_path $name]
             }

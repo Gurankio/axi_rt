@@ -1,9 +1,5 @@
-.DS_Store
-**/.DS_Store
 test/stimuli/*
 test/tb_axi_rt_unit_top.sv
-*/regs/*.py
-*/regs/*.hjson
 
 # Bender
 **/apb/src/apb_cdc.sv

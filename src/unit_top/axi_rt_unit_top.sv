@@ -10,16 +10,22 @@
 /// Real-time unit: fragments and throttles transactions. Top-lvl unit includes the registers
 module axi_rt_unit_top #(
   parameter int unsigned NumManagers        = 32'd0,
+
   parameter int unsigned AddrWidth          = 32'd0,
   parameter int unsigned DataWidth          = 32'd0,
   parameter int unsigned IdWidth            = 32'd0,
   parameter int unsigned UserWidth          = 32'd0,
+
   parameter int unsigned NumPending         = 32'd0,
   parameter int unsigned WBufferDepth       = 32'd0,
+
   parameter int unsigned NumAddrRegions     = 32'd0,
+
   parameter int unsigned PeriodWidth        = 32'd0,
   parameter int unsigned BudgetWidth        = 32'd0,
+
   parameter int unsigned RegIdWidth         = 32'd0,
+
   parameter bit          CutSplitterPaths   =  1'b0,
   parameter bit          DisableSplitChecks =  1'b0,
   parameter bit          CutDecErrors       =  1'b0,
@@ -185,7 +191,7 @@ module axi_rt_unit_top #(
     assign w_budget = reg2hw.write_budget [i * NumAddrRegions +: NumAddrRegions];
     assign w_period = reg2hw.write_period [i * NumAddrRegions +: NumAddrRegions];
 
-    // read budget/period left
+    // write budget/period left for software usage
     always_comb begin : proc_assemble_hw2reg
       hw2reg.read_budget_left  [i * NumAddrRegions +: NumAddrRegions] = r_budget_left;
       hw2reg.read_period_left  [i * NumAddrRegions +: NumAddrRegions] = r_period_left;

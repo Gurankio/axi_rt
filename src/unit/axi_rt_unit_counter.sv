@@ -51,6 +51,7 @@ module ax_rt_unit_counter #(
   );
 
   // load period new
+  // TODO: Bugged, should load on enable?
   assign period_load = period_over | period_abort_i;
 
   // period expired
@@ -72,6 +73,7 @@ module ax_rt_unit_counter #(
     .rst_ni,
     .clear_i   ( 1'b0            ),
     .en_i      ( budget_en       ),
+    // TODO: bugged! should be able to load also some other time: on abort and on enable!
     .load_i    ( period_over     ),
     .down_i    ( 1'b1            ),
     .delta_i   ( bytes_spent     ),
