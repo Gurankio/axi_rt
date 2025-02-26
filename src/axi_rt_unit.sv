@@ -275,8 +275,8 @@ module axi_rt_unit #(
   // --------------------------------------------------
   // Bandwidth Probes
   // --------------------------------------------------
-  assign aw_bytes = ({1'b0, fwd_req.aw.len} + 9'h001) << (fwd_req.aw.size);
-  assign ar_bytes = ({1'b0, fwd_req.ar.len} + 9'h001) << (fwd_req.ar.size);
+  assign aw_bytes = ({1'b0, fwd_req.aw.len} + 9'h001) * DataWidth;
+  assign ar_bytes = ({1'b0, fwd_req.ar.len} + 9'h001) * DataWidth;
 
   assign aw_happening = fwd_req.aw_valid & fwd_resp.aw_ready;
   assign ar_happening = fwd_req.ar_valid & fwd_resp.ar_ready;
