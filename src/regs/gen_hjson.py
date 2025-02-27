@@ -34,11 +34,6 @@ REG_STR = '''
       type: "int",
       default: "{num_managers}"
     }},
-    {{ name: "NumSub",
-      desc: "Configured number of subordinate regions.",
-      type: "int",
-      default: "{num_subordinates}"
-    }}
     {{ name: "NumReg",
       desc: "Configured number of required registers.",
       type: "int",

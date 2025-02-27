@@ -2,7 +2,7 @@
 # Do not edit manually.
 #
 # Creates the project.
-# Version 2.0.0
+# Version 2.1.0
 
 ### Commons
 source commons.tcl
@@ -90,12 +90,12 @@ set_property top {bd_dpu_wrapper} [get_filesets sources_1]
 
 set_property top_lib xil_defaultlib [get_filesets sim_1]
 set_property top {tbd_multidev_run} [get_filesets sim_1]
+set_property -name xsim.view -value "$::root/test/tbd_multidev_run.wcfg" -object [get_filesets sim_1]
 
 ### User Settings
 set_property -name xsim.simulate.runtime -value 0ps -object [get_filesets sim_1]
 set_property -name xsim.simulate.log_all_signals -value true -object [get_filesets sim_1]
 set_property -name xsim.elaborate.mt_level -value 32 -object [get_filesets sim_1]
-set_property -name xsim.view -value $::root/tb_axi_rt_device_port_behav.wcfg -object [get_filesets sim_1]
 
 ### Update
 update_compile_order -fileset sources_1

@@ -34,12 +34,17 @@ filesets = [
 #
 # Order also matters when BDs depend on each other.
 trusted = [
-    # TODO: Synth stuff
-    'src/bds/top.tcl',
-    # 'block_designs/design_dpu.tcl',
+    # Synthetizable design.
+    # 'src/bds/top.tcl',
+    'src/bds/bd_dpu.tcl',
 
-    'src/bds/bd_axi_rt.tcl',
+    # Single port single component verification
+    # 'src/bds/bd_axi_rt.tcl',
+
+    # ?
     'src/bds/axi_rt_device_port.tcl',
+
+    # Testbench for master logic
     'test/bds/tbd_multidev.tcl',
 ]
 
@@ -72,6 +77,5 @@ properties = [
     { name = 'xsim.simulate.runtime', value = '0ps', object = '[get_filesets sim_1]' },
     { name = 'xsim.simulate.log_all_signals', value = 'true', object = '[get_filesets sim_1]' },
     { name = 'xsim.elaborate.mt_level', value = '32', object = '[get_filesets sim_1]' },
-    { name = 'xsim.view', value = '$::root/tb_axi_rt_device_port_behav.wcfg', object = '[get_filesets sim_1]' },
     # { name = 'STEPS.WRITE_BITSTREAM.ARGS.BIN_FILE', value = 'true', object = '[get_runs impl_1]' },
 ]

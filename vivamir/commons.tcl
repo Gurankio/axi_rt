@@ -80,8 +80,7 @@ set root_name [file rootname [file tail $root]]
 set project_name axi-rt
 
 set block_designs [list \
-    "$::root/src/bds/top.tcl" \
-    "$::root/src/bds/bd_axi_rt.tcl" \
+    "$::root/src/bds/bd_dpu.tcl" \
     "$::root/src/bds/axi_rt_device_port.tcl" \
     "$::root/test/bds/tbd_multidev.tcl" \
 ]
@@ -132,6 +131,7 @@ set ignores [list \
     .bender/git/checkouts/axi-*/src/axi_cdc_src.sv \
     .bender/git/checkouts/axi-*/src/axi_chan_compare.sv \
     .bender/git/checkouts/axi-*/src/axi_delayer.sv \
+    .bender/git/checkouts/axi-*/src/axi_demux_simple.sv \
     .bender/git/checkouts/axi-*/src/axi_dumper.sv \
     .bender/git/checkouts/axi-*/src/axi_dw_converter.sv \
     .bender/git/checkouts/axi-*/src/axi_dw_downsizer.sv \
@@ -222,6 +222,7 @@ set ignores [list \
     .bender/git/checkouts/common_cells-*/src/plru_tree.sv \
     .bender/git/checkouts/common_cells-*/src/popcount.sv \
     .bender/git/checkouts/common_cells-*/src/read.sv \
+    .bender/git/checkouts/common_cells-*/src/rr_arb_tree.sv \
     .bender/git/checkouts/common_cells-*/src/rstgen.sv \
     .bender/git/checkouts/common_cells-*/src/rstgen_bypass.sv \
     .bender/git/checkouts/common_cells-*/src/serial_deglitch.sv \
@@ -286,7 +287,7 @@ set ignores [list \
 proc vivamir_export_bds {} {
     set block_designs_name_to_path {}
     foreach file $::block_designs {
-        dict set block_designs_name_to_path [file rootname [file tail $bd]] $file
+        dict set block_designs_name_to_path [file rootname [file tail $file]] $file
     }
 
     foreach bd [get_files *.bd] {
@@ -295,8 +296,8 @@ proc vivamir_export_bds {} {
             set name [file rootname [file tail $bd]]
 
             set output $::root/src/bds/$name.tcl
-            if [dict exists block_designs_name_to_path $name] {
-                set output [dict get block_designs_name_to_path $name]
+            if [dict exists $block_designs_name_to_path $name] {
+                set output [dict get $block_designs_name_to_path $name]
             }
 
             write_bd_tcl -force $output

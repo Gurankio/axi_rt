@@ -45,14 +45,6 @@ module axi_rt_unit_top #(
   input logic clk_i,
   input logic rst_ni,
 
-  // Input / Subordinate Ports
-  input  axi_req_t  [NumManagers-1:0] slv_req_i,
-  output axi_resp_t [NumManagers-1:0] slv_resp_o,
-
-  // Output / Manager Ports
-  output axi_req_t  [NumManagers-1:0] mst_req_o,
-  input  axi_resp_t [NumManagers-1:0] mst_resp_i,
-
   // Register interface
   input  req_req_t reg_req_i,
   output req_rsp_t reg_rsp_o,
