@@ -2,7 +2,7 @@
 # Do not edit manually.
 #
 # Starts the GUI after setting up a fresh project.
-# Version 1.1.0
+# Version 2.0.0
 
 ### Create the project.
 source project.tcl
@@ -19,7 +19,7 @@ source project.tcl
 # }
 
 ## Continue logging to terminal
-# set pid [exec tail -n0 -f $::root/vivamir/vivado.log &]
+set pid [exec tail -n0 -f $::root/vivamir/vivado.log &]
 
 ## Wait for successful start (useful on macOS)
 while 1 {

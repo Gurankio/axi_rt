@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_axi_rt_bd2_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_pkg" />
+            <top_module name="axi_rt_reg_pkg" />
+            <top_module name="axi_vip_pkg" />
+            <top_module name="glbl" />
+            <top_module name="std" />
+            <top_module name="tb_axi_rt_bd2" />
+            <top_module name="vcomponents" />
+            <top_module name="xil_common_vip_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="999,999 ps"></ZoomStartTime>
+      <ZoomEndTime time="1,000,002 ps"></ZoomEndTime>
+      <Cursor1Time time="1,000,000 ps"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="274"></NameColumnWidth>
+      <ValueColumnWidth column_width="103"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject type="logic" fp_name="/tb_axi_rt_bd2/aclk">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_rt_bd2/aresetn">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_rt_bd2/start">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_rt_bd2/stop">
+      <obj_property name="ElementShortName">stop</obj_property>
+      <obj_property name="ObjectShortName">stop</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_rt_bd2/axi_bresp">
+      <obj_property name="ElementShortName">axi_bresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">axi_bresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/s_axi_rt_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/s_axi_rt_0.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">s_axi_rt_0</obj_property>
+      <obj_property name="ObjectShortName">s_axi_rt_0</obj_property>
+      <obj_property name="label">config0</obj_property>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_traffic_gen_1/M_AXI">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_axi_rt_bd2/DUT/design_2_i/axi_traffic_gen_1/M_AXI.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">M_AXI</obj_property>
+      <obj_property name="ObjectShortName">M_AXI</obj_property>
+      <obj_property name="label">traffic0</obj_property>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/m_axi_rt_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/m_axi_rt_0.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">m_axi_rt_0</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rt_0</obj_property>
+      <obj_property name="label">down0</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group1752">
+      <obj_property name="label">core0_details</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /rt_enable_i">
+         <obj_property name="ElementShortName">rt_enable_i</obj_property>
+         <obj_property name="ObjectShortName">rt_enable_i</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /rt_bypassed_o">
+         <obj_property name="ElementShortName">rt_bypassed_o</obj_property>
+         <obj_property name="ObjectShortName">rt_bypassed_o</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /len_limit_i">
+         <obj_property name="ElementShortName">len_limit_i[7:0]</obj_property>
+         <obj_property name="ObjectShortName">len_limit_i[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /num_w_pending_o">
+         <obj_property name="ElementShortName">num_w_pending_o[4:0]</obj_property>
+         <obj_property name="ObjectShortName">num_w_pending_o[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /num_aw_pending_o">
+         <obj_property name="ElementShortName">num_aw_pending_o[4:0]</obj_property>
+         <obj_property name="ObjectShortName">num_aw_pending_o[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /rt_rule_i">
+         <obj_property name="ElementShortName">rt_rule_i[0:0]</obj_property>
+         <obj_property name="ObjectShortName">rt_rule_i[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /w_decode_error_o">
+         <obj_property name="ElementShortName">w_decode_error_o</obj_property>
+         <obj_property name="ObjectShortName">w_decode_error_o</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /r_decode_error_o">
+         <obj_property name="ElementShortName">r_decode_error_o</obj_property>
+         <obj_property name="ObjectShortName">r_decode_error_o</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /imtu_enable_i">
+         <obj_property name="ElementShortName">imtu_enable_i</obj_property>
+         <obj_property name="ObjectShortName">imtu_enable_i</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /imtu_abort_i">
+         <obj_property name="ElementShortName">imtu_abort_i</obj_property>
+         <obj_property name="ObjectShortName">imtu_abort_i</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /w_budget_i">
+         <obj_property name="ElementShortName">w_budget_i[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_budget_i[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /w_budget_left_o">
+         <obj_property name="ElementShortName">w_budget_left_o[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_budget_left_o[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /w_period_i">
+         <obj_property name="ElementShortName">w_period_i[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_period_i[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /w_period_left_o">
+         <obj_property name="ElementShortName">w_period_left_o[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_period_left_o[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /r_budget_i">
+         <obj_property name="ElementShortName">r_budget_i[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">r_budget_i[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /r_budget_left_o">
+         <obj_property name="ElementShortName">r_budget_left_o[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">r_budget_left_o[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /r_period_i">
+         <obj_property name="ElementShortName">r_period_i[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">r_period_i[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /r_period_left_o">
+         <obj_property name="ElementShortName">r_period_left_o[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">r_period_left_o[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /isolate_o">
+         <obj_property name="ElementShortName">isolate_o</obj_property>
+         <obj_property name="ObjectShortName">isolate_o</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /isolated_o">
+         <obj_property name="ElementShortName">isolated_o</obj_property>
+         <obj_property name="ObjectShortName">isolated_o</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /iso_req">
+         <obj_property name="ElementShortName">iso_req</obj_property>
+         <obj_property name="ObjectShortName">iso_req</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /cut_req">
+         <obj_property name="ElementShortName">cut_req</obj_property>
+         <obj_property name="ObjectShortName">cut_req</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /fwd_req">
+         <obj_property name="ElementShortName">fwd_req</obj_property>
+         <obj_property name="ObjectShortName">fwd_req</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /out_req">
+         <obj_property name="ElementShortName">out_req</obj_property>
+         <obj_property name="ObjectShortName">out_req</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /mux_req">
+         <obj_property name="ElementShortName">mux_req</obj_property>
+         <obj_property name="ObjectShortName">mux_req</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /iso_resp">
+         <obj_property name="ElementShortName">iso_resp</obj_property>
+         <obj_property name="ObjectShortName">iso_resp</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /cut_resp">
+         <obj_property name="ElementShortName">cut_resp</obj_property>
+         <obj_property name="ObjectShortName">cut_resp</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /fwd_resp">
+         <obj_property name="ElementShortName">fwd_resp</obj_property>
+         <obj_property name="ObjectShortName">fwd_resp</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /out_resp">
+         <obj_property name="ElementShortName">out_resp</obj_property>
+         <obj_property name="ObjectShortName">out_resp</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /mux_resp">
+         <obj_property name="ElementShortName">mux_resp</obj_property>
+         <obj_property name="ObjectShortName">mux_resp</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /aw_bytes">
+         <obj_property name="ElementShortName">aw_bytes[11:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_bytes[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /ar_bytes">
+         <obj_property name="ElementShortName">ar_bytes[11:0]</obj_property>
+         <obj_property name="ObjectShortName">ar_bytes[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /aw_happening">
+         <obj_property name="ElementShortName">aw_happening</obj_property>
+         <obj_property name="ObjectShortName">aw_happening</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /ar_happening">
+         <obj_property name="ElementShortName">ar_happening</obj_property>
+         <obj_property name="ObjectShortName">ar_happening</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /aw_region">
+         <obj_property name="ElementShortName">aw_region[0:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_region[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /ar_region">
+         <obj_property name="ElementShortName">ar_region[0:0]</obj_property>
+         <obj_property name="ObjectShortName">ar_region[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /r_isolate">
+         <obj_property name="ElementShortName">r_isolate[0:0]</obj_property>
+         <obj_property name="ObjectShortName">r_isolate[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /w_isolate">
+         <obj_property name="ElementShortName">w_isolate[0:0]</obj_property>
+         <obj_property name="ObjectShortName">w_isolate[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /global_isolate">
+         <obj_property name="ElementShortName">global_isolate</obj_property>
+         <obj_property name="ObjectShortName">global_isolate</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /rt_state_d">
+         <obj_property name="ElementShortName">rt_state_d[1:0]</obj_property>
+         <obj_property name="ObjectShortName">rt_state_d[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /rt_state_q">
+         <obj_property name="ElementShortName">rt_state_q[1:0]</obj_property>
+         <obj_property name="ObjectShortName">rt_state_q[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /byp_isolate">
+         <obj_property name="ElementShortName">byp_isolate</obj_property>
+         <obj_property name="ObjectShortName">byp_isolate</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /rt_bypassed_d">
+         <obj_property name="ElementShortName">rt_bypassed_d</obj_property>
+         <obj_property name="ObjectShortName">rt_bypassed_d</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /rt_bypassed_q">
+         <obj_property name="ElementShortName">rt_bypassed_q</obj_property>
+         <obj_property name="ObjectShortName">rt_bypassed_q</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /isolated">
+         <obj_property name="ElementShortName">isolated</obj_property>
+         <obj_property name="ObjectShortName">isolated</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /tail_isolated">
+         <obj_property name="ElementShortName">tail_isolated</obj_property>
+         <obj_property name="ObjectShortName">tail_isolated</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /w_decode_error">
+         <obj_property name="ElementShortName">w_decode_error</obj_property>
+         <obj_property name="ObjectShortName">w_decode_error</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /r_decode_error">
+         <obj_property name="ElementShortName">r_decode_error</obj_property>
+         <obj_property name="ObjectShortName">r_decode_error</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /\gen_regions[0].r_region_selected ">
+         <obj_property name="ElementShortName">\gen_regions[0].r_region_selected </obj_property>
+         <obj_property name="ObjectShortName">\gen_regions[0].r_region_selected </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[0].i_axi_rt_unit /\gen_regions[0].w_region_selected ">
+         <obj_property name="ElementShortName">\gen_regions[0].w_region_selected </obj_property>
+         <obj_property name="ObjectShortName">\gen_regions[0].w_region_selected </obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_traffic_gen_0/M_AXI">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_axi_rt_bd2/DUT/design_2_i/axi_traffic_gen_0/M_AXI.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">M_AXI</obj_property>
+      <obj_property name="ObjectShortName">M_AXI</obj_property>
+      <obj_property name="label">traffic1</obj_property>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/m_axi_rt_1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/m_axi_rt_1.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">m_axi_rt_1</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rt_1</obj_property>
+      <obj_property name="label">down1</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group1803">
+      <obj_property name="label">core1_details</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /rt_enable_i">
+         <obj_property name="ElementShortName">rt_enable_i</obj_property>
+         <obj_property name="ObjectShortName">rt_enable_i</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /rt_bypassed_o">
+         <obj_property name="ElementShortName">rt_bypassed_o</obj_property>
+         <obj_property name="ObjectShortName">rt_bypassed_o</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /len_limit_i">
+         <obj_property name="ElementShortName">len_limit_i[7:0]</obj_property>
+         <obj_property name="ObjectShortName">len_limit_i[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /num_w_pending_o">
+         <obj_property name="ElementShortName">num_w_pending_o[4:0]</obj_property>
+         <obj_property name="ObjectShortName">num_w_pending_o[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /num_aw_pending_o">
+         <obj_property name="ElementShortName">num_aw_pending_o[4:0]</obj_property>
+         <obj_property name="ObjectShortName">num_aw_pending_o[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /rt_rule_i">
+         <obj_property name="ElementShortName">rt_rule_i[0:0]</obj_property>
+         <obj_property name="ObjectShortName">rt_rule_i[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /w_decode_error_o">
+         <obj_property name="ElementShortName">w_decode_error_o</obj_property>
+         <obj_property name="ObjectShortName">w_decode_error_o</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /r_decode_error_o">
+         <obj_property name="ElementShortName">r_decode_error_o</obj_property>
+         <obj_property name="ObjectShortName">r_decode_error_o</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /imtu_enable_i">
+         <obj_property name="ElementShortName">imtu_enable_i</obj_property>
+         <obj_property name="ObjectShortName">imtu_enable_i</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /imtu_abort_i">
+         <obj_property name="ElementShortName">imtu_abort_i</obj_property>
+         <obj_property name="ObjectShortName">imtu_abort_i</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /w_budget_i">
+         <obj_property name="ElementShortName">w_budget_i[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_budget_i[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /w_budget_left_o">
+         <obj_property name="ElementShortName">w_budget_left_o[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_budget_left_o[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /w_period_i">
+         <obj_property name="ElementShortName">w_period_i[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_period_i[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /w_period_left_o">
+         <obj_property name="ElementShortName">w_period_left_o[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_period_left_o[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /r_budget_i">
+         <obj_property name="ElementShortName">r_budget_i[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">r_budget_i[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /r_budget_left_o">
+         <obj_property name="ElementShortName">r_budget_left_o[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">r_budget_left_o[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /r_period_i">
+         <obj_property name="ElementShortName">r_period_i[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">r_period_i[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /r_period_left_o">
+         <obj_property name="ElementShortName">r_period_left_o[0:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">r_period_left_o[0:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /isolate_o">
+         <obj_property name="ElementShortName">isolate_o</obj_property>
+         <obj_property name="ObjectShortName">isolate_o</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /isolated_o">
+         <obj_property name="ElementShortName">isolated_o</obj_property>
+         <obj_property name="ObjectShortName">isolated_o</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /iso_req">
+         <obj_property name="ElementShortName">iso_req</obj_property>
+         <obj_property name="ObjectShortName">iso_req</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /cut_req">
+         <obj_property name="ElementShortName">cut_req</obj_property>
+         <obj_property name="ObjectShortName">cut_req</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /fwd_req">
+         <obj_property name="ElementShortName">fwd_req</obj_property>
+         <obj_property name="ObjectShortName">fwd_req</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /out_req">
+         <obj_property name="ElementShortName">out_req</obj_property>
+         <obj_property name="ObjectShortName">out_req</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /mux_req">
+         <obj_property name="ElementShortName">mux_req</obj_property>
+         <obj_property name="ObjectShortName">mux_req</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /iso_resp">
+         <obj_property name="ElementShortName">iso_resp</obj_property>
+         <obj_property name="ObjectShortName">iso_resp</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /cut_resp">
+         <obj_property name="ElementShortName">cut_resp</obj_property>
+         <obj_property name="ObjectShortName">cut_resp</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /fwd_resp">
+         <obj_property name="ElementShortName">fwd_resp</obj_property>
+         <obj_property name="ObjectShortName">fwd_resp</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /out_resp">
+         <obj_property name="ElementShortName">out_resp</obj_property>
+         <obj_property name="ObjectShortName">out_resp</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /mux_resp">
+         <obj_property name="ElementShortName">mux_resp</obj_property>
+         <obj_property name="ObjectShortName">mux_resp</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /aw_bytes">
+         <obj_property name="ElementShortName">aw_bytes[11:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_bytes[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /ar_bytes">
+         <obj_property name="ElementShortName">ar_bytes[11:0]</obj_property>
+         <obj_property name="ObjectShortName">ar_bytes[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /aw_happening">
+         <obj_property name="ElementShortName">aw_happening</obj_property>
+         <obj_property name="ObjectShortName">aw_happening</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /ar_happening">
+         <obj_property name="ElementShortName">ar_happening</obj_property>
+         <obj_property name="ObjectShortName">ar_happening</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /aw_region">
+         <obj_property name="ElementShortName">aw_region[0:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_region[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /ar_region">
+         <obj_property name="ElementShortName">ar_region[0:0]</obj_property>
+         <obj_property name="ObjectShortName">ar_region[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /r_isolate">
+         <obj_property name="ElementShortName">r_isolate[0:0]</obj_property>
+         <obj_property name="ObjectShortName">r_isolate[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /w_isolate">
+         <obj_property name="ElementShortName">w_isolate[0:0]</obj_property>
+         <obj_property name="ObjectShortName">w_isolate[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /global_isolate">
+         <obj_property name="ElementShortName">global_isolate</obj_property>
+         <obj_property name="ObjectShortName">global_isolate</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /rt_state_d">
+         <obj_property name="ElementShortName">rt_state_d[1:0]</obj_property>
+         <obj_property name="ObjectShortName">rt_state_d[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /rt_state_q">
+         <obj_property name="ElementShortName">rt_state_q[1:0]</obj_property>
+         <obj_property name="ObjectShortName">rt_state_q[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /byp_isolate">
+         <obj_property name="ElementShortName">byp_isolate</obj_property>
+         <obj_property name="ObjectShortName">byp_isolate</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /rt_bypassed_d">
+         <obj_property name="ElementShortName">rt_bypassed_d</obj_property>
+         <obj_property name="ObjectShortName">rt_bypassed_d</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /rt_bypassed_q">
+         <obj_property name="ElementShortName">rt_bypassed_q</obj_property>
+         <obj_property name="ObjectShortName">rt_bypassed_q</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /isolated">
+         <obj_property name="ElementShortName">isolated</obj_property>
+         <obj_property name="ObjectShortName">isolated</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /tail_isolated">
+         <obj_property name="ElementShortName">tail_isolated</obj_property>
+         <obj_property name="ObjectShortName">tail_isolated</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /w_decode_error">
+         <obj_property name="ElementShortName">w_decode_error</obj_property>
+         <obj_property name="ObjectShortName">w_decode_error</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /r_decode_error">
+         <obj_property name="ElementShortName">r_decode_error</obj_property>
+         <obj_property name="ObjectShortName">r_decode_error</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /\gen_regions[0].r_region_selected ">
+         <obj_property name="ElementShortName">\gen_regions[0].r_region_selected </obj_property>
+         <obj_property name="ObjectShortName">\gen_regions[0].r_region_selected </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_bd2/DUT/design_2_i/axi_rt_unit_top_xili_0/inst/i_axi_rt_unit_top_xilinx/i_axi_rt_unit_top/\gen_rt_units[1].i_axi_rt_unit /\gen_regions[0].w_region_selected ">
+         <obj_property name="ElementShortName">\gen_regions[0].w_region_selected </obj_property>
+         <obj_property name="ObjectShortName">\gen_regions[0].w_region_selected </obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

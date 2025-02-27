@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_bd_axi_rt_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_bram_ctrl_funcs" />
+            <top_module name="axi_pkg" />
+            <top_module name="axi_vip_pkg" />
+            <top_module name="glbl" />
+            <top_module name="std" />
+            <top_module name="tb_bd_axi_rt" />
+            <top_module name="vcomponents" />
+            <top_module name="xil_common_vip_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="22,715.666 ns"></ZoomStartTime>
+      <ZoomEndTime time="23,122.867 ns"></ZoomEndTime>
+      <Cursor1Time time="22,945.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="274"></NameColumnWidth>
+      <ValueColumnWidth column_width="87"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject type="logic" fp_name="/tb_bd_axi_rt/aclk">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_bd_axi_rt/aresetn">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_traffic_gen_0/M_AXI">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_traffic_gen_0/M_AXI.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">M_AXI</obj_property>
+      <obj_property name="ObjectShortName">M_AXI</obj_property>
+      <obj_property name="label">traffic</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group455">
+      <obj_property name="label">lat_details</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/fd">
+         <obj_property name="ElementShortName">fd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">fd[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/aw_start_log">
+         <obj_property name="ElementShortName">aw_start_log[0:1023][63:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_start_log[0:1023][63:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/aw_start_ai">
+         <obj_property name="ElementShortName">aw_start_ai[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_start_ai[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/aw_beats_log">
+         <obj_property name="ElementShortName">aw_beats_log[0:1023][31:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_beats_log[0:1023][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/aw_beats_ai">
+         <obj_property name="ElementShortName">aw_beats_ai[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_beats_ai[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/aw_accept_log">
+         <obj_property name="ElementShortName">aw_accept_log[0:1023][63:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_accept_log[0:1023][63:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/aw_accept_ai">
+         <obj_property name="ElementShortName">aw_accept_ai[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_accept_ai[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/w_first_log">
+         <obj_property name="ElementShortName">w_first_log[0:1023][63:0]</obj_property>
+         <obj_property name="ObjectShortName">w_first_log[0:1023][63:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/w_first_ai">
+         <obj_property name="ElementShortName">w_first_ai[31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_first_ai[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/w_last_log">
+         <obj_property name="ElementShortName">w_last_log[0:1023][63:0]</obj_property>
+         <obj_property name="ObjectShortName">w_last_log[0:1023][63:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/w_last_ai">
+         <obj_property name="ElementShortName">w_last_ai[31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_last_ai[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/pi">
+         <obj_property name="ElementShortName">pi[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pi[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/aw_was_valid">
+         <obj_property name="ElementShortName">aw_was_valid[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_was_valid[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/aw_was_ready">
+         <obj_property name="ElementShortName">aw_was_ready[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_was_ready[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_lat_monitor_0/inst/w_was_last">
+         <obj_property name="ElementShortName">w_was_last[31:0]</obj_property>
+         <obj_property name="ObjectShortName">w_was_last[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group3014">
+      <obj_property name="label">splitter_details</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/act_req">
+         <obj_property name="ElementShortName">act_req</obj_property>
+         <obj_property name="ObjectShortName">act_req</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/act_resp">
+         <obj_property name="ElementShortName">act_resp</obj_property>
+         <obj_property name="ObjectShortName">act_resp</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/w_cnt_dec">
+         <obj_property name="ElementShortName">w_cnt_dec</obj_property>
+         <obj_property name="ObjectShortName">w_cnt_dec</obj_property>
+         <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/w_cnt_req">
+         <obj_property name="ElementShortName">w_cnt_req</obj_property>
+         <obj_property name="ObjectShortName">w_cnt_req</obj_property>
+         <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/w_cnt_gnt">
+         <obj_property name="ElementShortName">w_cnt_gnt</obj_property>
+         <obj_property name="ObjectShortName">w_cnt_gnt</obj_property>
+         <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/w_cnt_err">
+         <obj_property name="ElementShortName">w_cnt_err</obj_property>
+         <obj_property name="ObjectShortName">w_cnt_err</obj_property>
+         <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/w_cnt_len">
+         <obj_property name="ElementShortName">w_cnt_len[7:0]</obj_property>
+         <obj_property name="ObjectShortName">w_cnt_len[7:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/w_len_q">
+         <obj_property name="ElementShortName">w_len_q[7:0]</obj_property>
+         <obj_property name="ObjectShortName">w_len_q[7:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/w_len_vld_q">
+         <obj_property name="ElementShortName">w_len_vld_q</obj_property>
+         <obj_property name="ObjectShortName">w_len_vld_q</obj_property>
+         <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="other" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/b_state_q">
+         <obj_property name="ElementShortName">b_state_q</obj_property>
+         <obj_property name="ObjectShortName">b_state_q</obj_property>
+         <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/b_err_q">
+         <obj_property name="ElementShortName">b_err_q</obj_property>
+         <obj_property name="ObjectShortName">b_err_q</obj_property>
+         <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group302">
+      <obj_property name="label">splitter_aw_chan_details</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/len_limit_i">
+         <obj_property name="ElementShortName">len_limit_i[7:0]</obj_property>
+         <obj_property name="ObjectShortName">len_limit_i[7:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/ax_i">
+         <obj_property name="ElementShortName">ax_i</obj_property>
+         <obj_property name="ObjectShortName">ax_i</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/ax_valid_i">
+         <obj_property name="ElementShortName">ax_valid_i</obj_property>
+         <obj_property name="ObjectShortName">ax_valid_i</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/ax_ready_o">
+         <obj_property name="ElementShortName">ax_ready_o</obj_property>
+         <obj_property name="ObjectShortName">ax_ready_o</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/ax_o">
+         <obj_property name="ElementShortName">ax_o</obj_property>
+         <obj_property name="ObjectShortName">ax_o</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/ax_valid_o">
+         <obj_property name="ElementShortName">ax_valid_o</obj_property>
+         <obj_property name="ObjectShortName">ax_valid_o</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/ax_ready_i">
+         <obj_property name="ElementShortName">ax_ready_i</obj_property>
+         <obj_property name="ObjectShortName">ax_ready_i</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/cnt_id_i">
+         <obj_property name="ElementShortName">cnt_id_i[0:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt_id_i[0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/cnt_len_o">
+         <obj_property name="ElementShortName">cnt_len_o[7:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt_len_o[7:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/cnt_set_err_i">
+         <obj_property name="ElementShortName">cnt_set_err_i</obj_property>
+         <obj_property name="ObjectShortName">cnt_set_err_i</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/cnt_err_o">
+         <obj_property name="ElementShortName">cnt_err_o</obj_property>
+         <obj_property name="ObjectShortName">cnt_err_o</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/cnt_dec_i">
+         <obj_property name="ElementShortName">cnt_dec_i</obj_property>
+         <obj_property name="ObjectShortName">cnt_dec_i</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/cnt_req_i">
+         <obj_property name="ElementShortName">cnt_req_i</obj_property>
+         <obj_property name="ObjectShortName">cnt_req_i</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/cnt_gnt_o">
+         <obj_property name="ElementShortName">cnt_gnt_o</obj_property>
+         <obj_property name="ObjectShortName">cnt_gnt_o</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/ax_d">
+         <obj_property name="ElementShortName">ax_d</obj_property>
+         <obj_property name="ObjectShortName">ax_d</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/ax_q">
+         <obj_property name="ElementShortName">ax_q</obj_property>
+         <obj_property name="ObjectShortName">ax_q</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/num_beats_d">
+         <obj_property name="ElementShortName">num_beats_d[8:0]</obj_property>
+         <obj_property name="ObjectShortName">num_beats_d[8:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/num_beats_q">
+         <obj_property name="ElementShortName">num_beats_q[8:0]</obj_property>
+         <obj_property name="ObjectShortName">num_beats_q[8:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/max_beats">
+         <obj_property name="ElementShortName">max_beats[8:0]</obj_property>
+         <obj_property name="ObjectShortName">max_beats[8:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/cnt_alloc_req">
+         <obj_property name="ElementShortName">cnt_alloc_req</obj_property>
+         <obj_property name="ObjectShortName">cnt_alloc_req</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/cnt_alloc_gnt">
+         <obj_property name="ElementShortName">cnt_alloc_gnt</obj_property>
+         <obj_property name="ObjectShortName">cnt_alloc_gnt</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="other" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/state_d">
+         <obj_property name="ElementShortName">state_d</obj_property>
+         <obj_property name="ObjectShortName">state_d</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="other" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/state_q">
+         <obj_property name="ElementShortName">state_q</obj_property>
+         <obj_property name="ObjectShortName">state_q</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/IdWidth">
+         <obj_property name="ElementShortName">IdWidth[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IdWidth[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/MaxTxns">
+         <obj_property name="ElementShortName">MaxTxns[31:0]</obj_property>
+         <obj_property name="ObjectShortName">MaxTxns[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_axi_gran_burst_splitter_aw_chan/CutPath">
+         <obj_property name="ElementShortName">CutPath</obj_property>
+         <obj_property name="ObjectShortName">CutPath</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group4577">
+      <obj_property name="label">splitter_support_demux_details</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/test_i">
+         <obj_property name="ElementShortName">test_i</obj_property>
+         <obj_property name="ObjectShortName">test_i</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/slv_req_i">
+         <obj_property name="ElementShortName">slv_req_i</obj_property>
+         <obj_property name="ObjectShortName">slv_req_i</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/slv_aw_select_i">
+         <obj_property name="ElementShortName">slv_aw_select_i[0:0]</obj_property>
+         <obj_property name="ObjectShortName">slv_aw_select_i[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/slv_ar_select_i">
+         <obj_property name="ElementShortName">slv_ar_select_i[0:0]</obj_property>
+         <obj_property name="ObjectShortName">slv_ar_select_i[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/slv_resp_o">
+         <obj_property name="ElementShortName">slv_resp_o</obj_property>
+         <obj_property name="ObjectShortName">slv_resp_o</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/mst_reqs_o">
+         <obj_property name="ElementShortName">mst_reqs_o[1:0]</obj_property>
+         <obj_property name="ObjectShortName">mst_reqs_o[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/mst_resps_i">
+         <obj_property name="ElementShortName">mst_resps_i[1:0]</obj_property>
+         <obj_property name="ObjectShortName">mst_resps_i[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.lock_aw_valid_d ">
+         <obj_property name="ElementShortName">\genblk1.lock_aw_valid_d </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.lock_aw_valid_d </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.lock_aw_valid_q ">
+         <obj_property name="ElementShortName">\genblk1.lock_aw_valid_q </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.lock_aw_valid_q </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.load_aw_lock ">
+         <obj_property name="ElementShortName">\genblk1.load_aw_lock </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.load_aw_lock </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.aw_valid ">
+         <obj_property name="ElementShortName">\genblk1.aw_valid </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.aw_valid </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.aw_ready ">
+         <obj_property name="ElementShortName">\genblk1.aw_ready </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.aw_ready </obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.lookup_aw_select ">
+         <obj_property name="ElementShortName">\genblk1.lookup_aw_select [0:0]</obj_property>
+         <obj_property name="ObjectShortName">\genblk1.lookup_aw_select [0:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.aw_select_occupied ">
+         <obj_property name="ElementShortName">\genblk1.aw_select_occupied </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.aw_select_occupied </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.aw_id_cnt_full ">
+         <obj_property name="ElementShortName">\genblk1.aw_id_cnt_full </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.aw_id_cnt_full </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.atop_inject ">
+         <obj_property name="ElementShortName">\genblk1.atop_inject </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.atop_inject </obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.w_select ">
+         <obj_property name="ElementShortName">\genblk1.w_select [0:0]</obj_property>
+         <obj_property name="ObjectShortName">\genblk1.w_select [0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.w_select_q ">
+         <obj_property name="ElementShortName">\genblk1.w_select_q [0:0]</obj_property>
+         <obj_property name="ObjectShortName">\genblk1.w_select_q [0:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.w_select_valid ">
+         <obj_property name="ElementShortName">\genblk1.w_select_valid </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.w_select_valid </obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.w_open ">
+         <obj_property name="ElementShortName">\genblk1.w_open [4:0]</obj_property>
+         <obj_property name="ObjectShortName">\genblk1.w_open [4:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.w_cnt_up ">
+         <obj_property name="ElementShortName">\genblk1.w_cnt_up </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.w_cnt_up </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.w_cnt_down ">
+         <obj_property name="ElementShortName">\genblk1.w_cnt_down </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.w_cnt_down </obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.mst_b_valids ">
+         <obj_property name="ElementShortName">\genblk1.mst_b_valids [1:0]</obj_property>
+         <obj_property name="ObjectShortName">\genblk1.mst_b_valids [1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.mst_b_readies ">
+         <obj_property name="ElementShortName">\genblk1.mst_b_readies [1:0]</obj_property>
+         <obj_property name="ObjectShortName">\genblk1.mst_b_readies [1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.lookup_ar_select ">
+         <obj_property name="ElementShortName">\genblk1.lookup_ar_select [0:0]</obj_property>
+         <obj_property name="ObjectShortName">\genblk1.lookup_ar_select [0:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.ar_select_occupied ">
+         <obj_property name="ElementShortName">\genblk1.ar_select_occupied </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.ar_select_occupied </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.ar_id_cnt_full ">
+         <obj_property name="ElementShortName">\genblk1.ar_id_cnt_full </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.ar_id_cnt_full </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.ar_push ">
+         <obj_property name="ElementShortName">\genblk1.ar_push </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.ar_push </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.lock_ar_valid_d ">
+         <obj_property name="ElementShortName">\genblk1.lock_ar_valid_d </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.lock_ar_valid_d </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.lock_ar_valid_q ">
+         <obj_property name="ElementShortName">\genblk1.lock_ar_valid_q </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.lock_ar_valid_q </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.load_ar_lock ">
+         <obj_property name="ElementShortName">\genblk1.load_ar_lock </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.load_ar_lock </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.ar_valid ">
+         <obj_property name="ElementShortName">\genblk1.ar_valid </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.ar_valid </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.ar_ready ">
+         <obj_property name="ElementShortName">\genblk1.ar_ready </obj_property>
+         <obj_property name="ObjectShortName">\genblk1.ar_ready </obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.mst_r_valids ">
+         <obj_property name="ElementShortName">\genblk1.mst_r_valids [1:0]</obj_property>
+         <obj_property name="ObjectShortName">\genblk1.mst_r_valids [1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.mst_r_readies ">
+         <obj_property name="ElementShortName">\genblk1.mst_r_readies [1:0]</obj_property>
+         <obj_property name="ObjectShortName">\genblk1.mst_r_readies [1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.b_idx ">
+         <obj_property name="ElementShortName">\genblk1.b_idx [0:0]</obj_property>
+         <obj_property name="ObjectShortName">\genblk1.b_idx [0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/\genblk1.r_idx ">
+         <obj_property name="ElementShortName">\genblk1.r_idx [0:0]</obj_property>
+         <obj_property name="ObjectShortName">\genblk1.r_idx [0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/AxiIdWidth">
+         <obj_property name="ElementShortName">AxiIdWidth[31:0]</obj_property>
+         <obj_property name="ObjectShortName">AxiIdWidth[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/AtopSupport">
+         <obj_property name="ElementShortName">AtopSupport</obj_property>
+         <obj_property name="ObjectShortName">AtopSupport</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/NoMstPorts">
+         <obj_property name="ElementShortName">NoMstPorts[31:0]</obj_property>
+         <obj_property name="ObjectShortName">NoMstPorts[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/MaxTrans">
+         <obj_property name="ElementShortName">MaxTrans[31:0]</obj_property>
+         <obj_property name="ObjectShortName">MaxTrans[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/AxiLookBits">
+         <obj_property name="ElementShortName">AxiLookBits[31:0]</obj_property>
+         <obj_property name="ObjectShortName">AxiLookBits[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/UniqueIds">
+         <obj_property name="ElementShortName">UniqueIds</obj_property>
+         <obj_property name="ObjectShortName">UniqueIds</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/SelectWidth">
+         <obj_property name="ElementShortName">SelectWidth[31:0]</obj_property>
+         <obj_property name="ObjectShortName">SelectWidth[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/inst/i_axi_gran_burst_splitter_flat/i_axi_gran_burst_splitter/i_demux_supported_vs_unsupported/IdCounterWidth">
+         <obj_property name="ElementShortName">IdCounterWidth[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IdCounterWidth[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/m_axi_rt_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_gran_burst_split_0/m_axi_rt_0.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">m_axi_rt_0</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rt_0</obj_property>
+      <obj_property name="label">splitter</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group1793">
+      <obj_property name="label">buffer_details</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/aw_state_q">
+         <obj_property name="ElementShortName">aw_state_q[1:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_state_q[1:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/w_state_q">
+         <obj_property name="ElementShortName">w_state_q[1:0]</obj_property>
+         <obj_property name="ObjectShortName">w_state_q[1:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/num_aw_stored_o">
+         <obj_property name="ElementShortName">num_aw_stored_o[4:0]</obj_property>
+         <obj_property name="ObjectShortName">num_aw_stored_o[4:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/num_w_stored_o">
+         <obj_property name="ElementShortName">num_w_stored_o[4:0]</obj_property>
+         <obj_property name="ObjectShortName">num_w_stored_o[4:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/num_last_stored_o">
+         <obj_property name="ElementShortName">num_last_stored_o[4:0]</obj_property>
+         <obj_property name="ObjectShortName">num_last_stored_o[4:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/egress_aw_ready">
+         <obj_property name="ElementShortName">egress_aw_ready</obj_property>
+         <obj_property name="ObjectShortName">egress_aw_ready</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/egress_w_ready">
+         <obj_property name="ElementShortName">egress_w_ready</obj_property>
+         <obj_property name="ObjectShortName">egress_w_ready</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/last_ready">
+         <obj_property name="ElementShortName">last_ready</obj_property>
+         <obj_property name="ObjectShortName">last_ready</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/last_valid">
+         <obj_property name="ElementShortName">last_valid</obj_property>
+         <obj_property name="ObjectShortName">last_valid</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/egress_w_valid">
+         <obj_property name="ElementShortName">egress_w_valid</obj_property>
+         <obj_property name="ObjectShortName">egress_w_valid</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/egress_aw_valid">
+         <obj_property name="ElementShortName">egress_aw_valid</obj_property>
+         <obj_property name="ObjectShortName">egress_aw_valid</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/aw_state_d">
+         <obj_property name="ElementShortName">aw_state_d[1:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_state_d[1:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/w_state_d">
+         <obj_property name="ElementShortName">w_state_d[1:0]</obj_property>
+         <obj_property name="ObjectShortName">w_state_d[1:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFD700</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/m_axi_rt_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_write_buffer_wra_0/m_axi_rt_0.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">m_axi_rt_0</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rt_0</obj_property>
+      <obj_property name="label">buffer</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/m_axi_rt_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/m_axi_rt_0.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">m_axi_rt_0</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rt_0</obj_property>
+      <obj_property name="label">isolate1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/isolate">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">isolate</obj_property>
+      <obj_property name="ObjectShortName">isolate</obj_property>
+      <obj_property name="label">isolate1_in</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/isolated">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">isolated</obj_property>
+      <obj_property name="ObjectShortName">isolated</obj_property>
+      <obj_property name="label">isolated1_out</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_rt_logic_wrapper_0/w_budget_left">
+      <obj_property name="ElementShortName">w_budget_left[15:0]</obj_property>
+      <obj_property name="ObjectShortName">w_budget_left[15:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_rt_logic_wrapper_0/inst/i_axi_rt_logic/i_ax_rt_unit_counter_write/budget_spent_o">
+      <obj_property name="ElementShortName">budget_spent_o</obj_property>
+      <obj_property name="ObjectShortName">budget_spent_o</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_rt_logic_wrapper_0/w_period_left">
+      <obj_property name="ElementShortName">w_period_left[15:0]</obj_property>
+      <obj_property name="ObjectShortName">w_period_left[15:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_rt_logic_wrapper_0/inst/i_axi_rt_logic/aw_happening">
+      <obj_property name="ElementShortName">aw_happening</obj_property>
+      <obj_property name="ObjectShortName">aw_happening</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_rt_logic_wrapper_0/inst/i_axi_rt_logic/i_ax_rt_unit_counter_write/budget_en">
+      <obj_property name="ElementShortName">budget_en</obj_property>
+      <obj_property name="ObjectShortName">budget_en</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group1794">
+      <obj_property name="label">isolate1_details</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/inst/i_axi_isolate_flat/i_axi_isolate/i_axi_isolate/state_aw_d">
+         <obj_property name="ElementShortName">state_aw_d[1:0]</obj_property>
+         <obj_property name="ObjectShortName">state_aw_d[1:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/inst/i_axi_isolate_flat/i_axi_isolate/i_axi_isolate/state_aw_q">
+         <obj_property name="ElementShortName">state_aw_q[1:0]</obj_property>
+         <obj_property name="ObjectShortName">state_aw_q[1:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/inst/i_axi_isolate_flat/i_axi_isolate/i_axi_isolate/update_aw_state">
+         <obj_property name="ElementShortName">update_aw_state</obj_property>
+         <obj_property name="ObjectShortName">update_aw_state</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/inst/i_axi_isolate_flat/i_axi_isolate/i_axi_isolate/pending_aw_d">
+         <obj_property name="ElementShortName">pending_aw_d[5:0]</obj_property>
+         <obj_property name="ObjectShortName">pending_aw_d[5:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/inst/i_axi_isolate_flat/i_axi_isolate/i_axi_isolate/pending_aw_q">
+         <obj_property name="ElementShortName">pending_aw_q[5:0]</obj_property>
+         <obj_property name="ObjectShortName">pending_aw_q[5:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/inst/i_axi_isolate_flat/i_axi_isolate/i_axi_isolate/update_aw_cnt">
+         <obj_property name="ElementShortName">update_aw_cnt</obj_property>
+         <obj_property name="ObjectShortName">update_aw_cnt</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/inst/i_axi_isolate_flat/i_axi_isolate/i_axi_isolate/pending_w_d">
+         <obj_property name="ElementShortName">pending_w_d[5:0]</obj_property>
+         <obj_property name="ObjectShortName">pending_w_d[5:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/inst/i_axi_isolate_flat/i_axi_isolate/i_axi_isolate/pending_w_q">
+         <obj_property name="ElementShortName">pending_w_q[5:0]</obj_property>
+         <obj_property name="ObjectShortName">pending_w_q[5:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/inst/i_axi_isolate_flat/i_axi_isolate/i_axi_isolate/update_w_cnt">
+         <obj_property name="ElementShortName">update_w_cnt</obj_property>
+         <obj_property name="ObjectShortName">update_w_cnt</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/inst/i_axi_isolate_flat/i_axi_isolate/i_axi_isolate/connect_w">
+         <obj_property name="ElementShortName">connect_w</obj_property>
+         <obj_property name="ObjectShortName">connect_w</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/inst/i_axi_isolate_flat/i_axi_isolate/i_axi_isolate/NumPending">
+         <obj_property name="ElementShortName">NumPending[31:0]</obj_property>
+         <obj_property name="ObjectShortName">NumPending[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_isolate_wrapper_1/inst/i_axi_isolate_flat/i_axi_isolate/i_axi_isolate/CounterWidth">
+         <obj_property name="ElementShortName">CounterWidth[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CounterWidth[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_bram_ctrl_0/S_AXI">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_bd_axi_rt/DUT/bd_axi_rt_i/axi_bram_ctrl_0/S_AXI.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">S_AXI</obj_property>
+      <obj_property name="ObjectShortName">S_AXI</obj_property>
+      <obj_property name="label">memory=sopra</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>

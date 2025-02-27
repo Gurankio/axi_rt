@@ -19,13 +19,13 @@ filesets = [
     { kind = 'simulation', path = 'test' },
 
     ### Bender
-    { kind = 'design', read_only = true, exec = 'bender path apb' },
-    { kind = 'design', read_only = true, exec = 'bender path axi' },
-    { kind = 'design', read_only = true, exec = 'bender path common_cells' },
-    { kind = 'design', read_only = true, exec = 'bender path common_verification' },
-    { kind = 'design', read_only = true, exec = 'bender path register_interface' },
+    { kind = 'design', read_only = true, exec = 'echo $(bender path apb)/src' },
+    { kind = 'design', read_only = true, exec = 'echo $(bender path axi)/src' },
+    { kind = 'design', read_only = true, exec = 'echo $(bender path common_cells)/src' },
+    { kind = 'design', read_only = true, exec = 'echo $(bender path common_verification)/src' },
+    { kind = 'design', read_only = true, exec = 'echo $(bender path register_interface)/src' },
     { kind = 'design', read_only = true, exec = 'echo $(bender path register_interface)/vendor/lowrisc_opentitan/src' },
-    { kind = 'design', read_only = true, exec = 'bender path tech_cells_generic' },
+    { kind = 'design', read_only = true, exec = 'echo $(bender path tech_cells_generic)/src' },
 ]
 
 [block_designs]

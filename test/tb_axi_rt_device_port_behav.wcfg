@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_axi_rt_device_port_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_bram_ctrl_funcs" />
+            <top_module name="axi_pkg" />
+            <top_module name="axi_vip_pkg" />
+            <top_module name="glbl" />
+            <top_module name="std" />
+            <top_module name="tb_axi_rt_device_port" />
+            <top_module name="vcomponents" />
+            <top_module name="xil_common_vip_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="182.386 ns"></ZoomStartTime>
+      <ZoomEndTime time="4,763.523 ns"></ZoomEndTime>
+      <Cursor1Time time="4,000.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="266"></NameColumnWidth>
+      <ValueColumnWidth column_width="125"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="21" />
+   <wvobject type="logic" fp_name="/tb_axi_rt_device_port/aclk">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_rt_device_port/aresetn">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_rt_device_port/traffic_start">
+      <obj_property name="ElementShortName">traffic_start</obj_property>
+      <obj_property name="ObjectShortName">traffic_start</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_rt_device_port/traffic_stop">
+      <obj_property name="ElementShortName">traffic_stop</obj_property>
+      <obj_property name="ObjectShortName">traffic_stop</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_rt_device_port/axi_bresp">
+      <obj_property name="ElementShortName">axi_bresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">axi_bresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/any_enabled_d">
+      <obj_property name="ElementShortName">any_enabled_d</obj_property>
+      <obj_property name="ObjectShortName">any_enabled_d</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/any_enabled_q">
+      <obj_property name="ElementShortName">any_enabled_q</obj_property>
+      <obj_property name="ObjectShortName">any_enabled_q</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group729">
+      <obj_property name="label">master_logic</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/clk_i">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/rst_ni">
+         <obj_property name="ElementShortName">rst_ni</obj_property>
+         <obj_property name="ObjectShortName">rst_ni</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/period">
+         <obj_property name="ElementShortName">period[15:0]</obj_property>
+         <obj_property name="ObjectShortName">period[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/r_budget">
+         <obj_property name="ElementShortName">r_budget[0:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">r_budget[0:0][15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/w_budget">
+         <obj_property name="ElementShortName">w_budget[0:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">w_budget[0:0][15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/enable">
+         <obj_property name="ElementShortName">enable[0:0]</obj_property>
+         <obj_property name="ObjectShortName">enable[0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/period_left">
+         <obj_property name="ElementShortName">period_left[15:0]</obj_property>
+         <obj_property name="ObjectShortName">period_left[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/device_enable">
+         <obj_property name="ElementShortName">device_enable[0:0]</obj_property>
+         <obj_property name="ObjectShortName">device_enable[0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/device_load">
+         <obj_property name="ElementShortName">device_load[0:0]</obj_property>
+         <obj_property name="ObjectShortName">device_load[0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/device_incr">
+         <obj_property name="ElementShortName">device_incr[0:0]</obj_property>
+         <obj_property name="ObjectShortName">device_incr[0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/device_w_budget">
+         <obj_property name="ElementShortName">device_w_budget[0:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">device_w_budget[0:0][15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/device_r_budget">
+         <obj_property name="ElementShortName">device_r_budget[0:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">device_r_budget[0:0][15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/device_w_budget_left">
+         <obj_property name="ElementShortName">device_w_budget_left[0:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">device_w_budget_left[0:0][15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/device_w_budget_yield">
+         <obj_property name="ElementShortName">device_w_budget_yield[0:0]</obj_property>
+         <obj_property name="ObjectShortName">device_w_budget_yield[0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/device_w_budget_spent">
+         <obj_property name="ElementShortName">device_w_budget_spent[0:0]</obj_property>
+         <obj_property name="ObjectShortName">device_w_budget_spent[0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/device_r_budget_left">
+         <obj_property name="ElementShortName">device_r_budget_left[0:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">device_r_budget_left[0:0][15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/device_r_budget_yield">
+         <obj_property name="ElementShortName">device_r_budget_yield[0:0]</obj_property>
+         <obj_property name="ObjectShortName">device_r_budget_yield[0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/device_r_budget_spent">
+         <obj_property name="ElementShortName">device_r_budget_spent[0:0]</obj_property>
+         <obj_property name="ObjectShortName">device_r_budget_spent[0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/status_d">
+         <obj_property name="ElementShortName">status_d[0:0]</obj_property>
+         <obj_property name="ObjectShortName">status_d[0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/status_q">
+         <obj_property name="ElementShortName">status_q[0:0]</obj_property>
+         <obj_property name="ObjectShortName">status_q[0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/any_enabled_d">
+         <obj_property name="ElementShortName">any_enabled_d</obj_property>
+         <obj_property name="ObjectShortName">any_enabled_d</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/any_enabled_q">
+         <obj_property name="ElementShortName">any_enabled_q</obj_property>
+         <obj_property name="ObjectShortName">any_enabled_q</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/load">
+         <obj_property name="ElementShortName">load</obj_property>
+         <obj_property name="ObjectShortName">load</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/load_yield">
+         <obj_property name="ElementShortName">load_yield</obj_property>
+         <obj_property name="ObjectShortName">load_yield</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/yielded_r_budget">
+         <obj_property name="ElementShortName">yielded_r_budget[15:0]</obj_property>
+         <obj_property name="ObjectShortName">yielded_r_budget[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/yielded_r_budget_reduction">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">yielded_r_budget_reduction[1:1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">yielded_r_budget_reduction[1:1][15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">yielded_r_budget_reduction[1:1][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/yielded_w_budget">
+         <obj_property name="ElementShortName">yielded_w_budget[15:0]</obj_property>
+         <obj_property name="ObjectShortName">yielded_w_budget[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/yielded_w_budget_reduction">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">yielded_w_budget_reduction[1:1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">yielded_w_budget_reduction[1:1][15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="label">yielded_w_budget_reduction[1:1][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/spent_r_devices">
+         <obj_property name="ElementShortName">spent_r_devices[1:1][0:0]</obj_property>
+         <obj_property name="ObjectShortName">spent_r_devices[1:1][0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/spent_w_devices">
+         <obj_property name="ElementShortName">spent_w_devices[1:1][0:0]</obj_property>
+         <obj_property name="ObjectShortName">spent_w_devices[1:1][0:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/available_r_budget_per_device">
+         <obj_property name="ElementShortName">available_r_budget_per_device[15:0]</obj_property>
+         <obj_property name="ObjectShortName">available_r_budget_per_device[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/available_w_budget_per_device">
+         <obj_property name="ElementShortName">available_w_budget_per_device[15:0]</obj_property>
+         <obj_property name="ObjectShortName">available_w_budget_per_device[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/NumDevice">
+         <obj_property name="ElementShortName">NumDevice[31:0]</obj_property>
+         <obj_property name="ObjectShortName">NumDevice[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/PeriodWidth">
+         <obj_property name="ElementShortName">PeriodWidth[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PeriodWidth[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/BudgetWidth">
+         <obj_property name="ElementShortName">BudgetWidth[31:0]</obj_property>
+         <obj_property name="ObjectShortName">BudgetWidth[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/DataWidth">
+         <obj_property name="ElementShortName">DataWidth[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DataWidth[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/StaticOne">
+         <obj_property name="ElementShortName">StaticOne[15:0]</obj_property>
+         <obj_property name="ObjectShortName">StaticOne[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#DCDCDC</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group567">
+      <obj_property name="label">period_counter</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/clk_i">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/rst_ni">
+         <obj_property name="ElementShortName">rst_ni</obj_property>
+         <obj_property name="ObjectShortName">rst_ni</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/clear_i">
+         <obj_property name="ElementShortName">clear_i</obj_property>
+         <obj_property name="ObjectShortName">clear_i</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/en_i">
+         <obj_property name="ElementShortName">en_i</obj_property>
+         <obj_property name="ObjectShortName">en_i</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/load_i">
+         <obj_property name="ElementShortName">load_i</obj_property>
+         <obj_property name="ObjectShortName">load_i</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/down_i">
+         <obj_property name="ElementShortName">down_i</obj_property>
+         <obj_property name="ObjectShortName">down_i</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/delta_i">
+         <obj_property name="ElementShortName">delta_i[15:0]</obj_property>
+         <obj_property name="ObjectShortName">delta_i[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/d_i">
+         <obj_property name="ElementShortName">d_i[15:0]</obj_property>
+         <obj_property name="ObjectShortName">d_i[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/q_o">
+         <obj_property name="ElementShortName">q_o[15:0]</obj_property>
+         <obj_property name="ObjectShortName">q_o[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/overflow_o">
+         <obj_property name="ElementShortName">overflow_o</obj_property>
+         <obj_property name="ObjectShortName">overflow_o</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/counter_q">
+         <obj_property name="ElementShortName">counter_q[16:0]</obj_property>
+         <obj_property name="ObjectShortName">counter_q[16:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/counter_d">
+         <obj_property name="ElementShortName">counter_d[16:0]</obj_property>
+         <obj_property name="ObjectShortName">counter_d[16:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/WIDTH">
+         <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/inst/i_axi_rt_master_logic/i_delta_counter_period/STICKY_OVERFLOW">
+         <obj_property name="ElementShortName">STICKY_OVERFLOW</obj_property>
+         <obj_property name="ObjectShortName">STICKY_OVERFLOW</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_master_logic/period_left">
+      <obj_property name="ElementShortName">period_left[15:0]</obj_property>
+      <obj_property name="ObjectShortName">period_left[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group791">
+      <obj_property name="label">device_0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/clk_i">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/rst_ni">
+         <obj_property name="ElementShortName">rst_ni</obj_property>
+         <obj_property name="ObjectShortName">rst_ni</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/enable">
+         <obj_property name="ElementShortName">enable</obj_property>
+         <obj_property name="ObjectShortName">enable</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/load">
+         <obj_property name="ElementShortName">load</obj_property>
+         <obj_property name="ObjectShortName">load</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/incr">
+         <obj_property name="ElementShortName">incr</obj_property>
+         <obj_property name="ObjectShortName">incr</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/w_budget">
+         <obj_property name="ElementShortName">w_budget[15:0]</obj_property>
+         <obj_property name="ObjectShortName">w_budget[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/r_budget">
+         <obj_property name="ElementShortName">r_budget[15:0]</obj_property>
+         <obj_property name="ObjectShortName">r_budget[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/w_budget_left">
+         <obj_property name="ElementShortName">w_budget_left[15:0]</obj_property>
+         <obj_property name="ObjectShortName">w_budget_left[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/w_budget_spent">
+         <obj_property name="ElementShortName">w_budget_spent</obj_property>
+         <obj_property name="ObjectShortName">w_budget_spent</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/w_budget_yield">
+         <obj_property name="ElementShortName">w_budget_yield</obj_property>
+         <obj_property name="ObjectShortName">w_budget_yield</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/r_budget_left">
+         <obj_property name="ElementShortName">r_budget_left[15:0]</obj_property>
+         <obj_property name="ObjectShortName">r_budget_left[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/r_budget_spent">
+         <obj_property name="ElementShortName">r_budget_spent</obj_property>
+         <obj_property name="ObjectShortName">r_budget_spent</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/r_budget_yield">
+         <obj_property name="ElementShortName">r_budget_yield</obj_property>
+         <obj_property name="ObjectShortName">r_budget_yield</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/aw_happening">
+         <obj_property name="ElementShortName">aw_happening[1:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_happening[1:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/aw_bytes">
+         <obj_property name="ElementShortName">aw_bytes[3:1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_bytes[3:1][15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/ar_happening">
+         <obj_property name="ElementShortName">ar_happening[1:0]</obj_property>
+         <obj_property name="ObjectShortName">ar_happening[1:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/ar_bytes">
+         <obj_property name="ElementShortName">ar_bytes[3:1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">ar_bytes[3:1][15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/aw_bytes_sum">
+         <obj_property name="ElementShortName">aw_bytes_sum[15:0]</obj_property>
+         <obj_property name="ObjectShortName">aw_bytes_sum[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/ar_bytes_sum">
+         <obj_property name="ElementShortName">ar_bytes_sum[15:0]</obj_property>
+         <obj_property name="ObjectShortName">ar_bytes_sum[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/r_budget_yield_next">
+         <obj_property name="ElementShortName">r_budget_yield_next</obj_property>
+         <obj_property name="ObjectShortName">r_budget_yield_next</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/w_budget_yield_next">
+         <obj_property name="ElementShortName">w_budget_yield_next</obj_property>
+         <obj_property name="ObjectShortName">w_budget_yield_next</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/NumPorts">
+         <obj_property name="ElementShortName">NumPorts[31:0]</obj_property>
+         <obj_property name="ObjectShortName">NumPorts[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/BudgetWidth">
+         <obj_property name="ElementShortName">BudgetWidth[31:0]</obj_property>
+         <obj_property name="ObjectShortName">BudgetWidth[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="group251">
+         <obj_property name="label">write_counter</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_traffic_gen_0/M_AXI">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_traffic_gen_0/M_AXI.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">M_AXI</obj_property>
+      <obj_property name="ObjectShortName">M_AXI</obj_property>
+      <obj_property name="label">T0</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_isolate_wrapper_0/m_axi_rt_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">m_axi_rt_0</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rt_0</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_isolate_wrapper_0/m_axi_rt_0.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="label">isolate0_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_isolate_wrapper_0/isolate">
+      <obj_property name="ElementShortName">isolate</obj_property>
+      <obj_property name="ObjectShortName">isolate</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_isolate_wrapper_0/isolated">
+      <obj_property name="ElementShortName">isolated</obj_property>
+      <obj_property name="ObjectShortName">isolated</obj_property>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_isolate_wrapper_0/s_axi_rt_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">s_axi_rt_0</obj_property>
+      <obj_property name="ObjectShortName">s_axi_rt_0</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_isolate_wrapper_0/s_axi_rt_0.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <obj_property name="label">isolate0_out</obj_property>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_traffic_gen_1/M_AXI">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_traffic_gen_1/M_AXI.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="ElementShortName">M_AXI</obj_property>
+      <obj_property name="ObjectShortName">M_AXI</obj_property>
+      <obj_property name="label">T1</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_isolate_wrapper_1/m_axi_rt_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">m_axi_rt_0</obj_property>
+      <obj_property name="ObjectShortName">m_axi_rt_0</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_isolate_wrapper_1/m_axi_rt_0.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="label">isolate1_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_isolate_wrapper_1/isolate">
+      <obj_property name="ElementShortName">isolate</obj_property>
+      <obj_property name="ObjectShortName">isolate</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_isolate_wrapper_1/isolated">
+      <obj_property name="ElementShortName">isolated</obj_property>
+      <obj_property name="ObjectShortName">isolated</obj_property>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_isolate_wrapper_1/s_axi_rt_0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">s_axi_rt_0</obj_property>
+      <obj_property name="ObjectShortName">s_axi_rt_0</obj_property>
+      <obj_property name="children_use_element_short_name">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+      <obj_property name="EnumTransactionColorTable">0=blank 1=#D399FF 2=pink</obj_property>
+      <obj_property name="EnumTransactionValueTable">0=blank;1=Read;2=Write;3=Read/Write</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">turquoise</obj_property>
+      <obj_property name="Render_Data">/tb_axi_rt_device_port/DUT/tbd_axi_rt_device_port_i/axi_rt_device_port_0/axi_isolate_wrapper_1/s_axi_rt_0.readWriteSummary</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">36</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <obj_property name="label">isolate1_out</obj_property>
+   </wvobject>
+</wave_config>
