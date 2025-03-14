@@ -80,9 +80,8 @@ set root_name [file rootname [file tail $root]]
 set project_name axi-rt
 
 set block_designs [list \
-    "$::root/src/bds/bd_dpu.tcl" \
-    "$::root/src/bds/axi_rt_device_port.tcl" \
     "$::root/test/bds/tbd_multidev.tcl" \
+    "$::root/test/bds/tbd_multidev_synth.tcl" \
 ]
 set includes [list \
     "include" \

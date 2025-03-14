@@ -86,7 +86,7 @@ foreach bd $block_designs {
 
 ### Top modules
 set_property top_lib xil_defaultlib [get_filesets sources_1]
-set_property top {bd_dpu_wrapper} [get_filesets sources_1]
+set_property top {tbd_multidev_synth_wrapper} [get_filesets sources_1]
 
 set_property top_lib xil_defaultlib [get_filesets sim_1]
 set_property top {tbd_multidev_run} [get_filesets sim_1]

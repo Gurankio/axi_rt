@@ -1,6 +1,6 @@
 version = { major = 3, minor = 0, patch = 0 }
 name = 'axi-rt'
-design_top = 'bd_dpu_wrapper'
+design_top = 'tbd_multidev_synth_wrapper'
 simulation_top = 'tbd_multidev_run'
 ignore = { include = 'vivamir.ignore' }
 
@@ -36,16 +36,17 @@ filesets = [
 trusted = [
     # Synthetizable design.
     # 'src/bds/top.tcl',
-    'src/bds/bd_dpu.tcl',
+    # 'src/bds/bd_dpu.tcl',
 
     # Single port single component verification
     # 'src/bds/bd_axi_rt.tcl',
 
     # ?
-    'src/bds/axi_rt_device_port.tcl',
+    # 'src/bds/axi_rt_device_port.tcl',
 
     # Testbench for master logic
     'test/bds/tbd_multidev.tcl',
+    'test/bds/tbd_multidev_synth.tcl',
 ]
 
 # Where the sync utility should put new designs.

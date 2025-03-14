@@ -1,5 +1,5 @@
 module axi_rt_device_budget_counter #(
-    parameter int unsigned BudgetWidth = 32'd0,
+    parameter int unsigned BudgetWidth = 32'd16,
 
     // Dependant
     parameter type budget_t = logic [BudgetWidth-1:0]
@@ -22,21 +22,29 @@ module axi_rt_device_budget_counter #(
 );
     typedef logic signed [BudgetWidth:0] budget_signed_t;
     budget_signed_t available_d, available_q;
+    logic budget_used_d, budget_used_q;
+    logic budget_spent_d, budget_spent_q;
+
     always_ff @(posedge (clk_i) or negedge (rst_ni)) begin
         if (!rst_ni) begin
-            available_q <= ('0);
+            available_q <= '0;
+            budget_used_q <= '0;
+            budget_spent_q <= '0;
         end else begin
-            available_q <= (available_d);
+            available_q <= available_d;
+            budget_used_q <= budget_used_d;
+            budget_spent_q <= budget_spent_d;
         end
     end
 
+    assign budget_used  = budget_used_q;
+    assign budget_spent = budget_spent_q;
+
     budget_signed_t signed_budget;
-    assign signed_budget = budget;
+    assign signed_budget = {'0, budget};
 
     always_comb begin
-        available_d  = available_q;
-        budget_used  = available_q < signed_budget;
-        budget_spent = available_q <= 0;
+        available_d = available_q;
 
         if (enable) begin
             // transactions
@@ -53,5 +61,9 @@ module axi_rt_device_budget_counter #(
                 end
             end
         end
+
+        // TODO: hopefully this is fast enough.
+        budget_used_d  = available_d < signed_budget;
+        budget_spent_d = available_d <= 0;
     end
 endmodule
