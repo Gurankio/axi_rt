@@ -512,10 +512,10 @@ proc create_hier_cell_hier_dpu { parentCell nameHier } {
     CONFIG.SFM_ENA {0} \
     CONFIG.S_AXI_CLK_INDEPENDENT {1} \
     CONFIG.TIMESTAMP_ENA {1} \
-    CONFIG.TIME_DAY {27} \
-    CONFIG.TIME_HOUR {10} \
-    CONFIG.TIME_MONTH {2} \
-    CONFIG.TIME_QUARTER {3} \
+    CONFIG.TIME_DAY {14} \
+    CONFIG.TIME_HOUR {16} \
+    CONFIG.TIME_MONTH {3} \
+    CONFIG.TIME_QUARTER {0} \
     CONFIG.TIME_YEAR {25} \
     CONFIG.URAM_N_USER {50} \
     CONFIG.VER_DPU_NUM {2} \
