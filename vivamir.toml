@@ -46,7 +46,7 @@ trusted = [
 
     # Testbench for master logic
     'test/bds/tbd_multidev.tcl',
-    'test/bds/tbd_multidev_synth.tcl',
+    'src/bds/tbd_multidev_synth.tcl',
 ]
 
 # Where the sync utility should put new designs.

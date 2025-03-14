@@ -81,7 +81,7 @@ set project_name axi-rt
 
 set block_designs [list \
     "$::root/test/bds/tbd_multidev.tcl" \
-    "$::root/test/bds/tbd_multidev_synth.tcl" \
+    "$::root/src/bds/tbd_multidev_synth.tcl" \
 ]
 set includes [list \
     "include" \
