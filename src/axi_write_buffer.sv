@@ -182,7 +182,7 @@ module axi_write_buffer #(
                     aw_state_d = WaitingDownstream;
 
                     // OPT: Raise valid one clock before
-                    mst_req_o.aw_valid = '1;
+                    aw_valid_d = 1;
                     // Forward ready to the queue.
                     aw_pop = mst_resp_i.aw_ready;
 
