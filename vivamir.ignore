@@ -5,6 +5,8 @@ test/tb_axi_rt_unit_top.sv
 .bender/git/checkouts/axi-*/src/axi_isolate.sv
 .bender/git/checkouts/axi-*/src/axi_demux_simple.sv
 .bender/git/checkouts/common_cells-*/src/rr_arb_tree.sv
+.bender/git/checkouts/common_cells-*/include/common_cells/assertions.svh
+.bender/git/checkouts/common_cells-*/include/common_cells/registers.svh
 
 # Bender unused sources
 .bender/git/checkouts/apb-*/src/apb_cdc.sv

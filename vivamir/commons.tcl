@@ -177,6 +177,8 @@ set ignores [list \
     .bender/git/checkouts/axi-*/src/axi_xp.sv \
     .bender/git/checkouts/axi-*/src/axi_zero_mem.sv \
     .bender/git/checkouts/axi_rt-*/src/axi_rt_unit_top_synth.sv \
+    .bender/git/checkouts/common_cells-*/include/common_cells/assertions.svh \
+    .bender/git/checkouts/common_cells-*/include/common_cells/registers.svh \
     .bender/git/checkouts/common_cells-*/src/addr_decode.sv \
     .bender/git/checkouts/common_cells-*/src/addr_decode_napot.sv \
     .bender/git/checkouts/common_cells-*/src/binary_to_gray.sv \

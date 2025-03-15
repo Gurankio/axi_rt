@@ -129,8 +129,6 @@ module axi_write_buffer #(
     // TODO: handle last_pop?
     assign last_will_not_empty = last_not_empty || (!last_not_empty && last_valid_input);
 
-    // TODO: stream fifo delays by one. -> I don't remember what i meant with this.
-
     // Allow inputs on AW and W if there is space in all queues.
     // TODO: The last queue is maybe the only meaningful one?
     assign slv_resp_o.aw_ready = aw_not_full && w_not_full && last_not_full;
@@ -156,6 +154,10 @@ module axi_write_buffer #(
 
     logic aw_will_sync, w_will_sync, sync_over;
 
+    logic aw_valid_d, w_valid_d;
+    `FFARN(mst_req_o.aw_valid, aw_valid_d, '0, clk_i, rst_ni);
+    `FFARN(mst_req_o.w_valid, w_valid_d, '0, clk_i, rst_ni);
+
     always_comb begin
         // Pop last after both channels receive ready.
         last_pop = 0;
@@ -173,7 +175,7 @@ module axi_write_buffer #(
         aw_will_sync = 0;
         unique case (aw_state_q)
             WaitingInput: begin
-                mst_req_o.aw_valid = '0;
+                aw_valid_d = 0;
 
                 // If we have a full transaction stored go ahead.
                 if (last_will_not_empty && aw_not_empty) begin
@@ -197,7 +199,7 @@ module axi_write_buffer #(
                 end
             end
             WaitingDownstream: begin
-                mst_req_o.aw_valid = '1;
+                aw_valid_d = 1;
                 // Forward ready to the queue.
                 aw_pop = mst_resp_i.aw_ready;
 
@@ -212,7 +214,7 @@ module axi_write_buffer #(
                 end
             end
             WaitingSync: begin
-                mst_req_o.aw_valid = '0;
+                aw_valid_d = 0;
 
                 // TODO: remove redudant check.
                 if (sync_over || w_state_q == WaitingSync) begin
@@ -223,7 +225,7 @@ module axi_write_buffer #(
                         aw_state_d = WaitingDownstream;
 
                         // OPT: Raise valid one clock before
-                        mst_req_o.aw_valid = '1;
+                        aw_valid_d = 1;
                         // Forward ready to the queue.
                         aw_pop = mst_resp_i.aw_ready;
 
@@ -248,14 +250,14 @@ module axi_write_buffer #(
         w_will_sync = 0;
         unique case (w_state_q)
             WaitingInput: begin
-                mst_req_o.w_valid = '0;
+                w_valid_d = '0;
 
                 // If we have a full transaction stored go ahead.
                 if (last_will_not_empty && w_not_empty) begin
                     w_state_d = WaitingDownstream;
 
                     // OPT: Raise valid one clock before
-                    mst_req_o.w_valid = '1;
+                    w_valid_d = 1;
                     // Forward ready to the queues.
                     w_pop = mst_resp_i.w_ready;
                     last_pop = mst_req_o.w.last & mst_resp_i.w_ready;
@@ -273,7 +275,7 @@ module axi_write_buffer #(
                 end
             end
             WaitingDownstream: begin
-                mst_req_o.w_valid = '1;
+                w_valid_d = '1;
                 // Forward ready to the queue.
                 w_pop = mst_resp_i.w_ready;
                 last_pop = mst_req_o.w.last & mst_resp_i.w_ready;
@@ -289,7 +291,7 @@ module axi_write_buffer #(
                 end
             end
             WaitingSync: begin
-                mst_req_o.w_valid = '0;
+                w_valid_d = 0;
 
                 // TODO: remove redudant check.
                 if (sync_over || aw_state_q == WaitingSync) begin
@@ -300,7 +302,7 @@ module axi_write_buffer #(
                         w_state_d = WaitingDownstream;
 
                         // OPT: Raise valid one clock before
-                        mst_req_o.w_valid = '1;
+                        w_valid_d = 1;
                         // Forward ready to the queues.
                         w_pop = mst_resp_i.w_ready;
                         last_pop = mst_req_o.w.last & mst_resp_i.w_ready;
