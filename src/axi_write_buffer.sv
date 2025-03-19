@@ -123,17 +123,9 @@ module axi_write_buffer #(
         .ready_i   (last_pop)
     );
 
-    // Too big of a combinatorial loop.
-    // logic last_will_not_empty;
-    // assign last_will_not_empty = last_not_empty || (!last_not_empty && last_valid_input);
-
     // Allow inputs on AW and W if there is space in all queues.
-    // TODO: The last queue is maybe the only meaningful one?
-    assign slv_resp_o.aw_ready = aw_not_full && w_not_full && last_not_full;
-    assign slv_resp_o.w_ready  = aw_not_full && w_not_full && last_not_full;
-
-    // TODO: W can accept if Last is full provided that it is not a last beat.
-    // TODO: AW can accept completely in parallel? By tracking the B channel?
+    assign slv_resp_o.aw_ready = aw_not_full;
+    assign slv_resp_o.w_ready  = w_not_full && last_not_full;
 
     // --------------------------------------------------
     // Sync FSM

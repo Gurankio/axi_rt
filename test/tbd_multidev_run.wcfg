@@ -14,22 +14,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="222.333 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,265.334 ns"></ZoomEndTime>
-      <Cursor1Time time="396.166 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="52.350001 us"></ZoomEndTime>
+      <Cursor1Time time="20.545000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="262"></NameColumnWidth>
-      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+      <ValueColumnWidth column_width="112"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="14" />
    <wvobject type="logic" fp_name="/tbd_multidev_run/clock">
       <obj_property name="ElementShortName">clock</obj_property>
       <obj_property name="ObjectShortName">clock</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tbd_multidev_run/aresetn">
-      <obj_property name="ElementShortName">aresetn</obj_property>
-      <obj_property name="ObjectShortName">aresetn</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tbd_multidev_run/traffic_start">
       <obj_property name="ElementShortName">traffic_start</obj_property>
@@ -132,32 +128,20 @@
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_master_logic_0/inst/i_axi_rt_master_logic/progress_d">
-         <obj_property name="ElementShortName">progress_d[1:0]</obj_property>
-         <obj_property name="ObjectShortName">progress_d[1:0]</obj_property>
+         <obj_property name="ElementShortName">progress_d[2:0]</obj_property>
+         <obj_property name="ObjectShortName">progress_d[2:0]</obj_property>
          <obj_property name="CustomSignalColor">#FFD700</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_master_logic_0/inst/i_axi_rt_master_logic/progress_q">
-         <obj_property name="ElementShortName">progress_q[1:0]</obj_property>
-         <obj_property name="ObjectShortName">progress_q[1:0]</obj_property>
-         <obj_property name="CustomSignalColor">#FFD700</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_master_logic_0/inst/i_axi_rt_master_logic/next_periods_w_d">
-         <obj_property name="ElementShortName">next_periods_w_d[17:0]</obj_property>
-         <obj_property name="ObjectShortName">next_periods_w_d[17:0]</obj_property>
+         <obj_property name="ElementShortName">progress_q[2:0]</obj_property>
+         <obj_property name="ObjectShortName">progress_q[2:0]</obj_property>
          <obj_property name="CustomSignalColor">#FFD700</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_master_logic_0/inst/i_axi_rt_master_logic/next_periods_w_q">
          <obj_property name="ElementShortName">next_periods_w_q[0:7][17:0]</obj_property>
          <obj_property name="ObjectShortName">next_periods_w_q[0:7][17:0]</obj_property>
-         <obj_property name="CustomSignalColor">#FFD700</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_master_logic_0/inst/i_axi_rt_master_logic/next_periods_r_d">
-         <obj_property name="ElementShortName">next_periods_r_d[17:0]</obj_property>
-         <obj_property name="ObjectShortName">next_periods_r_d[17:0]</obj_property>
          <obj_property name="CustomSignalColor">#FFD700</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
@@ -207,7 +191,6 @@
    <wvobject type="group" fp_name="group718">
       <obj_property name="label">Budget0</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject type="logic" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/enable">
          <obj_property name="ElementShortName">enable</obj_property>
          <obj_property name="ObjectShortName">enable</obj_property>
@@ -312,10 +295,6 @@
          <obj_property name="ElementShortName">NumOutstanding[31:0]</obj_property>
          <obj_property name="ObjectShortName">NumOutstanding[31:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/num_w_stored_o">
-         <obj_property name="ElementShortName">num_w_stored_o[3:0]</obj_property>
-         <obj_property name="ObjectShortName">num_w_stored_o[3:0]</obj_property>
-      </wvobject>
       <wvobject type="array" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/num_aw_stored_o">
          <obj_property name="ElementShortName">num_aw_stored_o[3:0]</obj_property>
          <obj_property name="ObjectShortName">num_aw_stored_o[3:0]</obj_property>
@@ -331,6 +310,10 @@
       <wvobject type="logic" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/aw_not_full">
          <obj_property name="ElementShortName">aw_not_full</obj_property>
          <obj_property name="ObjectShortName">aw_not_full</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/num_w_stored_o">
+         <obj_property name="ElementShortName">num_w_stored_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">num_w_stored_o[3:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_write_buffer_wra_0/inst/i_axi_write_buffer_flat/i_axi_write_buffer/w_pop">
          <obj_property name="ElementShortName">w_pop</obj_property>
@@ -450,5 +433,9 @@
       <obj_property name="ObjectShortName">M_AXI</obj_property>
       <obj_property name="label">Traffic2</obj_property>
       <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/axi_bram_ctrl_0/S_AXI">
+      <obj_property name="ElementShortName">S_AXI</obj_property>
+      <obj_property name="ObjectShortName">S_AXI</obj_property>
    </wvobject>
 </wave_config>

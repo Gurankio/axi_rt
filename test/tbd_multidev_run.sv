@@ -21,7 +21,7 @@
 
 module tbd_multidev_run ();
     reg clock = 0;
-    reg aresetn = 0;
+    reg resetn = 0;
 
     reg traffic_start = 0;
     reg traffic_stop = 0;
@@ -39,16 +39,16 @@ module tbd_multidev_run ();
     reg [15:0] downstream_q = 'd0;
 
     tbd_multidev_bram_wrapper DUT (
-        .clock  (clock),
-        .aresetn(aresetn),
+        .clock (clock),
+        .resetn(resetn),
 
         .traffic_start(traffic_start),
         .traffic_stop (traffic_stop),
 
-        .enable_0(enable),
-        .enable_1(enable),
-        .enable_2(enable),
-        .len_limit(len_limit),
+        .enable_0  (enable),
+        .enable_1  (enable),
+        .enable_2  (enable),
+        .len_limit (len_limit),
         .budget_w_0(budget_w_0),
         .budget_w_1(budget_w_1),
         .budget_w_2(budget_w_2),
@@ -67,11 +67,11 @@ module tbd_multidev_run ();
 
     initial begin
         //Assert the reset
-        aresetn = 0;
+        resetn <= 0;
         #250ns;
 
         // Release the reset
-        aresetn = 1;
+        resetn <= 1;
         #50ns;
 
         enable <= 1;
