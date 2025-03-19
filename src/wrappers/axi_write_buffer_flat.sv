@@ -28,8 +28,8 @@ module axi_write_buffer_flat #(
     input logic clk_i,
     input logic rst_ni,
 
-    output [$clog2(WBufferDepth):0] num_w_stored_o,
-    output [$clog2(NumOutstanding):0] num_aw_stored_o,
+    output [$clog2(WBufferDepth)-1:0] num_w_stored_o,
+    output [$clog2(NumOutstanding)-1:0] num_aw_stored_o,
 
     // AXI manager port (with array to keep _i/_o suffixes)
     output [0:0][  IdWidth-1 : 0] m_axi_rt_awid_o,

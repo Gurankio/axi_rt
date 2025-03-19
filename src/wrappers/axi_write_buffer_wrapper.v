@@ -16,8 +16,8 @@ module axi_write_buffer_wrapper #(
     input clk,
     input resetn,
 
-    output [$clog2(WBufferDepth):0] num_w_stored,
-    output [$clog2(NumOutstanding):0] num_aw_stored,
+    output [$clog2(WBufferDepth)-1:0] num_w_stored,
+    output [$clog2(NumOutstanding)-1:0] num_aw_stored,
 
     // Input ports
     input [IdWidth-1:0] s_axi_rt_0_awid,

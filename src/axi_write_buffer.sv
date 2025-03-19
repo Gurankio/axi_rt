@@ -20,8 +20,8 @@ module axi_write_buffer #(
     parameter type axi_resp_t = logic,
 
     // Dependent parameter, do **not** overwite!
-    parameter type idx_w_t  = logic [ IdxWWidth:0],
-    parameter type idx_aw_t = logic [IdxAwWidth:0]
+    parameter type idx_w_t  = logic [ IdxWWidth-1:0],
+    parameter type idx_aw_t = logic [IdxAwWidth-1:0]
 ) (
     input logic clk_i,
     input logic rst_ni,
@@ -38,9 +38,6 @@ module axi_write_buffer #(
     output idx_w_t  num_w_stored_o,
     output idx_aw_t num_aw_stored_o
 );
-    logic mgmt_ready;
-    logic mgmt_valid;
-
     // --------------------------------------------------
     // Bypass the B, AR, R channels
     // --------------------------------------------------
@@ -103,6 +100,7 @@ module axi_write_buffer #(
     // handle W channel last queue
     // --------------------------------------------------
     logic last_pop, last_not_empty, last_not_full;
+    idx_aw_t last_stored;
 
     logic last_valid_input;
     assign last_valid_input = slv_req_i.w.last && slv_req_i.w_valid && slv_resp_o.w_ready;
@@ -115,7 +113,7 @@ module axi_write_buffer #(
         .rst_ni,
         .flush_i   (1'b0),
         .testmode_i(1'b0),
-        .usage_o   (  /* Not Used */),
+        .usage_o   (last_stored),
         .data_i    (1'b0),
         // If it is the last beat and it is valid.
         .valid_i   (last_valid_input),
@@ -125,9 +123,9 @@ module axi_write_buffer #(
         .ready_i   (last_pop)
     );
 
-    logic last_will_not_empty;
-    // TODO: handle last_pop?
-    assign last_will_not_empty = last_not_empty || (!last_not_empty && last_valid_input);
+    // Too big of a combinatorial loop.
+    // logic last_will_not_empty;
+    // assign last_will_not_empty = last_not_empty || (!last_not_empty && last_valid_input);
 
     // Allow inputs on AW and W if there is space in all queues.
     // TODO: The last queue is maybe the only meaningful one?
@@ -140,9 +138,8 @@ module axi_write_buffer #(
     // --------------------------------------------------
     // Sync FSM
     // --------------------------------------------------
-    typedef enum logic [1:0] {
+    typedef enum logic [0:0] {
         WaitingInput,
-        WaitingDownstream,
         WaitingSync
     } state_e;
 
@@ -152,172 +149,69 @@ module axi_write_buffer #(
     state_e w_state_q, w_state_d;
     `FFARN(w_state_q, w_state_d, WaitingInput, clk_i, rst_ni);
 
-    logic aw_will_sync, w_will_sync, sync_over;
-
     logic aw_valid_d, w_valid_d;
-    `FFARN(mst_req_o.aw_valid, aw_valid_d, '0, clk_i, rst_ni);
-    `FFARN(mst_req_o.w_valid, w_valid_d, '0, clk_i, rst_ni);
+    `FFARN(mst_req_o.aw_valid, aw_valid_d, WaitingInput, clk_i, rst_ni);
+    `FFARN(mst_req_o.w_valid, w_valid_d, WaitingInput, clk_i, rst_ni);
+
+    assign aw_pop = mst_req_o.aw_valid && mst_resp_i.aw_ready;
+    assign w_pop = mst_req_o.w_valid && mst_resp_i.w_ready;
+    assign last_pop = mst_req_o.w_valid && mst_req_o.w.last && mst_resp_i.w_ready;
 
     always_comb begin
-        // Pop last after both channels receive ready.
-        last_pop = 0;
-
-        // Sync over the sync fase if:
-        // 1. Both will sync
-        // 2. AW is in sync and W will sync
-        // 3. ~~AW will sync and W is in sync~~ (will not happen)
-        // 4. ~~Both are in sync~~ (will not happen)
-        sync_over = (aw_will_sync && w_will_sync) || (aw_state_q == WaitingSync && w_will_sync);
-
         // AW channel
         aw_state_d = aw_state_q;
-        aw_pop = 0;
-        aw_will_sync = 0;
+        aw_valid_d = 0;
         unique case (aw_state_q)
             WaitingInput: begin
-                aw_valid_d = 0;
-
                 // If we have a full transaction stored go ahead.
-                if (last_will_not_empty && aw_not_empty) begin
-                    aw_state_d = WaitingDownstream;
-
-                    // OPT: Raise valid one clock before
+                if (last_not_empty) begin
                     aw_valid_d = 1;
-                    // Forward ready to the queue.
-                    aw_pop = mst_resp_i.aw_ready;
 
-                    // Skip to sync if downstream is already ready.
                     if (aw_pop) begin
-                        aw_will_sync = 1;
-                        aw_state_d   = WaitingSync;
-
-                        // OPT: If both are ready skip the Sync step.
-                        if (sync_over) begin
-                            aw_state_d = WaitingInput;
-                        end
-                    end
-                end
-            end
-            WaitingDownstream: begin
-                aw_valid_d = 1;
-                // Forward ready to the queue.
-                aw_pop = mst_resp_i.aw_ready;
-
-                if (aw_pop) begin
-                    aw_will_sync = 1;
-                    aw_state_d   = WaitingSync;
-
-                    // OPT: If both are ready skip the Sync step.
-                    if (sync_over) begin
-                        aw_state_d = WaitingInput;
+                        aw_valid_d = 0;
+                        aw_state_d = WaitingSync;
                     end
                 end
             end
             WaitingSync: begin
-                aw_valid_d = 0;
-
-                // TODO: remove redudant check.
-                if (sync_over || w_state_q == WaitingSync) begin
-                    aw_state_d = WaitingInput;
-
-                    // OPT: ...
-                    if (last_will_not_empty && aw_not_empty) begin
-                        aw_state_d = WaitingDownstream;
-
-                        // OPT: Raise valid one clock before
+                if (last_pop) begin
+                    if (last_stored > 1 | !last_not_full) begin
                         aw_valid_d = 1;
-                        // Forward ready to the queue.
-                        aw_pop = mst_resp_i.aw_ready;
-
-                        // Skip to sync if downstream is already ready.
-                        if (aw_pop) begin
-                            aw_will_sync = 1;
-                            aw_state_d   = WaitingSync;
-
-                            // OPT: If both are ready skip the Sync step.
-                            if (sync_over) begin
-                                aw_state_d = WaitingInput;
-                            end
-                        end
                     end
+                    aw_state_d = WaitingInput;
                 end
             end
         endcase
 
         // W channel
         w_state_d = w_state_q;
-        w_pop = 0;
-        w_will_sync = 0;
+        w_valid_d = 0;
         unique case (w_state_q)
             WaitingInput: begin
-                w_valid_d = '0;
-
                 // If we have a full transaction stored go ahead.
-                if (last_will_not_empty && w_not_empty) begin
-                    w_state_d = WaitingDownstream;
-
-                    // OPT: Raise valid one clock before
+                if (last_not_empty) begin
                     w_valid_d = 1;
-                    // Forward ready to the queues.
-                    w_pop = mst_resp_i.w_ready;
-                    last_pop = mst_req_o.w.last & mst_resp_i.w_ready;
 
                     // Skip to sync if downstream is already ready.
                     if (last_pop) begin
-                        w_will_sync = 1;
-                        w_state_d   = WaitingSync;
+                        w_valid_d = 0;
+                        w_state_d = WaitingSync;
 
-                        // OPT: If both are ready skip the Sync step.
-                        if (sync_over) begin
+                        if (aw_state_q == WaitingSync) begin
+                            if (last_stored > 1 | !last_not_full) begin
+                                w_valid_d = 1;
+                            end
                             w_state_d = WaitingInput;
                         end
                     end
                 end
             end
-            WaitingDownstream: begin
-                w_valid_d = '1;
-                // Forward ready to the queue.
-                w_pop = mst_resp_i.w_ready;
-                last_pop = mst_req_o.w.last & mst_resp_i.w_ready;
-
-                if (last_pop) begin
-                    w_will_sync = 1;
-                    w_state_d   = WaitingSync;
-
-                    // OPT: If both are ready skip the Sync step.
-                    if (sync_over) begin
-                        w_state_d = WaitingInput;
-                    end
-                end
-            end
             WaitingSync: begin
-                w_valid_d = 0;
-
-                // TODO: remove redudant check.
-                if (sync_over || aw_state_q == WaitingSync) begin
-                    w_state_d = WaitingInput;
-
-                    // If we have a full transaction stored go ahead.
-                    if (last_will_not_empty && w_not_empty) begin
-                        w_state_d = WaitingDownstream;
-
-                        // OPT: Raise valid one clock before
+                if (aw_state_q == WaitingSync) begin
+                    if (last_not_empty) begin
                         w_valid_d = 1;
-                        // Forward ready to the queues.
-                        w_pop = mst_resp_i.w_ready;
-                        last_pop = mst_req_o.w.last & mst_resp_i.w_ready;
-
-                        // Skip to sync if downstream is already ready.
-                        if (last_pop) begin
-                            w_will_sync = 1;
-                            w_state_d   = WaitingSync;
-
-                            // OPT: If both are ready skip the Sync step.
-                            if (sync_over) begin
-                                w_state_d = WaitingInput;
-                            end
-                        end
                     end
+                    w_state_d = WaitingInput;
                 end
             end
         endcase
