@@ -45,21 +45,39 @@ module axi_rt_master_logic #(
     logic [$clog2(NumDevice + 1)-1:0] progress_d, progress_q;
     `FFARN(progress_q, progress_d, '0, clk_i, rst_ni);
 
-    period_t [2**NumDevice-1:0] next_periods_w_d, next_periods_w_q;
-    `FFARN(next_periods_w_q, next_periods_w_d, '0, clk_i, rst_ni);
-    period_t [2**NumDevice-1:0] next_periods_r_d, next_periods_r_q;
-    `FFARN(next_periods_r_q, next_periods_r_d, '0, clk_i, rst_ni);
+    period_t next_periods_w_q[2**NumDevice];
+    period_t next_periods_r_q[2**NumDevice];
+    period_t next_periods_w_d, next_periods_r_d;
+    for (genvar i = 0; i < 2 ** NumDevice; i++) begin : gen_next_periods_q
+        always_ff @(posedge (clk_i) or negedge (rst_ni)) begin
+            if (!rst_ni) begin
+                next_periods_w_q[i] <= '0;
+                next_periods_r_q[i] <= '0;
+            end else begin
+                if (i == 0) begin
+                    next_periods_w_q[i] <= '0;
+                    next_periods_r_q[i] <= '0;
+                end else if (to_compute_q == i) begin
+                    next_periods_w_q[i] <= next_periods_w_d;
+                    next_periods_r_q[i] <= next_periods_r_d;
+                end else begin
+                    next_periods_w_q[i] <= next_periods_w_q[i];
+                    next_periods_r_q[i] <= next_periods_r_q[i];
+                end
+            end
+        end
+    end
 
     always_comb begin
         to_compute_d = to_compute_q;
-        progress_d   = progress_q;
+        progress_d = progress_q;
+        next_periods_w_d = '0;
+        next_periods_r_d = '0;
 
         // If some enabled changed or the reset signal is present then start the computation.
         if (!rst_ni || to_compute_q == 0 && enable_changed) begin
-            to_compute_d     = 'd1;
-            progress_d       = '0;
-            next_periods_w_d = '0;
-            next_periods_r_d = '0;
+            to_compute_d = 'd1;
+            progress_d   = '0;
         end
 
         // As long as there is work to do (compute resets by overflowing).
@@ -68,16 +86,14 @@ module axi_rt_master_logic #(
 
             if (progress_q != NumDevice) begin
                 // Accumualate budgets.
-                next_periods_w_d[to_compute_q] =
+                next_periods_w_d =
                     next_periods_w_q[to_compute_q] + budget_w[progress_q] * to_compute_q[progress_q];
-                next_periods_r_d[to_compute_q] =
+                next_periods_r_d =
                     next_periods_r_q[to_compute_q] + budget_r[progress_q] * to_compute_q[progress_q];
             end else begin
                 // Scale by the factor and subtract one.
-                next_periods_w_d[to_compute_q] =
-                    next_periods_w_q[to_compute_q] * downstream_p / downstream_q - 1;
-                next_periods_r_d[to_compute_q] =
-                    next_periods_r_q[to_compute_q] * downstream_p / downstream_q - 1;
+                next_periods_w_d = next_periods_w_q[to_compute_q] * downstream_p / downstream_q - 1;
+                next_periods_r_d = next_periods_r_q[to_compute_q] * downstream_p / downstream_q - 1;
 
                 // Advance to the next case.
                 to_compute_d = to_compute_q + 1;
