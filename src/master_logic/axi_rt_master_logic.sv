@@ -42,28 +42,33 @@ module axi_rt_master_logic #(
     logic [NumDevice-1:0] to_compute_d, to_compute_q;
     `FFARN(to_compute_q, to_compute_d, '0, clk_i, rst_ni);
 
-    // 3 Extra clock cycles for: mult P, div Q, sub 1.
-    logic [$clog2(NumDevice + 3)-1:0] progress_d, progress_q;
+    // 4 Extra clock cycles for: mult P, div Q, sub 1, store in LUT.
+    logic [$clog2(NumDevice + 4)-1:0] progress_d, progress_q;
     `FFARN(progress_q, progress_d, '0, clk_i, rst_ni);
 
     period_t next_periods_w_q[2**NumDevice];
     period_t next_periods_r_q[2**NumDevice];
-    period_t next_periods_w_d, next_periods_r_d;
+    period_t tmp_w_q, tmp_r_q, tmp_w_d, tmp_r_d;
+    `FFARN(tmp_w_q, tmp_w_d, '0, clk_i, rst_ni);
+    `FFARN(tmp_r_q, tmp_r_d, '0, clk_i, rst_ni);
+
     for (genvar i = 0; i < 2 ** NumDevice; i++) begin : gen_next_periods_q
-        always_ff @(posedge (clk_i) or negedge (rst_ni)) begin
-            if (!rst_ni) begin
-                next_periods_w_q[i] <= '0;
-                next_periods_r_q[i] <= '0;
-            end else begin
-                if (i == 0) begin
+        if (i == 0) begin : gen_zero
+            assign next_periods_w_q[i] = '0;
+            assign next_periods_r_q[i] = '0;
+        end else begin : gen_generic
+            always_ff @(posedge (clk_i) or negedge (rst_ni)) begin
+                if (!rst_ni) begin
                     next_periods_w_q[i] <= '0;
                     next_periods_r_q[i] <= '0;
-                end else if (to_compute_q == i) begin
-                    next_periods_w_q[i] <= next_periods_w_d;
-                    next_periods_r_q[i] <= next_periods_r_d;
                 end else begin
-                    next_periods_w_q[i] <= next_periods_w_q[i];
-                    next_periods_r_q[i] <= next_periods_r_q[i];
+                    if (to_compute_q == i && progress_q == NumDevice + 3) begin
+                        next_periods_w_q[i] <= tmp_w_q;
+                        next_periods_r_q[i] <= tmp_r_q;
+                    end else begin
+                        next_periods_w_q[i] <= next_periods_w_q[i];
+                        next_periods_r_q[i] <= next_periods_r_q[i];
+                    end
                 end
             end
         end
@@ -72,8 +77,8 @@ module axi_rt_master_logic #(
     always_comb begin
         to_compute_d = to_compute_q;
         progress_d = progress_q;
-        next_periods_w_d = '0;
-        next_periods_r_d = '0;
+        tmp_w_d = '0;
+        tmp_r_d = '0;
 
         // If some enabled changed or the reset signal is present then start the computation.
         if (!rst_ni || to_compute_q == 0 && enable_changed) begin
@@ -87,29 +92,30 @@ module axi_rt_master_logic #(
 
             if (progress_q < NumDevice) begin
                 // Accumualate budgets.
-                next_periods_w_d =
-                    next_periods_w_q[to_compute_q] + budget_w[progress_q] * to_compute_q[progress_q];
-                next_periods_r_d =
-                    next_periods_r_q[to_compute_q] + budget_r[progress_q] * to_compute_q[progress_q];
+                tmp_w_d = tmp_w_q + budget_w[progress_q] * to_compute_q[progress_q];
+                tmp_r_d = tmp_r_q + budget_r[progress_q] * to_compute_q[progress_q];
             end
             if (progress_q == NumDevice + 0) begin
                 // Mul by P.
-                next_periods_w_d = next_periods_w_q[to_compute_q] * downstream_p;
-                next_periods_r_d = next_periods_r_q[to_compute_q] * downstream_p;
+                tmp_w_d = tmp_w_q * downstream_p;
+                tmp_r_d = tmp_r_q * downstream_p;
             end
             if (progress_q == NumDevice + 1) begin
                 // Div by Q.
-                next_periods_w_d = next_periods_w_q[to_compute_q] / downstream_q;
-                next_periods_r_d = next_periods_r_q[to_compute_q] / downstream_q;
+                tmp_w_d = tmp_w_q / downstream_q;
+                tmp_r_d = tmp_r_q / downstream_q;
             end
             if (progress_q == NumDevice + 2) begin
                 // Subtract one.
-                next_periods_w_d = next_periods_w_q[to_compute_q] - 1;
-                next_periods_r_d = next_periods_r_q[to_compute_q] - 1;
+                tmp_w_d = tmp_w_q - 1;
+                tmp_r_d = tmp_r_q - 1;
+            end
+            if (progress_q == NumDevice + 3) begin
+                // Idle cycle to let the "LUT" store.
 
                 // Advance to the next case.
                 to_compute_d = to_compute_q + 1;
-                progress_d = '0;
+                progress_d   = '0;
             end
         end
     end
