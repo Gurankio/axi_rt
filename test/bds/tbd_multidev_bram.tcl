@@ -257,6 +257,8 @@ proc create_root_design { parentCell } {
 
   # Create instance: axi_bram_ctrl_0, and set properties
   set axi_bram_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0 ]
+  set_property CONFIG.DATA_WIDTH {128} $axi_bram_ctrl_0
+
 
   # Create instance: blk_mem_gen_0, and set properties
   set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0 ]
@@ -284,7 +286,7 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net tbd_multidev_0_M00_AXI_0 [get_bd_intf_pins axi_bram_ctrl_0/S_AXI] [get_bd_intf_pins tbd_multidev_0/M00_AXI_0]
 
   # Create port connections
-  connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins tbd_multidev_0/aresetn]
+  connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn]
   connect_bd_net -net budget_r_0_0_1 [get_bd_ports budget_r_0] [get_bd_pins tbd_multidev_0/budget_r_0]
   connect_bd_net -net budget_r_1_0_1 [get_bd_ports budget_r_1] [get_bd_pins tbd_multidev_0/budget_r_1]
   connect_bd_net -net budget_r_2_0_1 [get_bd_ports budget_r_2] [get_bd_pins tbd_multidev_0/budget_r_2]

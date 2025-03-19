@@ -4,7 +4,7 @@ module constant_configurator #(
 
     parameter LenLimit = 8,
     parameter DownstreamP = 1,
-    parameter DownstreamQ = 1,
+    parameter DownstreamQ = 0,
 
     parameter Enable0 = 0,
     parameter Enable1 = 0,

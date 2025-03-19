@@ -102,8 +102,8 @@ module axi_rt_master_logic #(
             end
             if (progress_q == NumDevice + 1) begin
                 // Div by Q.
-                tmp_w_d = tmp_w_q / downstream_q;
-                tmp_r_d = tmp_r_q / downstream_q;
+                tmp_w_d = tmp_w_q >> downstream_q;
+                tmp_r_d = tmp_r_q >> downstream_q;
             end
             if (progress_q == NumDevice + 2) begin
                 // Subtract one.
@@ -126,13 +126,14 @@ module axi_rt_master_logic #(
     assign next_period_r = next_periods_r_q[device_budget_used_r];
 
     /// Period counters
+    period_t period_left_w, period_left_r;
     logic period_over_w, period_over_r;
+
     // assign period_over_w = !any_enabled_q && any_enabled_d || period_left_w == 0;
     assign period_over_w = period_left_w == 0;
     // assign period_over_r = !any_enabled_q && any_enabled_d || period_left_r == 0;
     assign period_over_r = period_left_r == 0;
 
-    period_t period_left_w;
     always_ff @(posedge (clk_i) or negedge (rst_ni)) begin
         if (!rst_ni) begin
             period_left_w <= 'd0;
@@ -145,7 +146,6 @@ module axi_rt_master_logic #(
         end
     end
 
-    period_t period_left_r;
     always_ff @(posedge (clk_i) or negedge (rst_ni)) begin
         if (!rst_ni) begin
             period_left_r <= 'd0;

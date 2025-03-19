@@ -2,7 +2,7 @@ module axi_rt_master_logic_wrapper #(
     parameter integer BudgetWidth = 'd16
 ) (
     input clock,
-    input aresen,
+    input resetn,
 
     input [BudgetWidth-1:0] downstream_p,
     input [BudgetWidth-1:0] downstream_q,
@@ -39,7 +39,7 @@ module axi_rt_master_logic_wrapper #(
         .BudgetWidth(BudgetWidth)
     ) i_axi_rt_master_logic (
         .clk_i (clock),
-        .rst_ni(aresen),
+        .rst_ni(resetn),
 
         .downstream_p(downstream_p),
         .downstream_q(downstream_q),

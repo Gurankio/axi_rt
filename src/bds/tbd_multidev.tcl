@@ -233,7 +233,7 @@ proc create_root_design { parentCell } {
   # Create interface ports
   set M00_AXI_0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M00_AXI_0 ]
   set_property -dict [ list \
-   CONFIG.ADDR_WIDTH {31} \
+   CONFIG.ADDR_WIDTH {32} \
    CONFIG.DATA_WIDTH {128} \
    CONFIG.HAS_REGION {0} \
    CONFIG.NUM_READ_OUTSTANDING {2} \
@@ -243,7 +243,6 @@ proc create_root_design { parentCell } {
 
 
   # Create ports
-  set aresetn [ create_bd_port -dir I -type rst aresetn ]
   set budget_r_0 [ create_bd_port -dir I -from 15 -to 0 budget_r_0 ]
   set budget_r_1 [ create_bd_port -dir I -from 15 -to 0 budget_r_1 ]
   set budget_r_2 [ create_bd_port -dir I -from 15 -to 0 budget_r_2 ]
@@ -251,12 +250,19 @@ proc create_root_design { parentCell } {
   set budget_w_1 [ create_bd_port -dir I -from 15 -to 0 budget_w_1 ]
   set budget_w_2 [ create_bd_port -dir I -from 15 -to 0 budget_w_2 ]
   set clock [ create_bd_port -dir I -type clk -freq_hz 100000000 clock ]
+  set_property -dict [ list \
+   CONFIG.ASSOCIATED_RESET {resetn} \
+ ] $clock
   set downstream_p [ create_bd_port -dir I -from 15 -to 0 downstream_p ]
   set downstream_q [ create_bd_port -dir I -from 15 -to 0 downstream_q ]
   set enable_0 [ create_bd_port -dir I enable_0 ]
   set enable_1 [ create_bd_port -dir I enable_1 ]
   set enable_2 [ create_bd_port -dir I enable_2 ]
   set len_limit [ create_bd_port -dir I -from 7 -to 0 len_limit ]
+  set resetn [ create_bd_port -dir I -type rst resetn ]
+  set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_LOW} \
+ ] $resetn
   set traffic_start [ create_bd_port -dir I traffic_start ]
   set traffic_stop [ create_bd_port -dir I traffic_stop ]
 
@@ -373,7 +379,8 @@ proc create_root_design { parentCell } {
   set_property -dict [list \
     CONFIG.AxiAddrWidth {32} \
     CONFIG.AxiDataWidth {128} \
-    CONFIG.AxiIdWidth {16} \
+    CONFIG.AxiIdWidth {2} \
+    CONFIG.AxiUserWidth {8} \
   ] $axi_rt_device_budget_0
 
 
@@ -382,7 +389,8 @@ proc create_root_design { parentCell } {
   set_property -dict [list \
     CONFIG.AxiAddrWidth {32} \
     CONFIG.AxiDataWidth {128} \
-    CONFIG.AxiIdWidth {16} \
+    CONFIG.AxiIdWidth {2} \
+    CONFIG.AxiUserWidth {8} \
   ] $axi_rt_device_budget_1
 
 
@@ -391,7 +399,8 @@ proc create_root_design { parentCell } {
   set_property -dict [list \
     CONFIG.AxiAddrWidth {32} \
     CONFIG.AxiDataWidth {128} \
-    CONFIG.AxiIdWidth {16} \
+    CONFIG.AxiIdWidth {2} \
+    CONFIG.AxiUserWidth {8} \
   ] $axi_rt_device_budget_2
 
 
@@ -576,7 +585,7 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets axi_write_buffer_wra_1_m_axi_rt_
   connect_bd_net -net Net6 [get_bd_ports budget_r_1] [get_bd_pins axi_rt_device_budget_1/budget_r] [get_bd_pins axi_rt_master_logic_0/budget_r_1]
   connect_bd_net -net Net9 [get_bd_ports budget_w_2] [get_bd_pins axi_rt_device_budget_2/budget_w] [get_bd_pins axi_rt_master_logic_0/budget_w_2]
   connect_bd_net -net Net10 [get_bd_ports budget_r_2] [get_bd_pins axi_rt_device_budget_2/budget_r] [get_bd_pins axi_rt_master_logic_0/budget_r_2]
-  connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins axi_gran_burst_split_0/resetn] [get_bd_pins axi_gran_burst_split_1/resetn] [get_bd_pins axi_gran_burst_split_2/resetn] [get_bd_pins axi_isolate_wrapper_0/resetn] [get_bd_pins axi_isolate_wrapper_1/resetn] [get_bd_pins axi_isolate_wrapper_2/resetn] [get_bd_pins axi_rt_device_budget_0/aresetn] [get_bd_pins axi_rt_device_budget_1/aresetn] [get_bd_pins axi_rt_device_budget_2/aresetn] [get_bd_pins axi_rt_master_logic_0/aresen] [get_bd_pins axi_traffic_gen_0/s_axi_aresetn] [get_bd_pins axi_traffic_gen_1/s_axi_aresetn] [get_bd_pins axi_traffic_gen_2/s_axi_aresetn] [get_bd_pins axi_write_buffer_wra_0/resetn] [get_bd_pins axi_write_buffer_wra_1/resetn] [get_bd_pins axi_write_buffer_wra_2/resetn] [get_bd_pins smartconnect_0/aresetn]
+  connect_bd_net -net aresetn_1 [get_bd_ports resetn] [get_bd_pins axi_gran_burst_split_0/resetn] [get_bd_pins axi_gran_burst_split_1/resetn] [get_bd_pins axi_gran_burst_split_2/resetn] [get_bd_pins axi_isolate_wrapper_0/resetn] [get_bd_pins axi_isolate_wrapper_1/resetn] [get_bd_pins axi_isolate_wrapper_2/resetn] [get_bd_pins axi_rt_device_budget_0/aresetn] [get_bd_pins axi_rt_device_budget_1/aresetn] [get_bd_pins axi_rt_device_budget_2/aresetn] [get_bd_pins axi_rt_master_logic_0/resetn] [get_bd_pins axi_traffic_gen_0/s_axi_aresetn] [get_bd_pins axi_traffic_gen_1/s_axi_aresetn] [get_bd_pins axi_traffic_gen_2/s_axi_aresetn] [get_bd_pins axi_write_buffer_wra_0/resetn] [get_bd_pins axi_write_buffer_wra_1/resetn] [get_bd_pins axi_write_buffer_wra_2/resetn] [get_bd_pins smartconnect_0/aresetn]
   connect_bd_net -net axi_rt_device_budget_0_budget_spent_r [get_bd_pins axi_rt_device_budget_0/budget_spent_r] [get_bd_pins util_vector_logic_0/Op2]
   connect_bd_net -net axi_rt_device_budget_0_budget_spent_w [get_bd_pins axi_rt_device_budget_0/budget_spent_w] [get_bd_pins util_vector_logic_0/Op1]
   connect_bd_net -net axi_rt_device_budget_0_budget_used_r [get_bd_pins axi_rt_device_budget_0/budget_used_r] [get_bd_pins axi_rt_master_logic_0/device_budget_used_r_0]

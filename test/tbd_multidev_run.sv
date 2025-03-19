@@ -36,7 +36,7 @@ module tbd_multidev_run ();
     reg [15:0] budget_r_2 = 'd1;
 
     reg [15:0] downstream_p = 'd1;
-    reg [15:0] downstream_q = 'd1;
+    reg [15:0] downstream_q = 'd0;
 
     tbd_multidev_bram_wrapper DUT (
         .clock  (clock),

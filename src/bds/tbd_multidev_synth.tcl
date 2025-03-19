@@ -341,19 +341,18 @@ Port;FD4A0000;FD4AFFFF;0|FPD;DPDMA;FD4C0000;FD4CFFFF;0|FPD;DDR_XMPU5_CFG;FD05000
   connect_bd_net -net constant_configurator_0_enable_1 [get_bd_pins constant_configurator_0/enable_1] [get_bd_pins tbd_multidev_0/enable_1]
   connect_bd_net -net constant_configurator_0_enable_2 [get_bd_pins constant_configurator_0/enable_2] [get_bd_pins tbd_multidev_0/enable_2]
   connect_bd_net -net constant_configurator_0_len_limit [get_bd_pins constant_configurator_0/len_limit] [get_bd_pins tbd_multidev_0/len_limit]
-  connect_bd_net -net rst_ps8_0_96M_interconnect_aresetn [get_bd_pins constant_configurator_0/aresetn] [get_bd_pins rst_ps8_0_96M/interconnect_aresetn] [get_bd_pins tbd_multidev_0/aresetn]
+  connect_bd_net -net resetn_1 [get_bd_pins rst_ps8_0_96M/peripheral_aresetn] [get_bd_pins tbd_multidev_0/resetn]
+  connect_bd_net -net rst_ps8_0_96M_interconnect_aresetn [get_bd_pins constant_configurator_0/aresetn] [get_bd_pins rst_ps8_0_96M/interconnect_aresetn]
   connect_bd_net -net zynq_ultra_ps_e_0_pl_clk0 [get_bd_pins constant_configurator_0/clock] [get_bd_pins rst_ps8_0_96M/slowest_sync_clk] [get_bd_pins tbd_multidev_0/clock] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0] [get_bd_pins zynq_ultra_ps_e_0/saxihp0_fpd_aclk]
   connect_bd_net -net zynq_ultra_ps_e_0_pl_resetn0 [get_bd_pins rst_ps8_0_96M/ext_reset_in] [get_bd_pins zynq_ultra_ps_e_0/pl_resetn0]
 
   # Create address segments
   assign_bd_address -offset 0x00000000 -range 0x80000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_0/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_LOW] -force
+  assign_bd_address -offset 0xFF000000 -range 0x01000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_0/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM] -force
   assign_bd_address -offset 0x00000000 -range 0x80000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_1/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_LOW] -force
+  assign_bd_address -offset 0xFF000000 -range 0x01000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_1/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM] -force
   assign_bd_address -offset 0x00000000 -range 0x80000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_2/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_LOW] -force
-
-  # Exclude Address Segments
-  exclude_bd_addr_seg -offset 0xFF000000 -range 0x01000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_0/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM]
-  exclude_bd_addr_seg -offset 0xFF000000 -range 0x01000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_1/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM]
-  exclude_bd_addr_seg -offset 0xFF000000 -range 0x01000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_2/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM]
+  assign_bd_address -offset 0xFF000000 -range 0x01000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_2/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM] -force
 
 
   # Restore current instance
