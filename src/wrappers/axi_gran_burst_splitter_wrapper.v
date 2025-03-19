@@ -36,7 +36,7 @@ module axi_gran_burst_splitter_wrapper #(
     input s_axi_rt_0_awvalid,
     output s_axi_rt_0_awready,
     input [DataWidth-1:0] s_axi_rt_0_wdata,
-    input [7:0] s_axi_rt_0_wstrb,
+    input [DataWidth/8-1:0] s_axi_rt_0_wstrb,
     input s_axi_rt_0_wlast,
     input s_axi_rt_0_wvalid,
     output s_axi_rt_0_wready,
@@ -77,7 +77,7 @@ module axi_gran_burst_splitter_wrapper #(
     output m_axi_rt_0_awvalid,
     input m_axi_rt_0_awready,
     output [DataWidth-1:0] m_axi_rt_0_wdata,
-    output [7:0] m_axi_rt_0_wstrb,
+    output [DataWidth/8-1:0] m_axi_rt_0_wstrb,
     output m_axi_rt_0_wlast,
     output m_axi_rt_0_wvalid,
     input m_axi_rt_0_wready,
@@ -105,14 +105,14 @@ module axi_gran_burst_splitter_wrapper #(
     output m_axi_rt_0_rready
 );
     axi_gran_burst_splitter_flat #(
-        .MaxReadTxns  (32), // TODO
-        .MaxWriteTxns (32), // TODO
-        .CutPath      (CutPath       ),
-        .DisableChecks(DisableChecks ),
-        .AddrWidth        (AddrWidth),
-        .DataWidth        (DataWidth),
-        .IdWidth          (IdWidth),
-        .UserWidth        (UserWidth)
+        .MaxReadTxns  (32),             // TODO
+        .MaxWriteTxns (32),             // TODO
+        .CutPath      (CutPath),
+        .DisableChecks(DisableChecks),
+        .AddrWidth    (AddrWidth),
+        .DataWidth    (DataWidth),
+        .IdWidth      (IdWidth),
+        .UserWidth    (UserWidth)
     ) i_axi_gran_burst_splitter_flat (
         .clk_i (clk),
         .rst_ni(resetn),

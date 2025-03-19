@@ -16,7 +16,7 @@ module axi_write_buffer_wrapper #(
     input clk,
     input resetn,
 
-    output [$clog2(WBufferDepth)-1:0] num_w_stored,
+    output [  $clog2(WBufferDepth)-1:0] num_w_stored,
     output [$clog2(NumOutstanding)-1:0] num_aw_stored,
 
     // Input ports
@@ -33,7 +33,7 @@ module axi_write_buffer_wrapper #(
     input s_axi_rt_0_awvalid,
     output s_axi_rt_0_awready,
     input [DataWidth-1:0] s_axi_rt_0_wdata,
-    input [7:0] s_axi_rt_0_wstrb,
+    input [DataWidth/8-1:0] s_axi_rt_0_wstrb,
     input s_axi_rt_0_wlast,
     input s_axi_rt_0_wvalid,
     output s_axi_rt_0_wready,
@@ -74,7 +74,7 @@ module axi_write_buffer_wrapper #(
     output m_axi_rt_0_awvalid,
     input m_axi_rt_0_awready,
     output [DataWidth-1:0] m_axi_rt_0_wdata,
-    output [7:0] m_axi_rt_0_wstrb,
+    output [DataWidth/8-1:0] m_axi_rt_0_wstrb,
     output m_axi_rt_0_wlast,
     output m_axi_rt_0_wvalid,
     input m_axi_rt_0_wready,
