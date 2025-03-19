@@ -42,7 +42,8 @@ module axi_rt_master_logic #(
     logic [NumDevice-1:0] to_compute_d, to_compute_q;
     `FFARN(to_compute_q, to_compute_d, '0, clk_i, rst_ni);
 
-    logic [$clog2(NumDevice + 1)-1:0] progress_d, progress_q;
+    // 3 Extra clock cycles for: mult P, div Q, sub 1.
+    logic [$clog2(NumDevice + 3)-1:0] progress_d, progress_q;
     `FFARN(progress_q, progress_d, '0, clk_i, rst_ni);
 
     period_t next_periods_w_q[2**NumDevice];
@@ -84,16 +85,27 @@ module axi_rt_master_logic #(
         if (rst_ni && to_compute_q != 0) begin
             progress_d = progress_q + 1;
 
-            if (progress_q != NumDevice) begin
+            if (progress_q < NumDevice) begin
                 // Accumualate budgets.
                 next_periods_w_d =
                     next_periods_w_q[to_compute_q] + budget_w[progress_q] * to_compute_q[progress_q];
                 next_periods_r_d =
                     next_periods_r_q[to_compute_q] + budget_r[progress_q] * to_compute_q[progress_q];
-            end else begin
-                // Scale by the factor and subtract one.
-                next_periods_w_d = next_periods_w_q[to_compute_q] * downstream_p / downstream_q - 1;
-                next_periods_r_d = next_periods_r_q[to_compute_q] * downstream_p / downstream_q - 1;
+            end
+            if (progress_q == NumDevice + 0) begin
+                // Mul by P.
+                next_periods_w_d = next_periods_w_q[to_compute_q] * downstream_p;
+                next_periods_r_d = next_periods_r_q[to_compute_q] * downstream_p;
+            end
+            if (progress_q == NumDevice + 1) begin
+                // Div by Q.
+                next_periods_w_d = next_periods_w_q[to_compute_q] / downstream_q;
+                next_periods_r_d = next_periods_r_q[to_compute_q] / downstream_q;
+            end
+            if (progress_q == NumDevice + 2) begin
+                // Subtract one.
+                next_periods_w_d = next_periods_w_q[to_compute_q] - 1;
+                next_periods_r_d = next_periods_r_q[to_compute_q] - 1;
 
                 // Advance to the next case.
                 to_compute_d = to_compute_q + 1;
