@@ -49,8 +49,8 @@ module axi_rt_master_logic #(
     period_t next_periods_w_q[2**NumDevice];
     period_t next_periods_r_q[2**NumDevice];
     period_t tmp_w_q, tmp_r_q, tmp_w_d, tmp_r_d;
-    `FFARN(tmp_w_q, tmp_w_d, '0, clk_i, rst_ni);
-    `FFARN(tmp_r_q, tmp_r_d, '0, clk_i, rst_ni);
+    `FFSRN(tmp_w_q, tmp_w_d, '0, clk_i, rst_ni);
+    `FFSRN(tmp_r_q, tmp_r_d, '0, clk_i, rst_ni);
 
     for (genvar i = 0; i < 2 ** NumDevice; i++) begin : gen_next_periods_q
         if (i == 0) begin : gen_zero
