@@ -38,14 +38,16 @@ module tbd_multidev_run ();
     reg [15:0] downstream_p = 'd1;
     reg [15:0] downstream_q = 'd1;
 
-    tbd_multidev_wrapper DUT (
+    tbd_multidev_bram_wrapper DUT (
         .clock  (clock),
         .aresetn(aresetn),
 
         .traffic_start(traffic_start),
         .traffic_stop (traffic_stop),
 
-        .enable(enable),
+        .enable_0(enable),
+        .enable_1(enable),
+        .enable_2(enable),
         .len_limit(len_limit),
         .budget_w_0(budget_w_0),
         .budget_w_1(budget_w_1),

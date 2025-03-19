@@ -351,9 +351,9 @@ Port;FD4A0000;FD4AFFFF;0|FPD;DPDMA;FD4C0000;FD4CFFFF;0|FPD;DDR_XMPU5_CFG;FD05000
   assign_bd_address -offset 0x00000000 -range 0x80000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_2/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_LOW] -force
 
   # Exclude Address Segments
-  exclude_bd_addr_seg -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_0/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM]
-  exclude_bd_addr_seg -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_1/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM]
-  exclude_bd_addr_seg -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_2/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM]
+  exclude_bd_addr_seg -offset 0xFF000000 -range 0x01000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_0/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM]
+  exclude_bd_addr_seg -offset 0xFF000000 -range 0x01000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_1/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM]
+  exclude_bd_addr_seg -offset 0xFF000000 -range 0x01000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_2/m_axi_rt_0] [get_bd_addr_segs zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM]
 
 
   # Restore current instance

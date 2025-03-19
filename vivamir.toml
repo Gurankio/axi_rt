@@ -34,19 +34,14 @@ filesets = [
 #
 # Order also matters when BDs depend on each other.
 trusted = [
-    # Synthetizable design.
+    # DPU
     # 'src/bds/top.tcl',
     # 'src/bds/bd_dpu.tcl',
 
-    # Single port single component verification
-    # 'src/bds/bd_axi_rt.tcl',
-
-    # ?
-    # 'src/bds/axi_rt_device_port.tcl',
-
     # Testbench for master logic
-    'test/bds/tbd_multidev.tcl',
+    'src/bds/tbd_multidev.tcl',
     'src/bds/tbd_multidev_synth.tcl',
+    'test/bds/tbd_multidev_bram.tcl',
 ]
 
 # Where the sync utility should put new designs.

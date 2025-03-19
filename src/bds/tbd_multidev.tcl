@@ -233,7 +233,7 @@ proc create_root_design { parentCell } {
   # Create interface ports
   set M00_AXI_0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M00_AXI_0 ]
   set_property -dict [ list \
-   CONFIG.ADDR_WIDTH {15} \
+   CONFIG.ADDR_WIDTH {31} \
    CONFIG.DATA_WIDTH {128} \
    CONFIG.HAS_REGION {0} \
    CONFIG.NUM_READ_OUTSTANDING {2} \
@@ -411,13 +411,16 @@ proc create_root_design { parentCell } {
   set_property -dict [list \
     CONFIG.ATG_HLT_CH_SELECT {Write_Only} \
     CONFIG.ATG_OPTIONS {High Level Traffic} \
+    CONFIG.C_ATG_REPEAT_TYPE {Repetitive} \
     CONFIG.C_ATG_STATIC_HLTP_INCR {true} \
+    CONFIG.DATA_SIZE_AVG {32} \
+    CONFIG.DATA_TRANS_GAP {Random} \
     CONFIG.MASTER_AXI_WIDTH {128} \
     CONFIG.MASTER_HIGH_ADDRESS {0x00007FFF} \
     CONFIG.PCIE_LANES {2} \
     CONFIG.PCIE_LANE_RATE {5} \
     CONFIG.PCIE_LOAD {80} \
-    CONFIG.TRAFFIC_PROFILE {PCIe} \
+    CONFIG.TRAFFIC_PROFILE {Data} \
   ] $axi_traffic_gen_0
 
 
@@ -426,13 +429,17 @@ proc create_root_design { parentCell } {
   set_property -dict [list \
     CONFIG.ATG_HLT_CH_SELECT {Write_Only} \
     CONFIG.ATG_OPTIONS {High Level Traffic} \
+    CONFIG.C_ATG_REPEAT_TYPE {Repetitive} \
     CONFIG.C_ATG_STATIC_HLTP_INCR {true} \
+    CONFIG.DATA_SIZE_AVG {4} \
+    CONFIG.DATA_TRANS_GAP {Random} \
+    CONFIG.DATA_TRANS_SEED {2} \
     CONFIG.MASTER_AXI_WIDTH {128} \
     CONFIG.MASTER_HIGH_ADDRESS {0x00007FFF} \
     CONFIG.PCIE_LANES {2} \
     CONFIG.PCIE_LANE_RATE {5} \
     CONFIG.PCIE_LOAD {80} \
-    CONFIG.TRAFFIC_PROFILE {PCIe} \
+    CONFIG.TRAFFIC_PROFILE {Data} \
   ] $axi_traffic_gen_1
 
 
@@ -441,13 +448,17 @@ proc create_root_design { parentCell } {
   set_property -dict [list \
     CONFIG.ATG_HLT_CH_SELECT {Write_Only} \
     CONFIG.ATG_OPTIONS {High Level Traffic} \
+    CONFIG.C_ATG_REPEAT_TYPE {Repetitive} \
     CONFIG.C_ATG_STATIC_HLTP_INCR {true} \
+    CONFIG.DATA_SIZE_AVG {128} \
+    CONFIG.DATA_TRANS_GAP {Random} \
+    CONFIG.DATA_TRANS_SEED {3} \
     CONFIG.MASTER_AXI_WIDTH {128} \
     CONFIG.MASTER_HIGH_ADDRESS {0x00007FFF} \
     CONFIG.PCIE_LANES {2} \
     CONFIG.PCIE_LANE_RATE {5} \
     CONFIG.PCIE_LOAD {80} \
-    CONFIG.TRAFFIC_PROFILE {PCIe} \
+    CONFIG.TRAFFIC_PROFILE {Data} \
   ] $axi_traffic_gen_2
 
 
@@ -598,6 +609,9 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets axi_write_buffer_wra_1_m_axi_rt_
   assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_gran_burst_split_0/m_axi_rt_0] [get_bd_addr_segs axi_write_buffer_wra_0/s_axi_rt_0/reg0] -force
   assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_gran_burst_split_1/m_axi_rt_0] [get_bd_addr_segs axi_write_buffer_wra_1/s_axi_rt_0/reg0] -force
   assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_gran_burst_split_2/m_axi_rt_0] [get_bd_addr_segs axi_write_buffer_wra_2/s_axi_rt_0/reg0] -force
+  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_isolate_wrapper_0/m_axi_rt_0] [get_bd_addr_segs M00_AXI_0/Reg] -force
+  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_isolate_wrapper_1/m_axi_rt_0] [get_bd_addr_segs M00_AXI_0/Reg] -force
+  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_isolate_wrapper_2/m_axi_rt_0] [get_bd_addr_segs M00_AXI_0/Reg] -force
   assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_traffic_gen_0/Data] [get_bd_addr_segs axi_gran_burst_split_0/s_axi_rt_0/reg0] -force
   assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_traffic_gen_1/Data] [get_bd_addr_segs axi_gran_burst_split_1/s_axi_rt_0/reg0] -force
   assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_traffic_gen_2/Data] [get_bd_addr_segs axi_gran_burst_split_2/s_axi_rt_0/reg0] -force

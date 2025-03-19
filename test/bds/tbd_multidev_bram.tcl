@@ -302,6 +302,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net traffic_stop_0_1 [get_bd_ports traffic_stop] [get_bd_pins tbd_multidev_0/traffic_stop]
 
   # Create address segments
+  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_0/m_axi_rt_0] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] -force
+  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_1/m_axi_rt_0] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] -force
+  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces tbd_multidev_0/axi_isolate_wrapper_2/m_axi_rt_0] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] -force
 
 
   # Restore current instance
