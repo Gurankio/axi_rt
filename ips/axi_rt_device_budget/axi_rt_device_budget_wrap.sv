@@ -3,6 +3,7 @@ module axi_rt_device_budget_wrap #(
     parameter integer NumPorts = 'd1,
     parameter integer AxiAddrWidth = 'd48,
     parameter integer AxiDataWidth = 'd64,
+    parameter integer AxiUserWidth = 'd64,
     parameter integer AxiIdWidth = 'd16
 ) (
     // TODO: constrains on clock: compare with AXI clock
@@ -35,6 +36,7 @@ module axi_rt_device_budget_wrap #(
     input                      axi_0_awlock,
     input                      axi_0_awvalid,
     input                      axi_0_awready,
+    input [  AxiUserWidth-1:0] axi_0_awuser,
     input [  AxiDataWidth-1:0] axi_0_wdata,
     input [AxiDataWidth/8-1:0] axi_0_wstrb,
     input                      axi_0_wlast,
@@ -54,6 +56,7 @@ module axi_rt_device_budget_wrap #(
     input                      axi_0_arlock,
     input                      axi_0_arvalid,
     input                      axi_0_arready,
+    input [  AxiUserWidth-1:0] axi_0_aruser,
     input [    AxiIdWidth-1:0] axi_0_rid,
     input [  AxiDataWidth-1:0] axi_0_rdata,
     input [               1:0] axi_0_rresp,
@@ -71,6 +74,7 @@ module axi_rt_device_budget_wrap #(
     input                      axi_1_awlock,
     input                      axi_1_awvalid,
     input                      axi_1_awready,
+    input [  AxiUserWidth-1:0] axi_1_awuser,
     input [  AxiDataWidth-1:0] axi_1_wdata,
     input [AxiDataWidth/8-1:0] axi_1_wstrb,
     input                      axi_1_wlast,
@@ -90,6 +94,7 @@ module axi_rt_device_budget_wrap #(
     input                      axi_1_arlock,
     input                      axi_1_arvalid,
     input                      axi_1_arready,
+    input [  AxiUserWidth-1:0] axi_1_aruser,
     input [    AxiIdWidth-1:0] axi_1_rid,
     input [  AxiDataWidth-1:0] axi_1_rdata,
     input [               1:0] axi_1_rresp,
@@ -107,6 +112,7 @@ module axi_rt_device_budget_wrap #(
     input                      axi_2_awlock,
     input                      axi_2_awvalid,
     input                      axi_2_awready,
+    input [  AxiUserWidth-1:0] axi_2_awuser,
     input [  AxiDataWidth-1:0] axi_2_wdata,
     input [AxiDataWidth/8-1:0] axi_2_wstrb,
     input                      axi_2_wlast,
@@ -126,6 +132,7 @@ module axi_rt_device_budget_wrap #(
     input                      axi_2_arlock,
     input                      axi_2_arvalid,
     input                      axi_2_arready,
+    input [  AxiUserWidth-1:0] axi_2_aruser,
     input [    AxiIdWidth-1:0] axi_2_rid,
     input [  AxiDataWidth-1:0] axi_2_rdata,
     input [               1:0] axi_2_rresp,
@@ -143,6 +150,7 @@ module axi_rt_device_budget_wrap #(
     input                      axi_3_awlock,
     input                      axi_3_awvalid,
     input                      axi_3_awready,
+    input [  AxiUserWidth-1:0] axi_3_awuser,
     input [  AxiDataWidth-1:0] axi_3_wdata,
     input [AxiDataWidth/8-1:0] axi_3_wstrb,
     input                      axi_3_wlast,
@@ -162,6 +170,7 @@ module axi_rt_device_budget_wrap #(
     input                      axi_3_arlock,
     input                      axi_3_arvalid,
     input                      axi_3_arready,
+    input [  AxiUserWidth-1:0] axi_3_aruser,
     input [    AxiIdWidth-1:0] axi_3_rid,
     input [  AxiDataWidth-1:0] axi_3_rdata,
     input [               1:0] axi_3_rresp,
@@ -179,6 +188,7 @@ module axi_rt_device_budget_wrap #(
     wire [4-1:0]                     axi_awlock;
     wire [4-1:0]                     axi_awvalid;
     wire [4-1:0]                     axi_awready;
+    wire [4-1:0][  AxiUserWidth-1:0] axi_awuser;
     wire [4-1:0][  AxiDataWidth-1:0] axi_wdata;
     wire [4-1:0][AxiDataWidth/8-1:0] axi_wstrb;
     wire [4-1:0]                     axi_wlast;

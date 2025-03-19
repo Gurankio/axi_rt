@@ -3,12 +3,14 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
-  ipgui::add_param $IPINST -name "AxiAddrWidth" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "AxiDataWidth" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "AxiIdWidth" -parent ${Page_0}
   ipgui::add_param $IPINST -name "BudgetWidth" -parent ${Page_0}
   ipgui::add_param $IPINST -name "NumPorts" -parent ${Page_0}
 
+  set AxiAddrWidth [ipgui::add_param $IPINST -name "AxiAddrWidth"]
+  set_property tooltip {AxiAddrWidth} ${AxiAddrWidth}
+  ipgui::add_param $IPINST -name "AxiDataWidth"
+  ipgui::add_param $IPINST -name "AxiUserWidth"
+  ipgui::add_param $IPINST -name "AxiIdWidth"
 
 }
 
@@ -36,6 +38,15 @@ proc update_PARAM_VALUE.AxiIdWidth { PARAM_VALUE.AxiIdWidth } {
 
 proc validate_PARAM_VALUE.AxiIdWidth { PARAM_VALUE.AxiIdWidth } {
 	# Procedure called to validate AxiIdWidth
+	return true
+}
+
+proc update_PARAM_VALUE.AxiUserWidth { PARAM_VALUE.AxiUserWidth } {
+	# Procedure called to update AxiUserWidth when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.AxiUserWidth { PARAM_VALUE.AxiUserWidth } {
+	# Procedure called to validate AxiUserWidth
 	return true
 }
 
@@ -76,6 +87,11 @@ proc update_MODELPARAM_VALUE.AxiAddrWidth { MODELPARAM_VALUE.AxiAddrWidth PARAM_
 proc update_MODELPARAM_VALUE.AxiDataWidth { MODELPARAM_VALUE.AxiDataWidth PARAM_VALUE.AxiDataWidth } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.AxiDataWidth}] ${MODELPARAM_VALUE.AxiDataWidth}
+}
+
+proc update_MODELPARAM_VALUE.AxiUserWidth { MODELPARAM_VALUE.AxiUserWidth PARAM_VALUE.AxiUserWidth } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.AxiUserWidth}] ${MODELPARAM_VALUE.AxiUserWidth}
 }
 
 proc update_MODELPARAM_VALUE.AxiIdWidth { MODELPARAM_VALUE.AxiIdWidth PARAM_VALUE.AxiIdWidth } {
