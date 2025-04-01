@@ -85,11 +85,11 @@ set block_designs [list \
     "$::root/test/bds/tbd_multidev_bram.tcl" \
 ]
 set includes [list \
-    "include" \
-    ".bender/git/checkouts/apb-283bf6e9432d6c92/include" \
-    ".bender/git/checkouts/axi-7532a4b2723f5a17/include" \
-    ".bender/git/checkouts/common_cells-66e79b7fa036356c/include" \
-    ".bender/git/checkouts/register_interface-26fdd1b926642676/include" \
+    "$::root/include" \
+    "$::root/.bender/git/checkouts/apb-283bf6e9432d6c92/include" \
+    "$::root/.bender/git/checkouts/axi-7532a4b2723f5a17/include" \
+    "$::root/.bender/git/checkouts/common_cells-66e79b7fa036356c/include" \
+    "$::root/.bender/git/checkouts/register_interface-26fdd1b926642676/include" \
 ]
 set des_filesets [list \
     "$::root/src" \

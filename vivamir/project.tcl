@@ -36,27 +36,35 @@ foreach file [rglob $sim_filesets {*.*}] {
     }
 }
 
+set inc_files {}
+foreach file [rglob $includes {*.*}] {
+    if {[dict exists $valid_extensions [file extension $file]] && ![dict exists $ignore_files_dict $file]} {
+        lappend inc_files $file
+    }
+}
+
 ### Force create project
 create_project $project_name $::root/vivamir/project -part xck26-sfvc784-2LV-c -force
+set_property -name "board_part" -value xilinx.com:kr260_som:part0:1.1 -objects [current_project]
+set_property -name "platform.board_id" -value kr260_som -objects [current_project]
 
 ### Design files
 add_files -fileset sources_1 -norecurse $des_files
-set includes_absolute {}
-foreach include $includes {
-    lappend includes_absolute $::root/$include
-}
-add_files -fileset sources_1 $includes_absolute
+add_files -fileset sources_1 -norecurse $inc_files
 import_files -relative_to $root -fileset sources_1
 
 ### Includes
 set includes_imported {}
 foreach include $includes {
-    lappend includes_imported $::root/vivamir/project/$project_name.srcs/sources_1/imports/$root_name/$include
+    set include_rel [string replace $include 0 [string len $::root]]
+    lappend includes_imported $::root/vivamir/project/$project_name.srcs/sources_1/imports/$root_name/$include_rel
 }
 set_property include_dirs $includes_imported [get_filesets sources_1]
 # TODO: Includes work only as globals?
 foreach include $includes_imported {
-    set_property is_global_include true [get_files $include/*]
+    catch {
+        set_property is_global_include true [get_files -quiet $include/*]
+    }
 }
 
 ### Simulation files
@@ -71,11 +79,6 @@ update_ip_catalog
 foreach bd $block_designs {
     # Source Tcl
     source -notrace $bd
-
-    # Validate BD
-    regenerate_bd_layout
-    validate_bd_design 
-    save_bd_design
 
     # Generate wrapper
     make_wrapper -fileset sources_1 -top [get_files ${design_name}.bd] 
