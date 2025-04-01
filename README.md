@@ -11,16 +11,31 @@ the specific AXI4 implementation used. However, it is primarily intended to be u
 ## License
 AXI-RT is released under Solderpad v0.51 (SHL-0.51) see [`LICENSE`](LICENSE):
 
-## Contributing
-We are happy to accept pull requests and issues from any contributors. See [`CONTRIBUTING.md`](CONTRIBUTING.md)
-for additional information.
-
 ## Getting Started
 
-The IP can be reconfigured using the `axirt.mk` make fragment. The provided makefile gives
-a reference on how to invoke the fragment.
-
-``` bash
-make axirt_regs
-
+Without [vivamir](https://github.com/Gurankio/vivamir) installed:
 ```
+vivado -mode tcl 
+> source vivamir/project.tcl
+```
+
+or with [vivamir](https://github.com/Gurankio/vivamir) installed:
+```
+vivamir open vivado
+```
+
+This will create a new project with a sample design with 3 AXI Traffic Generator individually limited.
+Both a synthetizable design and a simulation design with a BRAM are already available.
+
+## AXI-REALM Structure
+
+There are 2 modules a "device" module and a "master" module that coordinates a number of "device" modules.
+
+Each device module can be configured to support a number of ports and is responsible for tracking the available budget.
+The master module is instead responsible for coordinating budget increments, achieving maximum bandwidth utilization through budget reclaiming.
+
+A constant configurator is available as a module to configure the AXI-REALM unit without PS.
+Using the reclaiming to the maximum, it is enough to simply configure the minimum ratio needed for each device.
+I.e.: 3 devices with equal share => set budget to 1 for everyone.
+
+See my bachelor thesis [here](https://github.com/Gurankio/bachelor-thesis) (in italian).
