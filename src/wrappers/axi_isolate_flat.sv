@@ -5,13 +5,6 @@
 
 ///  Vivado AXI flattned wrapper
 module axi_isolate_flat #(
-    /// Maximum number of pending requests per channel
-    parameter int unsigned NumPending = 32'd16,
-    /// Gracefully terminate all incoming transactions in case of isolation by returning proper error
-    /// responses.
-    parameter bit TerminateTransaction = 1'b0,
-    /// Support atomic operations (ATOPs)
-    parameter bit AtopSupport = 1'b1,
     /// Address width of all AXI4+ATOP ports
     parameter int signed AddrWidth = 48'd0,
     /// Data width of all AXI4+ATOP ports
@@ -30,9 +23,9 @@ module axi_isolate_flat #(
     input logic clk_i,
     input logic rst_ni,
 
-    input  logic isolate_i,
-    output logic isolated_o,
-
+    input  logic isolate_r_i,
+    input  logic isolate_w_i,
+    
     // AXI manager port (with array to keep _i/_o suffixes)
     output [  IdWidth-1 : 0] m_axi_rt_awid_o,
     output [  AddrWidth-1:0] m_axi_rt_awaddr_o,
@@ -204,9 +197,6 @@ module axi_isolate_flat #(
     // DUT
     //-----------------------------------
     axi_isolate #(
-        .NumPending          (NumPending),
-        .TerminateTransaction(TerminateTransaction),
-        .AtopSupport         (AtopSupport),
         .AxiAddrWidth        (AddrWidth),
         .AxiDataWidth        (DataWidth),
         .AxiIdWidth          (IdWidth),
@@ -220,8 +210,8 @@ module axi_isolate_flat #(
         .slv_resp_o(s_rsp[0]),
         .mst_req_o (m_req),
         .mst_resp_i(m_rsp),
-        .isolate_i (isolate_i),
-        .isolated_o(isolated_o)
+        .isolate_r_i (isolate_r_i),
+        .isolate_w_i (isolate_w_i)
     );
 
 endmodule

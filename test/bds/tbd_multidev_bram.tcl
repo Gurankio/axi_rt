@@ -51,6 +51,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 set list_projs [get_projects -quiet]
 if { $list_projs eq "" } {
    create_project project_1 myproj -part xck26-sfvc784-2LV-c
+   set_property BOARD_PART xilinx.com:kr260_som:part0:1.1 [current_project]
 }
 
 

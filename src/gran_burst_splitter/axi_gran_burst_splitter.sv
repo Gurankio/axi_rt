@@ -9,6 +9,7 @@
 
 `include "axi/typedef.svh"
 `include "common_cells/registers.svh"
+// `define DEBUG_AXI_GRAN_BURST_SPLITTER
 
 /// Split AXI4 bursts into single-beat transactions.
 ///
@@ -85,7 +86,7 @@ module axi_gran_burst_splitter #(
         .AxiIdWidth (IdWidth),
         .axi_req_t  (axi_req_t),
         .axi_resp_t (axi_resp_t),
-        .NoMstPorts (2),
+        .NoMstPorts (1), // FIXING THIS, WE ONLY HAVE ONE MASTER PORT! NOT 2!
         .MaxTrans   (MaxTxns),
         .AxiLookBits(IdWidth)
     ) i_demux_supported_vs_unsupported (
@@ -342,11 +343,20 @@ module axi_gran_burst_splitter #(
             RFeedthrough: begin
                 // If downstream has an R beat and the R counters can give us the remaining length of
                 // that burst, ...
+                `ifdef DEBUG_AXI_GRAN_BURST_SPLITTER
+                $display("INFO (%m): State -> RFeedthrough");
+                `endif
                 if (mst_resp_i.r_valid) begin
                     // if downstream is last
                     if (mst_resp_i.r.last) begin
+                        `ifdef DEBUG_AXI_GRAN_BURST_SPLITTER
+                        $display("INFO (%m): mst_resp_i.r.last");
+                        `endif
                         r_cnt_req = 1'b1;
                         if (r_cnt_gnt) begin
+                            `ifdef DEBUG_AXI_GRAN_BURST_SPLITTER
+                            $display("INFO (%m): r_cnt_gnt");
+                            `endif
                             r_last_d         = (r_cnt_len < ({1'b0, len_limit_i} + 9'h001));
                             act_resp.r.last  = r_last_d;
                             // Decrement the counter.
@@ -354,23 +364,38 @@ module axi_gran_burst_splitter #(
                             // Try to forward the beat upstream.
                             act_resp.r_valid = 1'b1;
                             if (act_req.r_ready) begin
+                                `ifdef DEBUG_AXI_GRAN_BURST_SPLITTER
+                                $display("INFO (%m): r_cnt_gnt + act_req.r_ready");
+                                `endif
                                 // Acknowledge downstream.
                                 mst_req_o.r_ready = 1'b1;
                             end else begin
+                                `ifdef DEBUG_AXI_GRAN_BURST_SPLITTER
+                                $display("INFO (%m): r_cnt_gnt + else");
+                                `endif
                                 // Wait for upstream to become ready.
                                 r_state_d = RWait;
                             end
                         end
                     end else begin
+                        `ifdef DEBUG_AXI_GRAN_BURST_SPLITTER
+                        $display("INFO (%m): !mst_resp_i.r.last, else");
+                        `endif
                         // downstream was not last, just a normal read to pass through
                         r_last_d = 1'b0;
                         act_resp.r.last = r_last_d;
                         // Try to forward the beat upstream.
                         act_resp.r_valid = 1'b1;
                         if (act_req.r_ready) begin
+                            `ifdef DEBUG_AXI_GRAN_BURST_SPLITTER
+                            $display("INFO (%m): !mst_resp_i.r.last, else + rready");
+                            `endif
                             // Acknowledge downstream.
                             mst_req_o.r_ready = 1'b1;
                         end else begin
+                            `ifdef DEBUG_AXI_GRAN_BURST_SPLITTER
+                            $display("INFO (%m): !mst_resp_i.r.last, else + else");
+                            `endif
                             // Wait for upstream to become ready.
                             r_state_d = RWait;
                         end
@@ -378,9 +403,15 @@ module axi_gran_burst_splitter #(
                 end
             end
             RWait: begin
+                `ifdef DEBUG_AXI_GRAN_BURST_SPLITTER
+                $display("INFO (%m): State -> RWait");
+                `endif
                 act_resp.r.last  = r_last_q;
                 act_resp.r_valid = mst_resp_i.r_valid;
                 if (mst_resp_i.r_valid && act_req.r_ready) begin
+                    `ifdef DEBUG_AXI_GRAN_BURST_SPLITTER
+                    $display("INFO (%m): mst_resp_i.r_valid && act_req.r_ready");
+                    `endif
                     mst_req_o.r_ready = 1'b1;
                     r_state_d         = RFeedthrough;
                 end

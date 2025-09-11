@@ -1,5 +1,6 @@
 test/stimuli/*
 test/tb_axi_rt_unit_top.sv
+src/experimental_isolates/*
 
 # Patches
 .bender/git/checkouts/axi-*/src/axi_isolate.sv

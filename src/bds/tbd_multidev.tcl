@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# axi_gran_burst_splitter_wrapper, axi_gran_burst_splitter_wrapper, axi_gran_burst_splitter_wrapper, axi_isolate_wrapper, axi_isolate_wrapper, axi_isolate_wrapper, axi_rt_master_logic_wrapper, axi_write_buffer_wrapper, axi_write_buffer_wrapper, axi_write_buffer_wrapper
+# axi_gran_burst_splitter_wrapper, axi_gran_burst_splitter_wrapper, axi_gran_burst_splitter_wrapper, axi_isolate_wrapper, axi_isolate_wrapper, axi_isolate_wrapper, axi_rt_master_logic_wrapper
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -51,6 +51,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 set list_projs [get_projects -quiet]
 if { $list_projs eq "" } {
    create_project project_1 myproj -part xck26-sfvc784-2LV-c
+   set_property BOARD_PART xilinx.com:kr260_som:part0:1.1 [current_project]
 }
 
 
@@ -133,7 +134,6 @@ if { $bCheckIPs == 1 } {
 delgranchio.it:axi_rt:axi_rt_device_budget:1.0\
 xilinx.com:ip:axi_traffic_gen:3.0\
 xilinx.com:ip:smartconnect:1.0\
-xilinx.com:ip:util_vector_logic:2.0\
 "
 
    set list_ips_missing ""
@@ -166,9 +166,6 @@ axi_isolate_wrapper\
 axi_isolate_wrapper\
 axi_isolate_wrapper\
 axi_rt_master_logic_wrapper\
-axi_write_buffer_wrapper\
-axi_write_buffer_wrapper\
-axi_write_buffer_wrapper\
 "
 
    set list_mods_missing ""
@@ -471,60 +468,6 @@ proc create_root_design { parentCell } {
   ] $axi_traffic_gen_2
 
 
-  # Create instance: axi_write_buffer_wra_0, and set properties
-  set block_name axi_write_buffer_wrapper
-  set block_cell_name axi_write_buffer_wra_0
-  if { [catch {set axi_write_buffer_wra_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $axi_write_buffer_wra_0 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [list \
-    CONFIG.AddrWidth {0x00000020} \
-    CONFIG.DataWidth {0x00000080} \
-    CONFIG.IdWidth {0x00000002} \
-    CONFIG.UserWidth {0x00000008} \
-  ] $axi_write_buffer_wra_0
-
-
-  # Create instance: axi_write_buffer_wra_1, and set properties
-  set block_name axi_write_buffer_wrapper
-  set block_cell_name axi_write_buffer_wra_1
-  if { [catch {set axi_write_buffer_wra_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $axi_write_buffer_wra_1 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [list \
-    CONFIG.AddrWidth {0x00000020} \
-    CONFIG.DataWidth {0x00000080} \
-    CONFIG.IdWidth {0x00000002} \
-    CONFIG.UserWidth {0x00000008} \
-  ] $axi_write_buffer_wra_1
-
-
-  # Create instance: axi_write_buffer_wra_2, and set properties
-  set block_name axi_write_buffer_wrapper
-  set block_cell_name axi_write_buffer_wra_2
-  if { [catch {set axi_write_buffer_wra_2 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $axi_write_buffer_wra_2 eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-    set_property -dict [list \
-    CONFIG.AddrWidth {0x00000020} \
-    CONFIG.DataWidth {0x00000080} \
-    CONFIG.IdWidth {0x00000002} \
-    CONFIG.UserWidth {0x00000008} \
-  ] $axi_write_buffer_wra_2
-
-
   # Create instance: smartconnect_0, and set properties
   set smartconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 smartconnect_0 ]
   set_property -dict [list \
@@ -533,46 +476,19 @@ proc create_root_design { parentCell } {
   ] $smartconnect_0
 
 
-  # Create instance: util_vector_logic_0, and set properties
-  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
-  set_property -dict [list \
-    CONFIG.C_OPERATION {or} \
-    CONFIG.C_SIZE {1} \
-  ] $util_vector_logic_0
-
-
-  # Create instance: util_vector_logic_1, and set properties
-  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
-  set_property -dict [list \
-    CONFIG.C_OPERATION {or} \
-    CONFIG.C_SIZE {1} \
-  ] $util_vector_logic_1
-
-
-  # Create instance: util_vector_logic_2, and set properties
-  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
-  set_property -dict [list \
-    CONFIG.C_OPERATION {or} \
-    CONFIG.C_SIZE {1} \
-  ] $util_vector_logic_2
-
-
   # Create interface connections
-  connect_bd_intf_net -intf_net Conn [get_bd_intf_pins axi_isolate_wrapper_2/s_axi_rt_0] [get_bd_intf_pins axi_write_buffer_wra_2/m_axi_rt_0]
-connect_bd_intf_net -intf_net [get_bd_intf_nets Conn] [get_bd_intf_pins axi_rt_device_budget_2/axi_0] [get_bd_intf_pins axi_write_buffer_wra_2/m_axi_rt_0]
-  connect_bd_intf_net -intf_net axi_gran_burst_split_0_m_axi_rt_0 [get_bd_intf_pins axi_gran_burst_split_0/m_axi_rt_0] [get_bd_intf_pins axi_write_buffer_wra_0/s_axi_rt_0]
-  connect_bd_intf_net -intf_net axi_gran_burst_split_1_m_axi_rt_0 [get_bd_intf_pins axi_gran_burst_split_1/m_axi_rt_0] [get_bd_intf_pins axi_write_buffer_wra_1/s_axi_rt_0]
-  connect_bd_intf_net -intf_net axi_gran_burst_split_2_m_axi_rt_0 [get_bd_intf_pins axi_gran_burst_split_2/m_axi_rt_0] [get_bd_intf_pins axi_write_buffer_wra_2/s_axi_rt_0]
+  connect_bd_intf_net -intf_net Conn [get_bd_intf_pins axi_gran_burst_split_2/m_axi_rt_0] [get_bd_intf_pins axi_isolate_wrapper_2/s_axi_rt_0]
+connect_bd_intf_net -intf_net [get_bd_intf_nets Conn] [get_bd_intf_pins axi_gran_burst_split_2/m_axi_rt_0] [get_bd_intf_pins axi_rt_device_budget_2/axi_0]
   connect_bd_intf_net -intf_net axi_isolate_wrapper_0_m_axi_rt_0 [get_bd_intf_pins axi_isolate_wrapper_0/m_axi_rt_0] [get_bd_intf_pins smartconnect_0/S00_AXI]
   connect_bd_intf_net -intf_net axi_isolate_wrapper_1_m_axi_rt_0 [get_bd_intf_pins axi_isolate_wrapper_1/m_axi_rt_0] [get_bd_intf_pins smartconnect_0/S01_AXI]
   connect_bd_intf_net -intf_net axi_isolate_wrapper_2_m_axi_rt_0 [get_bd_intf_pins axi_isolate_wrapper_2/m_axi_rt_0] [get_bd_intf_pins smartconnect_0/S02_AXI]
   connect_bd_intf_net -intf_net axi_traffic_gen_0_M_AXI [get_bd_intf_pins axi_gran_burst_split_0/s_axi_rt_0] [get_bd_intf_pins axi_traffic_gen_0/M_AXI]
   connect_bd_intf_net -intf_net axi_traffic_gen_1_M_AXI [get_bd_intf_pins axi_gran_burst_split_1/s_axi_rt_0] [get_bd_intf_pins axi_traffic_gen_1/M_AXI]
   connect_bd_intf_net -intf_net axi_traffic_gen_2_M_AXI [get_bd_intf_pins axi_gran_burst_split_2/s_axi_rt_0] [get_bd_intf_pins axi_traffic_gen_2/M_AXI]
-  connect_bd_intf_net -intf_net axi_write_buffer_wra_0_m_axi_rt_0 [get_bd_intf_pins axi_isolate_wrapper_0/s_axi_rt_0] [get_bd_intf_pins axi_write_buffer_wra_0/m_axi_rt_0]
-connect_bd_intf_net -intf_net [get_bd_intf_nets axi_write_buffer_wra_0_m_axi_rt_0] [get_bd_intf_pins axi_rt_device_budget_0/axi_0] [get_bd_intf_pins axi_write_buffer_wra_0/m_axi_rt_0]
-  connect_bd_intf_net -intf_net axi_write_buffer_wra_1_m_axi_rt_0 [get_bd_intf_pins axi_isolate_wrapper_1/s_axi_rt_0] [get_bd_intf_pins axi_write_buffer_wra_1/m_axi_rt_0]
-connect_bd_intf_net -intf_net [get_bd_intf_nets axi_write_buffer_wra_1_m_axi_rt_0] [get_bd_intf_pins axi_rt_device_budget_1/axi_0] [get_bd_intf_pins axi_write_buffer_wra_1/m_axi_rt_0]
+  connect_bd_intf_net -intf_net axi_write_buffer_wra_0_m_axi_rt_0 [get_bd_intf_pins axi_gran_burst_split_0/m_axi_rt_0] [get_bd_intf_pins axi_isolate_wrapper_0/s_axi_rt_0]
+connect_bd_intf_net -intf_net [get_bd_intf_nets axi_write_buffer_wra_0_m_axi_rt_0] [get_bd_intf_pins axi_gran_burst_split_0/m_axi_rt_0] [get_bd_intf_pins axi_rt_device_budget_0/axi_0]
+  connect_bd_intf_net -intf_net axi_write_buffer_wra_1_m_axi_rt_0 [get_bd_intf_pins axi_gran_burst_split_1/m_axi_rt_0] [get_bd_intf_pins axi_isolate_wrapper_1/s_axi_rt_0]
+connect_bd_intf_net -intf_net [get_bd_intf_nets axi_write_buffer_wra_1_m_axi_rt_0] [get_bd_intf_pins axi_gran_burst_split_1/m_axi_rt_0] [get_bd_intf_pins axi_rt_device_budget_1/axi_0]
   connect_bd_intf_net -intf_net smartconnect_0_M00_AXI [get_bd_intf_ports M00_AXI_0] [get_bd_intf_pins smartconnect_0/M00_AXI]
 
   # Create port connections
@@ -585,17 +501,17 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets axi_write_buffer_wra_1_m_axi_rt_
   connect_bd_net -net Net6 [get_bd_ports budget_r_1] [get_bd_pins axi_rt_device_budget_1/budget_r] [get_bd_pins axi_rt_master_logic_0/budget_r_1]
   connect_bd_net -net Net9 [get_bd_ports budget_w_2] [get_bd_pins axi_rt_device_budget_2/budget_w] [get_bd_pins axi_rt_master_logic_0/budget_w_2]
   connect_bd_net -net Net10 [get_bd_ports budget_r_2] [get_bd_pins axi_rt_device_budget_2/budget_r] [get_bd_pins axi_rt_master_logic_0/budget_r_2]
-  connect_bd_net -net aresetn_1 [get_bd_ports resetn] [get_bd_pins axi_gran_burst_split_0/resetn] [get_bd_pins axi_gran_burst_split_1/resetn] [get_bd_pins axi_gran_burst_split_2/resetn] [get_bd_pins axi_isolate_wrapper_0/resetn] [get_bd_pins axi_isolate_wrapper_1/resetn] [get_bd_pins axi_isolate_wrapper_2/resetn] [get_bd_pins axi_rt_device_budget_0/aresetn] [get_bd_pins axi_rt_device_budget_1/aresetn] [get_bd_pins axi_rt_device_budget_2/aresetn] [get_bd_pins axi_rt_master_logic_0/resetn] [get_bd_pins axi_traffic_gen_0/s_axi_aresetn] [get_bd_pins axi_traffic_gen_1/s_axi_aresetn] [get_bd_pins axi_traffic_gen_2/s_axi_aresetn] [get_bd_pins axi_write_buffer_wra_0/resetn] [get_bd_pins axi_write_buffer_wra_1/resetn] [get_bd_pins axi_write_buffer_wra_2/resetn] [get_bd_pins smartconnect_0/aresetn]
-  connect_bd_net -net axi_rt_device_budget_0_budget_spent_r [get_bd_pins axi_rt_device_budget_0/budget_spent_r] [get_bd_pins util_vector_logic_0/Op2]
-  connect_bd_net -net axi_rt_device_budget_0_budget_spent_w [get_bd_pins axi_rt_device_budget_0/budget_spent_w] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net aresetn_1 [get_bd_ports resetn] [get_bd_pins axi_gran_burst_split_0/resetn] [get_bd_pins axi_gran_burst_split_1/resetn] [get_bd_pins axi_gran_burst_split_2/resetn] [get_bd_pins axi_isolate_wrapper_0/resetn] [get_bd_pins axi_isolate_wrapper_1/resetn] [get_bd_pins axi_isolate_wrapper_2/resetn] [get_bd_pins axi_rt_device_budget_0/aresetn] [get_bd_pins axi_rt_device_budget_1/aresetn] [get_bd_pins axi_rt_device_budget_2/aresetn] [get_bd_pins axi_rt_master_logic_0/resetn] [get_bd_pins axi_traffic_gen_0/s_axi_aresetn] [get_bd_pins axi_traffic_gen_1/s_axi_aresetn] [get_bd_pins axi_traffic_gen_2/s_axi_aresetn] [get_bd_pins smartconnect_0/aresetn]
+  connect_bd_net -net axi_rt_device_budget_0_budget_spent_r [get_bd_pins axi_isolate_wrapper_0/isolate_r] [get_bd_pins axi_rt_device_budget_0/budget_spent_r]
+  connect_bd_net -net axi_rt_device_budget_0_budget_spent_w [get_bd_pins axi_isolate_wrapper_0/isolate_w] [get_bd_pins axi_rt_device_budget_0/budget_spent_w]
   connect_bd_net -net axi_rt_device_budget_0_budget_used_r [get_bd_pins axi_rt_device_budget_0/budget_used_r] [get_bd_pins axi_rt_master_logic_0/device_budget_used_r_0]
   connect_bd_net -net axi_rt_device_budget_0_budget_used_w [get_bd_pins axi_rt_device_budget_0/budget_used_w] [get_bd_pins axi_rt_master_logic_0/device_budget_used_w_0]
-  connect_bd_net -net axi_rt_device_budget_1_budget_spent_r [get_bd_pins axi_rt_device_budget_1/budget_spent_r] [get_bd_pins util_vector_logic_1/Op2]
-  connect_bd_net -net axi_rt_device_budget_1_budget_spent_w [get_bd_pins axi_rt_device_budget_1/budget_spent_w] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net axi_rt_device_budget_1_budget_spent_r [get_bd_pins axi_isolate_wrapper_1/isolate_r] [get_bd_pins axi_rt_device_budget_1/budget_spent_r]
+  connect_bd_net -net axi_rt_device_budget_1_budget_spent_w [get_bd_pins axi_isolate_wrapper_1/isolate_w] [get_bd_pins axi_rt_device_budget_1/budget_spent_w]
   connect_bd_net -net axi_rt_device_budget_1_budget_used_r [get_bd_pins axi_rt_device_budget_1/budget_used_r] [get_bd_pins axi_rt_master_logic_0/device_budget_used_r_1]
   connect_bd_net -net axi_rt_device_budget_1_budget_used_w [get_bd_pins axi_rt_device_budget_1/budget_used_w] [get_bd_pins axi_rt_master_logic_0/device_budget_used_w_1]
-  connect_bd_net -net axi_rt_device_budget_2_budget_spent_r [get_bd_pins axi_rt_device_budget_2/budget_spent_r] [get_bd_pins util_vector_logic_2/Op2]
-  connect_bd_net -net axi_rt_device_budget_2_budget_spent_w [get_bd_pins axi_rt_device_budget_2/budget_spent_w] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net axi_rt_device_budget_2_budget_spent_r [get_bd_pins axi_isolate_wrapper_2/isolate_r] [get_bd_pins axi_rt_device_budget_2/budget_spent_r]
+  connect_bd_net -net axi_rt_device_budget_2_budget_spent_w [get_bd_pins axi_isolate_wrapper_2/isolate_w] [get_bd_pins axi_rt_device_budget_2/budget_spent_w]
   connect_bd_net -net axi_rt_device_budget_2_budget_used_r [get_bd_pins axi_rt_device_budget_2/budget_used_r] [get_bd_pins axi_rt_master_logic_0/device_budget_used_r_2]
   connect_bd_net -net axi_rt_device_budget_2_budget_used_w [get_bd_pins axi_rt_device_budget_2/budget_used_w] [get_bd_pins axi_rt_master_logic_0/device_budget_used_w_2]
   connect_bd_net -net axi_rt_master_logic_0_device_incr_r_0 [get_bd_pins axi_rt_device_budget_0/incr_r] [get_bd_pins axi_rt_master_logic_0/device_incr_r_0]
@@ -604,29 +520,23 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets axi_write_buffer_wra_1_m_axi_rt_
   connect_bd_net -net axi_rt_master_logic_0_device_incr_w_0 [get_bd_pins axi_rt_device_budget_0/incr_w] [get_bd_pins axi_rt_master_logic_0/device_incr_w_0]
   connect_bd_net -net axi_rt_master_logic_0_device_incr_w_1 [get_bd_pins axi_rt_device_budget_1/incr_w] [get_bd_pins axi_rt_master_logic_0/device_incr_w_1]
   connect_bd_net -net axi_rt_master_logic_0_device_incr_w_2 [get_bd_pins axi_rt_device_budget_2/incr_w] [get_bd_pins axi_rt_master_logic_0/device_incr_w_2]
-  connect_bd_net -net clock_1 [get_bd_ports clock] [get_bd_pins axi_gran_burst_split_0/clk] [get_bd_pins axi_gran_burst_split_1/clk] [get_bd_pins axi_gran_burst_split_2/clk] [get_bd_pins axi_isolate_wrapper_0/clk] [get_bd_pins axi_isolate_wrapper_1/clk] [get_bd_pins axi_isolate_wrapper_2/clk] [get_bd_pins axi_rt_device_budget_0/clock] [get_bd_pins axi_rt_device_budget_1/clock] [get_bd_pins axi_rt_device_budget_2/clock] [get_bd_pins axi_rt_master_logic_0/clock] [get_bd_pins axi_traffic_gen_0/s_axi_aclk] [get_bd_pins axi_traffic_gen_1/s_axi_aclk] [get_bd_pins axi_traffic_gen_2/s_axi_aclk] [get_bd_pins axi_write_buffer_wra_0/clk] [get_bd_pins axi_write_buffer_wra_1/clk] [get_bd_pins axi_write_buffer_wra_2/clk] [get_bd_pins smartconnect_0/aclk]
+  connect_bd_net -net clock_1 [get_bd_ports clock] [get_bd_pins axi_gran_burst_split_0/clk] [get_bd_pins axi_gran_burst_split_1/clk] [get_bd_pins axi_gran_burst_split_2/clk] [get_bd_pins axi_isolate_wrapper_0/clk] [get_bd_pins axi_isolate_wrapper_1/clk] [get_bd_pins axi_isolate_wrapper_2/clk] [get_bd_pins axi_rt_device_budget_0/clock] [get_bd_pins axi_rt_device_budget_1/clock] [get_bd_pins axi_rt_device_budget_2/clock] [get_bd_pins axi_rt_master_logic_0/clock] [get_bd_pins axi_traffic_gen_0/s_axi_aclk] [get_bd_pins axi_traffic_gen_1/s_axi_aclk] [get_bd_pins axi_traffic_gen_2/s_axi_aclk] [get_bd_pins smartconnect_0/aclk]
   connect_bd_net -net downstream_p_0_1 [get_bd_ports downstream_p] [get_bd_pins axi_rt_master_logic_0/downstream_p]
   connect_bd_net -net downstream_q_0_1 [get_bd_ports downstream_q] [get_bd_pins axi_rt_master_logic_0/downstream_q]
   connect_bd_net -net enable_1_0_1 [get_bd_ports enable_1] [get_bd_pins axi_rt_device_budget_1/enable] [get_bd_pins axi_rt_master_logic_0/enable_1]
   connect_bd_net -net enable_2_0_1 [get_bd_ports enable_2] [get_bd_pins axi_rt_device_budget_2/enable] [get_bd_pins axi_rt_master_logic_0/enable_2]
   connect_bd_net -net len_limit_0_1 [get_bd_ports len_limit] [get_bd_pins axi_gran_burst_split_0/len_limit] [get_bd_pins axi_gran_burst_split_1/len_limit] [get_bd_pins axi_gran_burst_split_2/len_limit]
-  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins axi_isolate_wrapper_0/isolate] [get_bd_pins util_vector_logic_0/Res]
-  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins axi_isolate_wrapper_1/isolate] [get_bd_pins util_vector_logic_1/Res]
-  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins axi_isolate_wrapper_2/isolate] [get_bd_pins util_vector_logic_2/Res]
 
   # Create address segments
-  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_gran_burst_split_0/m_axi_rt_0] [get_bd_addr_segs axi_write_buffer_wra_0/s_axi_rt_0/reg0] -force
-  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_gran_burst_split_1/m_axi_rt_0] [get_bd_addr_segs axi_write_buffer_wra_1/s_axi_rt_0/reg0] -force
-  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_gran_burst_split_2/m_axi_rt_0] [get_bd_addr_segs axi_write_buffer_wra_2/s_axi_rt_0/reg0] -force
+  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_gran_burst_split_0/m_axi_rt_0] [get_bd_addr_segs axi_isolate_wrapper_0/s_axi_rt_0/reg0] -force
+  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_gran_burst_split_1/m_axi_rt_0] [get_bd_addr_segs axi_isolate_wrapper_1/s_axi_rt_0/reg0] -force
+  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_gran_burst_split_2/m_axi_rt_0] [get_bd_addr_segs axi_isolate_wrapper_2/s_axi_rt_0/reg0] -force
   assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_isolate_wrapper_0/m_axi_rt_0] [get_bd_addr_segs M00_AXI_0/Reg] -force
   assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_isolate_wrapper_1/m_axi_rt_0] [get_bd_addr_segs M00_AXI_0/Reg] -force
   assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_isolate_wrapper_2/m_axi_rt_0] [get_bd_addr_segs M00_AXI_0/Reg] -force
   assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_traffic_gen_0/Data] [get_bd_addr_segs axi_gran_burst_split_0/s_axi_rt_0/reg0] -force
   assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_traffic_gen_1/Data] [get_bd_addr_segs axi_gran_burst_split_1/s_axi_rt_0/reg0] -force
   assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_traffic_gen_2/Data] [get_bd_addr_segs axi_gran_burst_split_2/s_axi_rt_0/reg0] -force
-  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_write_buffer_wra_0/m_axi_rt_0] [get_bd_addr_segs axi_isolate_wrapper_0/s_axi_rt_0/reg0] -force
-  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_write_buffer_wra_1/m_axi_rt_0] [get_bd_addr_segs axi_isolate_wrapper_1/s_axi_rt_0/reg0] -force
-  assign_bd_address -offset 0x00000000 -range 0x000100000000 -target_address_space [get_bd_addr_spaces axi_write_buffer_wra_2/m_axi_rt_0] [get_bd_addr_segs axi_isolate_wrapper_2/s_axi_rt_0/reg0] -force
 
 
   # Restore current instance

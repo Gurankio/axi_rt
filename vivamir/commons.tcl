@@ -281,6 +281,7 @@ set ignores [list \
     .bender/git/checkouts/tech_cells_generic-*/src/rtl/tc_clk.sv \
     .bender/git/checkouts/tech_cells_generic-*/src/rtl/tc_sram.sv \
     .bender/git/checkouts/tech_cells_generic-*/src/rtl/tc_sram_impl.sv \
+    src/experimental_isolates/* \
     test/tb_axi_rt_unit_top.sv \
     test/stimuli/* \
 ]

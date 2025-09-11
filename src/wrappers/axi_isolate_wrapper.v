@@ -1,12 +1,5 @@
 // Vivado block design wrapper
 module axi_isolate_wrapper #(
-    /// Maximum number of pending requests per channel
-    parameter integer NumPending = 32'd16,
-    /// Gracefully terminate all incoming transactions in case of isolation by returning proper error
-    /// responses.
-    parameter integer TerminateTransaction = 1'b0,
-    /// Support atomic operations (ATOPs)
-    parameter integer AtopSupport = 1'b1,
     /// Address width of all AXI4+ATOP ports
     parameter integer AddrWidth = 'd48,
     /// Data width of all AXI4+ATOP ports
@@ -19,8 +12,8 @@ module axi_isolate_wrapper #(
     input clk,
     input resetn,
 
-    input  isolate,
-    output isolated,
+    input  isolate_r,
+    input  isolate_w,
 
     // Input ports
     input [IdWidth-1:0] s_axi_rt_0_awid,
@@ -106,9 +99,6 @@ module axi_isolate_wrapper #(
 );
     // AXI RT unit, xilinx wrapper
     axi_isolate_flat #(
-        .NumPending          (NumPending),
-        .TerminateTransaction(TerminateTransaction),
-        .AtopSupport         (AtopSupport),
         .AddrWidth           (AddrWidth),
         .DataWidth           (DataWidth),
         .IdWidth             (IdWidth),
@@ -117,8 +107,8 @@ module axi_isolate_wrapper #(
         .clk_i (clk),
         .rst_ni(resetn),
 
-        .isolate_i (isolate),
-        .isolated_o(isolated),
+        .isolate_r_i (isolate_r),
+        .isolate_w_i (isolate_w),
 
         // Master
         .m_axi_rt_awid_o(m_axi_rt_0_awid),

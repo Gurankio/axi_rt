@@ -7,6 +7,8 @@
 // - Jacopo Del Granchio <j.delgranchio@santannpisa.it>
 
 `include "common_cells/registers.svh"
+// `define DEBUG_AXI_WRITE_BUFFER // debug
+
 
 module axi_write_buffer #(
     parameter int unsigned NumOutstanding = 32'd0,
@@ -155,19 +157,44 @@ module axi_write_buffer #(
         aw_valid_d = 0;
         unique case (aw_state_q)
             WaitingInput: begin
+                `ifdef DEBUG_AXI_WRITE_BUFFER
+                $display("[AXI_WRBUF][%0t] AW: state is WaitingInput", $time);
+                `endif
                 // If we have a full transaction stored go ahead.
                 if (last_not_empty) begin
                     aw_valid_d = 1;
 
+                    `ifdef DEBUG_AXI_WRITE_BUFFER
+                    $display("[AXI_WRBUF][%0t] AW: Ready to send. last_not_empty=%0b", $time, last_not_empty);
+                    `endif
+
                     if (aw_pop) begin
                         aw_valid_d = 0;
-                        aw_state_d = WaitingSync;
+                        `ifdef DEBUG_AXI_WRITE_BUFFER
+                        $display("[AXI_WRBUF][%0t] AW: Pop, moving to WaitingSync", $time);
+                        `endif
+
+                        // if the burst is just 1 beat long, the state is kept to WaitingInput
+                        // ELSE: normal transition to WaitingSync
+                        if (last_pop) begin
+                            if (last_stored > 1 | !last_not_full) begin // fill pointer or fifo is full
+                                aw_valid_d = 1;
+                            end
+                            aw_state_d = WaitingInput; // explicit assignment
+                        end
+                        else begin
+                            aw_state_d = WaitingSync;
+                        end
                     end
                 end
             end
             WaitingSync: begin
+                $display("[AXI_WRBUF][%0t] AW: state is WaitingSync: last pop=%0b", $time, last_pop);
                 if (last_pop) begin
-                    if (last_stored > 1 | !last_not_full) begin
+                    `ifdef DEBUG_AXI_WRITE_BUFFER
+                    $display("[AXI_WRBUF][%0t] AW: Last popped. last_stored=%0d, last_not_full=%0b", $time, last_stored, last_not_full);
+                    `endif
+                    if (last_stored > 1 | !last_not_full) begin // fill pointer or fifo is full
                         aw_valid_d = 1;
                     end
                     aw_state_d = WaitingInput;
@@ -184,10 +211,19 @@ module axi_write_buffer #(
                 if (last_not_empty) begin
                     w_valid_d = 1;
 
+
+                    `ifdef DEBUG_AXI_WRITE_BUFFER
+                    $display("[AXI_WRBUF][%0t] W: Ready to send. last_not_empty=%0b", $time, last_not_empty);
+                    `endif
+
                     // Skip to sync if downstream is already ready.
                     if (last_pop) begin
                         w_valid_d = 0;
                         w_state_d = WaitingSync;
+
+                        `ifdef DEBUG_AXI_WRITE_BUFFER
+                        $display("[AXI_WRBUF][%0t] W: Last popped. Transition to WaitingSync", $time);
+                        `endif
 
                         if (aw_state_q == WaitingSync) begin
                             if (last_stored > 1 | !last_not_full) begin
@@ -204,6 +240,10 @@ module axi_write_buffer #(
                         w_valid_d = 1;
                     end
                     w_state_d = WaitingInput;
+
+                    `ifdef DEBUG_AXI_WRITE_BUFFER
+                    $display("[AXI_WRBUF][%0t] W: Sync complete. Back to WaitingInput", $time);
+                    `endif
                 end
             end
         endcase
