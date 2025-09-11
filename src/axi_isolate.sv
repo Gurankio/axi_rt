@@ -16,27 +16,6 @@
 `include "axi/typedef.svh"
 `include "common_cells/registers.svh"
 
-/// This module can isolate the AXI4+ATOPs bus on the master port from the slave port.  When the
-/// isolation is not active, the two ports are directly connected.
-///
-/// This module counts how many open transactions are currently in flight on the read and write
-/// channels.  It is further capable of tracking the amount of open atomic transactions with read
-/// responses.
-///
-/// The isolation interface has two signals: `isolate_i` and `isolated_o`.  When `isolate_i` is
-/// asserted, all open transactions are gracefully terminated.  When no transactions are in flight
-/// anymore, the `isolated_o` output is asserted.  As long as `isolated_o` is asserted, all output
-/// signals in `mst_req_o` are silenced to `'0`.  When isolated, new transactions initiated on the
-/// slave port are stalled until the isolation is terminated by deasserting `isolate_i`.
-///
-/// ## Response
-///
-/// If the `TerminateTransaction` parameter is set to `1'b1`, the module will return response errors
-/// in case there is an incoming transaction while the module isolates.  The data returned on the
-/// bus is `1501A7ED` (hexspeak for isolated).
-///
-/// If `TerminateTransaction` is set to `1'b0`, the transaction will block indefinitely until the
-/// module is de-isolated again.
 // `define DEBUG_AXI_ISOLATE 
 
 module axi_isolate #(
@@ -118,13 +97,13 @@ module axi_isolate_inner #(
     // Connect channel per default
     mst_req_o       = slv_req_i;
     slv_resp_o      = mst_resp_i;
-
+    
     if (isolate_w_i) begin
         mst_req_o.aw_valid  = 1'b0;
         slv_resp_o.aw_ready = 1'b0;
     end
 
-    if (isolate_r_i) begin
+    if (isolate_r_i) begin 
         mst_req_o.ar_valid  = 1'b0;
         slv_resp_o.ar_ready = 1'b0;
     end

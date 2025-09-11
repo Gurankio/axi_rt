@@ -236,7 +236,6 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set aresetn [ create_bd_port -dir I -type rst aresetn ]
   set budget_r_0 [ create_bd_port -dir I -from 15 -to 0 budget_r_0 ]
   set budget_r_1 [ create_bd_port -dir I -from 15 -to 0 budget_r_1 ]
   set budget_r_2 [ create_bd_port -dir I -from 15 -to 0 budget_r_2 ]
@@ -245,6 +244,7 @@ proc create_root_design { parentCell } {
   set budget_w_2 [ create_bd_port -dir I -from 15 -to 0 budget_w_2 ]
   set clock [ create_bd_port -dir I -type clk -freq_hz 100000000 clock ]
   set_property -dict [ list \
+   CONFIG.ASSOCIATED_RESET {resetn} \
    CONFIG.CLK_DOMAIN {tbd_multidev_inst_1_clock} \
  ] $clock
   set downstream_p [ create_bd_port -dir I -from 15 -to 0 downstream_p ]
@@ -253,6 +253,7 @@ proc create_root_design { parentCell } {
   set enable_1 [ create_bd_port -dir I enable_1 ]
   set enable_2 [ create_bd_port -dir I enable_2 ]
   set len_limit [ create_bd_port -dir I -from 7 -to 0 len_limit ]
+  set resetn [ create_bd_port -dir I -type rst resetn ]
   set traffic_start [ create_bd_port -dir I traffic_start ]
   set traffic_stop [ create_bd_port -dir I traffic_stop ]
 
@@ -287,7 +288,7 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net tbd_multidev_0_M00_AXI_0 [get_bd_intf_pins axi_bram_ctrl_0/S_AXI] [get_bd_intf_pins tbd_multidev_0/M00_AXI_0]
 
   # Create port connections
-  connect_bd_net -net aresetn_1 [get_bd_ports aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn]
+  connect_bd_net -net aresetn_1 [get_bd_ports resetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins tbd_multidev_0/resetn]
   connect_bd_net -net budget_r_0_0_1 [get_bd_ports budget_r_0] [get_bd_pins tbd_multidev_0/budget_r_0]
   connect_bd_net -net budget_r_1_0_1 [get_bd_ports budget_r_1] [get_bd_pins tbd_multidev_0/budget_r_1]
   connect_bd_net -net budget_r_2_0_1 [get_bd_ports budget_r_2] [get_bd_pins tbd_multidev_0/budget_r_2]

@@ -14,15 +14,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="6.823964 us"></ZoomStartTime>
-      <ZoomEndTime time="70.635208 us"></ZoomEndTime>
-      <Cursor1Time time="60.000000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,910.001 ns"></ZoomEndTime>
+      <Cursor1Time time="475.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="262"></NameColumnWidth>
-      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+      <ValueColumnWidth column_width="104"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="18" />
    <wvobject type="logic" fp_name="/tbd_multidev_run/clock">
       <obj_property name="ElementShortName">clock</obj_property>
       <obj_property name="ObjectShortName">clock</obj_property>
@@ -42,6 +42,7 @@
    <wvobject type="group" fp_name="group214">
       <obj_property name="label">Master</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject type="array" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_master_logic_0/inst/i_axi_rt_master_logic/downstream_p">
          <obj_property name="ElementShortName">downstream_p[15:0]</obj_property>
          <obj_property name="ObjectShortName">downstream_p[15:0]</obj_property>
@@ -190,7 +191,6 @@
    <wvobject type="group" fp_name="group718">
       <obj_property name="label">Budget0</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject type="logic" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/enable">
          <obj_property name="ElementShortName">enable</obj_property>
          <obj_property name="ObjectShortName">enable</obj_property>
@@ -273,6 +273,15 @@
       <obj_property name="label">Traffic0</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
+   <wvobject type="array" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/i_counter_w/budget">
+      <obj_property name="ElementShortName">budget[15:0]</obj_property>
+      <obj_property name="ObjectShortName">budget[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_device_budget_0/inst/i_axi_rt_device_budget/i_counter_w/available_q">
+      <obj_property name="ElementShortName">available_q[16:0]</obj_property>
+      <obj_property name="ObjectShortName">available_q[16:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
    <wvobject type="protoinst" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_gran_burst_split_0/m_axi_rt_0">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="children_use_element_short_name">true</obj_property>
@@ -287,6 +296,7 @@
       <obj_property name="ElementShortName">m_axi_rt_0</obj_property>
       <obj_property name="ObjectShortName">m_axi_rt_0</obj_property>
       <obj_property name="label">Splitter0</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="protoinst" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_isolate_wrapper_0/m_axi_rt_0">
       <obj_property name="DisplayName">label</obj_property>
@@ -319,6 +329,14 @@
       <obj_property name="ObjectShortName">M_AXI</obj_property>
       <obj_property name="label">Traffic1</obj_property>
    </wvobject>
+   <wvobject type="logic" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_device_budget_1/inst/i_axi_rt_device_budget/budget_spent_w">
+      <obj_property name="ElementShortName">budget_spent_w</obj_property>
+      <obj_property name="ObjectShortName">budget_spent_w</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_device_budget_1/inst/i_axi_rt_device_budget/budget_spent_r">
+      <obj_property name="ElementShortName">budget_spent_r</obj_property>
+      <obj_property name="ObjectShortName">budget_spent_r</obj_property>
+   </wvobject>
    <wvobject type="protoinst" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_traffic_gen_2/M_AXI">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="children_use_element_short_name">true</obj_property>
@@ -333,6 +351,14 @@
       <obj_property name="ElementShortName">M_AXI</obj_property>
       <obj_property name="ObjectShortName">M_AXI</obj_property>
       <obj_property name="label">Traffic2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_device_budget_2/inst/i_axi_rt_device_budget/budget_spent_w">
+      <obj_property name="ElementShortName">budget_spent_w</obj_property>
+      <obj_property name="ObjectShortName">budget_spent_w</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/tbd_multidev_0/axi_rt_device_budget_2/inst/i_axi_rt_device_budget/budget_spent_r">
+      <obj_property name="ElementShortName">budget_spent_r</obj_property>
+      <obj_property name="ObjectShortName">budget_spent_r</obj_property>
    </wvobject>
    <wvobject type="protoinst" fp_name="/tbd_multidev_run/DUT/tbd_multidev_bram_i/axi_bram_ctrl_0/S_AXI">
       <obj_property name="ElementShortName">S_AXI</obj_property>
