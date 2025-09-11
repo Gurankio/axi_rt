@@ -27,8 +27,8 @@ module tbd_multidev_run ();
     reg traffic_stop = 0;
 
     reg enable = 0;
-    reg [7:0] len_limit = 'd8;
-    reg [15:0] budget_w_0 = 'd1;
+    reg [7:0] len_limit = 'd7;
+    reg [15:0] budget_w_0 = 'd3;
     reg [15:0] budget_w_1 = 'd1;
     reg [15:0] budget_w_2 = 'd1;
     reg [15:0] budget_r_0 = 'd1;

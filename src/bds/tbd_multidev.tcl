@@ -420,8 +420,10 @@ proc create_root_design { parentCell } {
     CONFIG.C_ATG_REPEAT_TYPE {Repetitive} \
     CONFIG.C_ATG_STATIC_HLTP_INCR {true} \
     CONFIG.DATA_ITG_GAP {0} \
-    CONFIG.DATA_SIZE_AVG {32} \
+    CONFIG.DATA_READ_SHARE {50} \
+    CONFIG.DATA_SIZE_AVG {128} \
     CONFIG.DATA_TRANS_GAP {Fixed} \
+    CONFIG.DATA_TRANS_TYPE {Read_Write} \
     CONFIG.MASTER_AXI_WIDTH {128} \
     CONFIG.MASTER_HIGH_ADDRESS {0x00007FFF} \
     CONFIG.PCIE_LANES {2} \
@@ -439,7 +441,7 @@ proc create_root_design { parentCell } {
     CONFIG.C_ATG_REPEAT_TYPE {Repetitive} \
     CONFIG.C_ATG_STATIC_HLTP_INCR {true} \
     CONFIG.DATA_ITG_GAP {0} \
-    CONFIG.DATA_SIZE_AVG {4} \
+    CONFIG.DATA_SIZE_AVG {128} \
     CONFIG.DATA_TRANS_GAP {Fixed} \
     CONFIG.DATA_TRANS_SEED {2} \
     CONFIG.MASTER_AXI_WIDTH {128} \
