@@ -254,7 +254,9 @@ proc create_root_design { parentCell } {
   set enable_2 [ create_bd_port -dir I enable_2 ]
   set len_limit [ create_bd_port -dir I -from 7 -to 0 len_limit ]
   set resetn [ create_bd_port -dir I -type rst resetn ]
-  set traffic_start [ create_bd_port -dir I traffic_start ]
+  set traffic_start_0 [ create_bd_port -dir I traffic_start_0 ]
+  set traffic_start_1 [ create_bd_port -dir I traffic_start_1 ]
+  set traffic_start_2 [ create_bd_port -dir I traffic_start_2 ]
   set traffic_stop [ create_bd_port -dir I traffic_stop ]
 
   # Create instance: axi_bram_ctrl_0, and set properties
@@ -302,7 +304,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net enable_1_0_1 [get_bd_ports enable_1] [get_bd_pins tbd_multidev_0/enable_1]
   connect_bd_net -net enable_2_0_1 [get_bd_ports enable_2] [get_bd_pins tbd_multidev_0/enable_2]
   connect_bd_net -net len_limit_0_1 [get_bd_ports len_limit] [get_bd_pins tbd_multidev_0/len_limit]
-  connect_bd_net -net traffic_start_0_1 [get_bd_ports traffic_start] [get_bd_pins tbd_multidev_0/traffic_start]
+  connect_bd_net -net traffic_start_0_0_1 [get_bd_ports traffic_start_0] [get_bd_pins tbd_multidev_0/traffic_start_0]
+  connect_bd_net -net traffic_start_1_0_1 [get_bd_ports traffic_start_1] [get_bd_pins tbd_multidev_0/traffic_start_1]
+  connect_bd_net -net traffic_start_2_0_1 [get_bd_ports traffic_start_2] [get_bd_pins tbd_multidev_0/traffic_start_2]
   connect_bd_net -net traffic_stop_0_1 [get_bd_ports traffic_stop] [get_bd_pins tbd_multidev_0/traffic_stop]
 
   # Create address segments

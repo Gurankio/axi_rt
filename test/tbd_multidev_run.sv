@@ -23,7 +23,7 @@ module tbd_multidev_run ();
     reg clock = 0;
     reg resetn = 0;
 
-    reg traffic_start = 0;
+    reg [2:0] traffic_start = '0;
     reg traffic_stop = 0;
 
     reg enable = 0;
@@ -42,7 +42,9 @@ module tbd_multidev_run ();
         .clock (clock),
         .resetn(resetn),
 
-        .traffic_start(traffic_start),
+        .traffic_start_0(traffic_start[0]),
+        .traffic_start_1(traffic_start[1]),
+        .traffic_start_2(traffic_start[2]),
         .traffic_stop (traffic_stop),
 
         .enable_0  (enable),
@@ -77,10 +79,10 @@ module tbd_multidev_run ();
         enable <= 1;
         #25ns;
 
-        traffic_start <= 1;
+        traffic_start <= 'b010;
         #50us;
 
-        traffic_start <= 0;
+        traffic_start <= '0;
         #25ns;
 
         traffic_stop <= 1;

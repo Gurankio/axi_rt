@@ -49,7 +49,7 @@ module axi_rt_device_budget_counter #(
         if (enable) begin
             // transactions
             if (!budget_spent & ax_happening) begin
-                available_d -= ax_lengths;
+                available_d -= (ax_lengths + 1); // ax_lengths +1 (the number of beats)
             end
 
             // incr

@@ -27,7 +27,7 @@ module axi_gran_burst_splitter #(
     // Maximum number of AXI write bursts outstanding at the same time
     parameter int unsigned MaxWriteTxns  = 32'd0,
     parameter bit          CutPath       = 1'b0,
-    parameter bit          DisableChecks = 1'b0,
+    parameter bit          DisableChecks = 1'b1,
 
     // AXI Bus Types
     parameter int unsigned AddrWidth     = 32'd0,
@@ -79,6 +79,7 @@ module axi_gran_burst_splitter #(
         .mst_resp_i(slv_resp)
     );
 
+
     logic sel_aw_unsupported, sel_ar_unsupported;
     localparam int unsigned MaxTxns = (MaxReadTxns > MaxWriteTxns) ? MaxReadTxns : MaxWriteTxns;
     axi_demux_simple #(
@@ -86,7 +87,7 @@ module axi_gran_burst_splitter #(
         .AxiIdWidth (IdWidth),
         .axi_req_t  (axi_req_t),
         .axi_resp_t (axi_resp_t),
-        .NoMstPorts (1), // FIXING THIS, WE ONLY HAVE ONE MASTER PORT! NOT 2!
+        .NoMstPorts (2),
         .MaxTrans   (MaxTxns),
         .AxiLookBits(IdWidth)
     ) i_demux_supported_vs_unsupported (

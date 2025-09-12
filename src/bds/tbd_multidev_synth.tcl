@@ -338,7 +338,7 @@ Port;FD4A0000;FD4AFFFF;0|FPD;DPDMA;FD4C0000;FD4CFFFF;0|FPD;DDR_XMPU5_CFG;FD05000
   connect_bd_net -net constant_configurator_0_budget_w_2 [get_bd_pins constant_configurator_0/budget_w_2] [get_bd_pins tbd_multidev_0/budget_w_2]
   connect_bd_net -net constant_configurator_0_downstream_p [get_bd_pins constant_configurator_0/downstream_p] [get_bd_pins tbd_multidev_0/downstream_p]
   connect_bd_net -net constant_configurator_0_downstream_q [get_bd_pins constant_configurator_0/downstream_q] [get_bd_pins tbd_multidev_0/downstream_q]
-  connect_bd_net -net constant_configurator_0_enable_0 [get_bd_pins constant_configurator_0/enable_0] [get_bd_pins tbd_multidev_0/enable_0] [get_bd_pins tbd_multidev_0/traffic_start]
+  connect_bd_net -net constant_configurator_0_enable_0 [get_bd_pins constant_configurator_0/enable_0] [get_bd_pins tbd_multidev_0/enable_0]
   connect_bd_net -net constant_configurator_0_enable_1 [get_bd_pins constant_configurator_0/enable_1] [get_bd_pins tbd_multidev_0/enable_1]
   connect_bd_net -net constant_configurator_0_enable_2 [get_bd_pins constant_configurator_0/enable_2] [get_bd_pins tbd_multidev_0/enable_2]
   connect_bd_net -net constant_configurator_0_len_limit [get_bd_pins constant_configurator_0/len_limit] [get_bd_pins tbd_multidev_0/len_limit]
@@ -359,6 +359,7 @@ Port;FD4A0000;FD4AFFFF;0|FPD;DPDMA;FD4C0000;FD4CFFFF;0|FPD;DDR_XMPU5_CFG;FD05000
   # Restore current instance
   current_bd_instance $oldCurInst
 
+  validate_bd_design
   save_bd_design
 }
 # End of create_root_design()
@@ -370,6 +371,4 @@ Port;FD4A0000;FD4AFFFF;0|FPD;DPDMA;FD4C0000;FD4CFFFF;0|FPD;DDR_XMPU5_CFG;FD05000
 
 create_root_design ""
 
-
-common::send_gid_msg -ssname BD::TCL -id 2053 -severity "WARNING" "This Tcl script was generated from a block design that has not been validated. It is possible that design <$design_name> may result in errors during validation."
 

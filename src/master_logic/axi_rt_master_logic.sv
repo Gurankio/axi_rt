@@ -2,6 +2,7 @@
 
 /// Real-time unit: fragments and throttles transactions
 module axi_rt_master_logic #(
+    parameter logic        Reclaiming  = '1,
     parameter int unsigned NumDevice   = 'd1,
     parameter int unsigned BudgetWidth = 'd16,
 
@@ -122,8 +123,13 @@ module axi_rt_master_logic #(
 
     /// Next period output
     period_t next_period_w, next_period_r;
-    assign next_period_w = next_periods_w_q[device_budget_used_w];
-    assign next_period_r = next_periods_r_q[device_budget_used_r];
+    if (Reclaiming) begin : gen_reclaiming
+        assign next_period_w = next_periods_w_q[device_budget_used_w];
+        assign next_period_r = next_periods_r_q[device_budget_used_r];
+    end else begin : gen_no_reclaiming
+        assign next_period_w = next_periods_w_q[2**NumDevice - 1];
+        assign next_period_r = next_periods_r_q[2**NumDevice - 1];
+    end
 
     /// Period counters
     period_t period_left_w, period_left_r;

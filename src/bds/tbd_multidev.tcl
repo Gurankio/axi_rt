@@ -260,7 +260,9 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.POLARITY {ACTIVE_LOW} \
  ] $resetn
-  set traffic_start [ create_bd_port -dir I traffic_start ]
+  set traffic_start_0 [ create_bd_port -dir I traffic_start_0 ]
+  set traffic_start_1 [ create_bd_port -dir I traffic_start_1 ]
+  set traffic_start_2 [ create_bd_port -dir I traffic_start_2 ]
   set traffic_stop [ create_bd_port -dir I traffic_stop ]
 
   # Create instance: axi_gran_burst_split_0, and set properties
@@ -411,7 +413,9 @@ proc create_root_design { parentCell } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-  
+    set_property CONFIG.Reclaiming {0x00000000} $axi_rt_master_logic_0
+
+
   # Create instance: axi_traffic_gen_0, and set properties
   set axi_traffic_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_traffic_gen:3.0 axi_traffic_gen_0 ]
   set_property -dict [list \
@@ -499,7 +503,6 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets axi_write_buffer_wra_1_m_axi_rt_
   # Create port connections
   connect_bd_net -net Net [get_bd_ports enable_0] [get_bd_pins axi_rt_device_budget_0/enable] [get_bd_pins axi_rt_master_logic_0/enable_0]
   connect_bd_net -net Net1 [get_bd_ports budget_w_0] [get_bd_pins axi_rt_device_budget_0/budget_w] [get_bd_pins axi_rt_master_logic_0/budget_w_0]
-  connect_bd_net -net Net2 [get_bd_ports traffic_start] [get_bd_pins axi_traffic_gen_0/core_ext_start] [get_bd_pins axi_traffic_gen_1/core_ext_start] [get_bd_pins axi_traffic_gen_2/core_ext_start]
   connect_bd_net -net Net3 [get_bd_ports traffic_stop] [get_bd_pins axi_traffic_gen_0/core_ext_stop] [get_bd_pins axi_traffic_gen_1/core_ext_stop] [get_bd_pins axi_traffic_gen_2/core_ext_stop]
   connect_bd_net -net Net4 [get_bd_ports budget_r_0] [get_bd_pins axi_rt_device_budget_0/budget_r] [get_bd_pins axi_rt_master_logic_0/budget_r_0]
   connect_bd_net -net Net5 [get_bd_ports budget_w_1] [get_bd_pins axi_rt_device_budget_1/budget_w] [get_bd_pins axi_rt_master_logic_0/budget_w_1]
@@ -526,6 +529,9 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets axi_write_buffer_wra_1_m_axi_rt_
   connect_bd_net -net axi_rt_master_logic_0_device_incr_w_1 [get_bd_pins axi_rt_device_budget_1/incr_w] [get_bd_pins axi_rt_master_logic_0/device_incr_w_1]
   connect_bd_net -net axi_rt_master_logic_0_device_incr_w_2 [get_bd_pins axi_rt_device_budget_2/incr_w] [get_bd_pins axi_rt_master_logic_0/device_incr_w_2]
   connect_bd_net -net clock_1 [get_bd_ports clock] [get_bd_pins axi_gran_burst_split_0/clk] [get_bd_pins axi_gran_burst_split_1/clk] [get_bd_pins axi_gran_burst_split_2/clk] [get_bd_pins axi_isolate_wrapper_0/clk] [get_bd_pins axi_isolate_wrapper_1/clk] [get_bd_pins axi_isolate_wrapper_2/clk] [get_bd_pins axi_rt_device_budget_0/clock] [get_bd_pins axi_rt_device_budget_1/clock] [get_bd_pins axi_rt_device_budget_2/clock] [get_bd_pins axi_rt_master_logic_0/clock] [get_bd_pins axi_traffic_gen_0/s_axi_aclk] [get_bd_pins axi_traffic_gen_1/s_axi_aclk] [get_bd_pins axi_traffic_gen_2/s_axi_aclk] [get_bd_pins smartconnect_0/aclk]
+  connect_bd_net -net core_ext_start_0_1 [get_bd_ports traffic_start_0] [get_bd_pins axi_traffic_gen_2/core_ext_start]
+  connect_bd_net -net core_ext_start_1_1 [get_bd_ports traffic_start_1] [get_bd_pins axi_traffic_gen_1/core_ext_start]
+  connect_bd_net -net core_ext_start_2_1 [get_bd_ports traffic_start_2] [get_bd_pins axi_traffic_gen_0/core_ext_start]
   connect_bd_net -net downstream_p_0_1 [get_bd_ports downstream_p] [get_bd_pins axi_rt_master_logic_0/downstream_p]
   connect_bd_net -net downstream_q_0_1 [get_bd_ports downstream_q] [get_bd_pins axi_rt_master_logic_0/downstream_q]
   connect_bd_net -net enable_1_0_1 [get_bd_ports enable_1] [get_bd_pins axi_rt_device_budget_1/enable] [get_bd_pins axi_rt_master_logic_0/enable_1]

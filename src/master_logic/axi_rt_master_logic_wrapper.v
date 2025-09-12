@@ -1,4 +1,5 @@
 module axi_rt_master_logic_wrapper #(
+    parameter integer Reclaiming  = 'b1,
     parameter integer BudgetWidth = 'd16
 ) (
     input clock,
@@ -36,6 +37,7 @@ module axi_rt_master_logic_wrapper #(
 );
     axi_rt_master_logic #(
         .NumDevice  ('d3),
+        .Reclaiming (Reclaiming),
         .BudgetWidth(BudgetWidth)
     ) i_axi_rt_master_logic (
         .clk_i (clock),
