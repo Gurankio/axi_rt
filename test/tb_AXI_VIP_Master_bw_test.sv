@@ -19,9 +19,9 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 import axi_vip_pkg::*;
-import dpu_bd_axi_vip_0_0_pkg::*; // FULL AXI MASTER
-import dpu_bd_axi_vip_2_0_pkg::*; // FULL AXI MASTER
-import dpu_bd_axi_vip_1_0_pkg::*; // FULL AXI SLAVE
+import tbd_multidev_vip_axi_vip_0_0_pkg::*; // FULL AXI MASTER
+import tbd_multidev_vip_axi_vip_2_0_pkg::*; // FULL AXI MASTER
+import tbd_multidev_vip_axi_vip_1_0_pkg::*; // FULL AXI SLAVE
 
 
 // simulation parameters
@@ -46,8 +46,8 @@ xil_axi_region_t                        mtestRegion = 4'b000;
 xil_axi_qos_t                           mtestQOS = 4'b000;  
 xil_axi_data_beat                       dbeat;  
 xil_axi_data_beat [255:0]               mtestWUSER;   
-xil_axi_user_beat                       mtestAWUSER = 'h0;  
-xil_axi_data_beat                       mtestARUSER = 'h0;  
+xil_axi_user_beat                       mtestAWUSER = 'h1;  
+xil_axi_data_beat                       mtestARUSER = 'h1;  
 xil_axi_data_beat [255:0]               mtestRUSER;      
 xil_axi_uint                            mtestBUSER;  
 xil_axi_resp_t                          mtestBresp;  
@@ -70,8 +70,8 @@ xil_axi_region_t                        mtestRegion_2 = 4'b000;
 xil_axi_qos_t                           mtestQOS_2 = 4'b000;  
 xil_axi_data_beat                       dbea_2t;  
 xil_axi_data_beat [255:0]               mtestWUSER_2;   
-xil_axi_user_beat                       mtestAWUSER_2 = 'h0;  
-xil_axi_data_beat                       mtestARUSER_2 = 'h0;  
+xil_axi_user_beat                       mtestAWUSER_2 = 'h2;  
+xil_axi_data_beat                       mtestARUSER_2 = 'h2;  
 xil_axi_data_beat [255:0]               mtestRUSER_2;      
 xil_axi_uint                            mtestBUSER_2;  
 xil_axi_resp_t                          mtestBresp_2;  
@@ -90,16 +90,16 @@ module tb_AXI_VIP_Master_bw_test();
 
 always #5ns aclk = ~aclk;
 
-dpu_bd_wrapper DUT
+tbd_multidev_vip_wrapper DUT
 (
-    .aclk_0(aclk),
-    .aresetn_0(aresetn)
+    .clock(aclk),
+    .resetn(aresetn)
 );
 
 // Declare agent
-dpu_bd_axi_vip_0_0_mst_t      master_agent_ooo;
-dpu_bd_axi_vip_2_0_mst_t      master_agent_ooo_noise;
-dpu_bd_axi_vip_1_0_slv_mem_t slv_agent;
+tbd_multidev_vip_axi_vip_0_0_mst_t      master_agent_ooo;
+tbd_multidev_vip_axi_vip_2_0_mst_t      master_agent_ooo_noise;
+tbd_multidev_vip_axi_vip_1_0_slv_mem_t slv_agent;
 
 // setting bits at blocks of 128
 genvar i;
@@ -120,9 +120,9 @@ initial begin
     // axi_vip_0-1 (master and slave)
     // Thread 1
     // Create an agent
-    master_agent_ooo = new("master vip agent",DUT.dpu_bd_i.axi_vip_0.inst.IF);
-    master_agent_ooo_noise = new("master vip agent noise", DUT.dpu_bd_i.axi_vip_2.inst.IF);
-    slv_agent = new("slave vip agent",DUT.dpu_bd_i.axi_vip_1.inst.IF);
+    master_agent_ooo = new("master vip agent",DUT.tbd_multidev_vip_i.axi_vip_0.inst.IF);
+    master_agent_ooo_noise = new("master vip agent noise", DUT.tbd_multidev_vip_i.axi_vip_2.inst.IF);
+    slv_agent = new("slave vip agent",DUT.tbd_multidev_vip_i.axi_vip_1.inst.IF);
 
     // set tag for agents for easy debug
     slv_agent.set_agent_tag("Slave VIP");
